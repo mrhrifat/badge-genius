@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material'
 
- Root = () => {
+const Root = () => {
   console.log('2')
   return <Typography>Root</Typography>
 }
