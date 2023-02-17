@@ -1,7 +1,8 @@
 {
   "name": "shield-icons",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "private": true,
+  "author": "Mrh Rifat",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -13,11 +14,13 @@
     "@types/node": "18.13.0",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
-    "eslint": "8.34.0",
-    "eslint-config-next": "13.1.6",
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "4.9.5"
+  },
+  "devDependencies": {
+    "eslint": "^8.34.0",
+    "eslint-config-next": "^13.1.6"
   }
 }
