@@ -8,9 +8,18 @@
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@next/next/recommended",
-    "prettier"
+    "prettier",
+    "plugin:storybook/recommended"
   ],
-  "overrides": [],
+  "overrides": [
+    {
+      "files": ["*.stories.@(ts|tsx|js|jsx|mjs|cjs)"],
+      "rules": {
+        // Exmaple of overriding a rule
+        "storybook/hierarchy-seperator": "error"
+      }
+    }
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
