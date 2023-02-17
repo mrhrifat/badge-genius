@@ -3,11 +3,21 @@
   "version": "2.0.0",
   "private": true,
   "author": "Mrh Rifat",
+  "description": "",
+  "license": "GPL 3.0",
+  "homepage": "https://github.com/mrhrifat/sheild-icons",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier --write",
+    "prepare": "husky install"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "yarn": ">=1.22.0",
+    "npm": "please-use-yarn"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -31,6 +41,7 @@
     "eslint-config-next": "^13.1.6",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.3",
     "prettier": "^2.8.4"
   }
 }
