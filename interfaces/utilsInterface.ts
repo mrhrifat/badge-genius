@@ -15,3 +15,11 @@ export interface metadataInterface {
   keywords: string[]
   icons: object
 }
+
+export interface shieldContextDataInterface {
+  theme: string
+  icons: object
+  options: object
+  selectedIcon: object
+  generateShield: string
+}
