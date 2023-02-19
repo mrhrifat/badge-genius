@@ -12,17 +12,12 @@
     "start": "next start",
     "lint": "next lint",
     "prettier": "prettier --write",
-    "prepare": "husky install",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "prepare": "husky install"
   },
   "engines": {
     "node": ">=18.0.0",
     "yarn": ">=1.22.0",
     "npm": "please-use-yarn"
-  },
-  "resolutions": {
-    "webpack": "^5"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
@@ -37,29 +32,17 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "simple-icons": "^8.5.0",
-    "typescript": "4.9.5",
-    "util": "^0.12.5"
+    "typescript": "4.9.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.12",
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
-    "@storybook/addon-actions": "^6.5.16",
-    "@storybook/addon-essentials": "^6.5.16",
-    "@storybook/addon-interactions": "^6.5.16",
-    "@storybook/addon-links": "^6.5.16",
-    "@storybook/builder-webpack5": "^6.5.16",
-    "@storybook/manager-webpack5": "^6.5.16",
-    "@storybook/react": "^6.5.16",
-    "@storybook/testing-library": "^0.0.13",
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "@typescript-eslint/parser": "^5.52.0",
-    "babel-loader": "^8.3.0",
     "eslint": "^8.34.0",
     "eslint-config-next": "^13.1.6",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-storybook": "^0.6.10",
     "husky": "^8.0.3",
     "prettier": "^2.8.4"
   }
