@@ -1,8 +1,12 @@
 import { Typography } from '@mui/material'
+import React from 'react'
 
-const Root = () => {
-  console.log('2')
-  return <Typography>Root</Typography>
+export interface IRoot {
+  text: string
+}
+
+const Root: React.FC<IRoot> = ({ text }) => {
+  return <Typography>{text}</Typography>
 }
 
 export default Root
