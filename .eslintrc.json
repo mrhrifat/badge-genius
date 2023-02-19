@@ -4,21 +4,11 @@
     "es2021": true
   },
   "extends": [
+    "plugin:@typescript-eslint/recommended",
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
     "plugin:@next/next/recommended",
-    "prettier",
-    "plugin:storybook/recommended"
-  ],
-  "overrides": [
-    {
-      "files": ["*.stories.@(ts|tsx|js|jsx|mjs|cjs)"],
-      "rules": {
-        // Exmaple of overriding a rule
-        "storybook/hierarchy-seperator": "error"
-      }
-    }
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -28,8 +18,9 @@
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "react/react-in-jsx-scope": 0,
-    "no-console": 2,
-    "no-unused-vars": 2
+    "no-console": 1,
+    "no-unused-vars": 1,
+    "@typescript-eslint/no-inferrable-types": 2
   },
   "globals": {
     "module": "writable"
