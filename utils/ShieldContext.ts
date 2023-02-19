@@ -1,4 +1,4 @@
-import { shieldContextType } from '@/type/utilsType'
+import { shieldContextType } from '@/types/utilsType'
 import React from 'react'
 import { shieldContextData } from './data'
 
