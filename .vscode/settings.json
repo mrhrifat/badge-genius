@@ -7,7 +7,5 @@
     "source.fixAll.tslint": true,
     "source.fixAll.eslint": true,
     "source.organizeImports": true
-  },
-  "javascript.validate.enable": false,
-  "typescript.validate.enable": false
+  }
 }
