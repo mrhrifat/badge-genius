@@ -1,4 +1,4 @@
-import { dosis, roboto_mono } from '@/utils/fonts'
+import { dosis, roboto } from '@/utils/fonts'
 import { createTheme } from '@mui/material'
 
 export const lightTheme = createTheme({
@@ -12,7 +12,7 @@ export const lightTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: [dosis.style.fontFamily, roboto_mono.style.fontFamily].join(''),
+    fontFamily: [dosis.style.fontFamily, roboto.style.fontFamily].join(''),
   },
 })
 
@@ -27,6 +27,6 @@ export const darkTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: [dosis.style.fontFamily, roboto_mono.style.fontFamily].join(''),
+    fontFamily: [dosis.style.fontFamily, roboto.style.fontFamily].join(''),
   },
 })
