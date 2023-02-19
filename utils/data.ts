@@ -8,7 +8,10 @@
  *
  */
 
-import { metadataInterface } from '@/interfaces/utilsInterface'
+import {
+  metadataInterface,
+  shieldContextDataInterface,
+} from '@/interfaces/utilsInterface'
 
 // Metadata
 export const metadata: metadataInterface = {
@@ -45,4 +48,13 @@ export const metadata: metadataInterface = {
   icons: {
     icon: '/favicon.ico',
   },
+}
+
+// Shield Context Data
+export const shieldContextData: shieldContextDataInterface = {
+  theme: 'light',
+  icons: {},
+  options: {},
+  selectedIcon: {},
+  generateShield: '',
 }
