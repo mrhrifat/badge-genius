@@ -1,12 +1,23 @@
-import { Typography } from '@mui/material'
-import React from 'react'
+/**
+ * Title: Root
+ * Description:
+ * Filename: Root.tsx
+ * Path: /components/Root.tsx
+ * Author: Mrh Rifat (Programmer)
+ * Date: Feb 20, 2023
+ *
+ */
 
-export interface IRoot {
-  text: string
-}
+import { Container } from '@mui/material'
+import { FC } from 'react'
+import Header from './header/Header'
 
-const Root: React.FC<IRoot> = ({ text }) => {
-  return <Typography>{text}</Typography>
+const Root: FC = () => {
+  return (
+    <Container maxWidth="lg">
+      <Header />
+    </Container>
+  )
 }
 
 export default Root
