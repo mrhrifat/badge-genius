@@ -3,5 +3,5 @@
   "trailingComma": "es5",
   "semi": false,
   "singleQuote": true,
-  "bracketSameLine": false
+  "bracketSameLine": true
 }
