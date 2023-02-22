@@ -1,7 +1,16 @@
-import { shieldContextType } from '@/types/utilsType'
-import React from 'react'
-import { shieldContextData } from './data'
+/**
+* Title: ShieldContext
+* Description:
+* Filename: ShieldContext.ts
+* Path: /utils/ShieldContext.ts
+* Author: Mrh Rifat (Programmer)
+* Date: Feb 22, 2023
+*
+*/
 
-const SheildContext: shieldContextType = React.createContext(shieldContextData)
+import { ShieldContextValueType } from '@/types/utilsTypes'
+import { createContext } from 'react'
 
-export default SheildContext
+const ShieldContext = createContext<ShieldContextValueType | null>(null)
+
+export default ShieldContext
