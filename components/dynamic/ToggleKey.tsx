@@ -8,16 +8,17 @@
  *
  */
 
-import { ToggleKeyOptionType, ToggleKeyType } from '@/types/componentsTypes'
+import { ToggleKeyInterface } from '@/interfaces/componentsInterfaces'
+import { ToggleKeyOptionType } from '@/types/componentsTypes'
 import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import { FC } from 'react'
 
-const ToggleKey: FC<ToggleKeyType> = ({
+const ToggleKey: FC<ToggleKeyInterface> = ({
   value,
   handleChange,
   options,
-}: ToggleKeyType) => {
+}: ToggleKeyInterface) => {
   return (
     <ToggleButtonGroup
       color="primary"
