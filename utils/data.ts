@@ -7,14 +7,11 @@
  * Date: Feb 17, 2023
  *
  */
+'use client'
 
-import {
-  metadataInterface,
-  shieldContextDataInterface,
-} from '@/interfaces/utilsInterface'
+import { HeaderIconsType, MetadataType, OptionsType } from '@/types/utilsTypes'
 
-// Metadata
-export const metadata: metadataInterface = {
+export const metaData: MetadataType = {
   title: 'Shield Icons',
   viewport: {
     width: 'device-width',
@@ -44,17 +41,74 @@ export const metadata: metadataInterface = {
     'Github page',
     'Github pages',
     'Readme Profile',
+    'Next.js',
+    'React',
+    'JavaScript',
   ],
   icons: {
     icon: '/favicon.ico',
   },
+  generator: 'Next.js',
+  applicationName: 'Shield Icons',
+  referrer: 'origin-when-crossorigin',
+  authors: [{ name: 'Mrh Rifat' }],
+  themeColor: 'Light Blye',
+  colorScheme: 'light',
+  creator: 'Mrh Rifat',
+  publisher: 'Mrh Rifat',
 }
 
-// Shield Context Data
-export const shieldContextData: shieldContextDataInterface = {
-  theme: 'light',
-  icons: {},
-  options: {},
-  selectedIcon: {},
-  generateShield: '',
+// // Option Object
+export const optionsdata: OptionsType = {
+  title: null,
+  svg: null,
+  hex: null,
+  license: null,
+  guidelines: null,
+  path: null,
+  source: null,
+  slug: null,
+  labelColor: 'ffffff',
+  logoColor: 'ffffff',
+  logoWidth: 14,
+  style: 'for-the-badge',
 }
+
+// Footer Icons Data
+export const footerIcons = {
+  id: 0,
+  title: 'GitHub',
+  icon: 'github',
+}
+
+// Header Icons Data
+export const headerIcons: HeaderIconsType = [
+  {
+    id: 0,
+    title: 'GitHub',
+    icon: 'github',
+    url: 'https://github.com/mrhrifat/shield-icons',
+  },
+  {
+    id: 1,
+    title: 'Star',
+    icon: 'starborder',
+    url: 'https://github.com/mrhrifat/shield-icons',
+  },
+  {
+    id: 2,
+    title: 'License',
+    icon: 'gavel',
+    url: 'https://github.com/mrhrifat/shield-icons/blob/master/LICENSE.md',
+  },
+  {
+    id: 3,
+    title: '3rd Party Extension',
+    icon: 'extension',
+    url: '',
+    item: [
+      { id: 0, itemTitle: 'Simple Icons' },
+      { id: 1, itemTitle: 'Sheild IO' },
+    ],
+  },
+]
