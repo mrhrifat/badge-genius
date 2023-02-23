@@ -11,7 +11,6 @@
 import { Dosis, Roboto } from '@next/font/google'
 
 // TODO: interface/type later
-
 export const dosis = Dosis({
   subsets: ['latin'],
   display: 'swap',
