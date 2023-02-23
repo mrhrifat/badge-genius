@@ -18,6 +18,14 @@ export type MetadataType = {
   description: string
   keywords: string[]
   icons: object
+  generator: string
+  applicationName: string
+  referrer: string
+  authors: object[]
+  themeColor: string
+  colorScheme: string
+  creator: string
+  publisher: string
 }
 
 // Shild Context Value
@@ -48,3 +56,28 @@ export type OptionsType = {
   logoWidth: number
   style: string
 }
+
+export type ShieldTypeOptionsType = string[]
+
+export type shieldLabelColorsType = string[]
+
+export type ItemHeaderIconType = {
+  id: number
+  itemTitle: string
+}
+
+export type HeaderIconType = {
+  id: number
+  title: string
+  icon: string
+  url: string
+  item?: ItemHeaderIconType[]
+}
+export type HeaderIconsType = HeaderIconType[]
+
+// ComponentType<SvgIconProps>
+
+// Footer Icon Type
+export type FooterIconType = { id: number; title: string; icon: string }
+// Footer Icons Type
+export type FooterIconsType = FooterIconType[]
