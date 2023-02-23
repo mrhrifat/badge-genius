@@ -9,7 +9,12 @@
  */
 'use client'
 
-import { HeaderIconsType, MetadataType, OptionsType } from '@/types/utilsTypes'
+import {
+  HeaderIconsType,
+  MetadataType,
+  OptionsType,
+  ShieldTypeOptionsType,
+} from '@/types/utilsTypes'
 
 export const metaData: MetadataType = {
   title: 'Shield Icons',
@@ -111,4 +116,13 @@ export const headerIcons: HeaderIconsType = [
       { id: 1, itemTitle: 'Sheild IO' },
     ],
   },
+]
+
+// // Options
+export const shieldTypeOptions: ShieldTypeOptionsType = [
+  'plastic',
+  'flat',
+  'flat-square',
+  'for-the-badge',
+  'social',
 ]
