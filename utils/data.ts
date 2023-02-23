@@ -13,6 +13,7 @@ import {
   HeaderIconsType,
   MetadataType,
   OptionsType,
+  shieldLabelColorsType,
   ShieldTypeOptionsType,
 } from '@/types/utilsTypes'
 
@@ -125,4 +126,12 @@ export const shieldTypeOptions: ShieldTypeOptionsType = [
   'flat-square',
   'for-the-badge',
   'social',
+]
+export const shieldLabelColors: shieldLabelColorsType = [
+  '2980b9',
+  '2c3e50',
+  'd35400',
+  'bdc3c7',
+  '000000',
+  'ffffff',
 ]
