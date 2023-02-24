@@ -26,6 +26,7 @@ export type MetadataType = {
   colorScheme: string
   creator: string
   publisher: string
+  stylesheet: string
 }
 
 // Shild Context Value
@@ -81,3 +82,18 @@ export type HeaderIconsType = HeaderIconType[]
 export type FooterIconType = { id: number; title: string; icon: string }
 // Footer Icons Type
 export type FooterIconsType = FooterIconType[]
+
+// Simple Icons
+export type SimpleIconsType = {
+  title: string
+  slug: string
+  hex: string
+  source: string
+  svg: string
+  path: string
+  guidelines: string
+  license: {
+    type: string
+    url: string
+  }
+}
