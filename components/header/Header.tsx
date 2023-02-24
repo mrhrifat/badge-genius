@@ -8,13 +8,16 @@
  *
  */
 
+import { optionRender } from '@/lib/utilsLib'
+import ShieldContext from '@/utils/ShieldContext'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import { FC } from 'react'
+import { FC, useContext } from 'react'
 import HeaderIcons from '../dynamic/HeaderIcons'
 import Theme from './Theme'
 
 const Header: FC = () => {
+  const shieldContextValue = useContext(ShieldContext)
   return (
     <Stack
       direction={{ xs: 'column', sm: 'row' }}
@@ -26,7 +29,9 @@ const Header: FC = () => {
           Shield Icons
         </Typography>
         <Typography variant="body1">
-          Build & Download 2401 popular brands
+          Build & Download &nbsp;
+          <strong>{optionRender(shieldContextValue?.icons).length}</strong>
+          &nbsp;popular brands
           <br />
           Badge,&nbsp;&nbsp;
           <abbr title="Scalable Vector Graphics">SVG,</abbr>
