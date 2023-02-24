@@ -1,0 +1,7 @@
+.homeGridItem {
+  border: '1px solid #eee';
+  padding: '3';
+  border-radius: '5';
+  background-color: '#fff';
+  box-shadow: '0 20px 27px 0 rgb(0 0 0 / 5%)';
+}
