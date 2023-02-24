@@ -62,6 +62,7 @@ export const metaData: MetadataType = {
   colorScheme: 'light',
   creator: 'Mrh Rifat',
   publisher: 'Mrh Rifat',
+  stylesheet: 'https://fonts.googleapis.com/icon?family=Material+Icons',
 }
 
 // // Option Object
