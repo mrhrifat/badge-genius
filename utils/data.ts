@@ -10,10 +10,12 @@
 'use client'
 
 import { shieldListValue } from '@/lib/utilsLib'
-import { ShieldListsShieldPropsType } from '@/types/componentsTypes'
-
 import {
   HeaderIconsType,
+  ShieldListsShieldPropsType,
+} from '@/types/componentsTypes'
+
+import {
   MetadataType,
   OptionsType,
   shieldLabelColorsType,
