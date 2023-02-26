@@ -9,7 +9,6 @@
  */
 
 import { Dispatch, SetStateAction } from 'react'
-import { SimpleIcon } from 'simple-icons/types'
 
 // Metadata
 export type MetadataType = {
@@ -33,12 +32,12 @@ export type MetadataType = {
 export type ShieldContextValueType = {
   theme: string
   setTheme: Dispatch<SetStateAction<string>>
-  options: object
+  options: OptionsType
   setOptions: Dispatch<SetStateAction<OptionsType>>
   shield: string
   setShield: Dispatch<SetStateAction<string>>
   selectedIcon: object
-  setSelectedIcon: Dispatch<SetStateAction<SimpleIcon>>
+  setSelectedIcon: Dispatch<SetStateAction<string>>
   icons: object
 }
 
@@ -47,14 +46,14 @@ export type OptionsType = {
   title: string | null
   svg: string | null
   hex: string | null
-  license: string | null
+  license: string | null | undefined | object
   guidelines: string | null
   path: string | null
   source: string | null
   slug: string | null
   labelColor: string | null
   logoColor: string | null
-  logoWidth: number
+  logoWidth: number | string
   style: string
 }
 
@@ -62,38 +61,3 @@ export type ShieldTypeOptionsType = string[]
 
 export type shieldLabelColorsType = string[]
 
-export type ItemHeaderIconType = {
-  id: number
-  itemTitle: string
-}
-
-export type HeaderIconType = {
-  id: number
-  title: string
-  icon: string
-  url: string
-  item?: ItemHeaderIconType[]
-}
-export type HeaderIconsType = HeaderIconType[]
-
-// ComponentType<SvgIconProps>
-
-// Footer Icon Type
-export type FooterIconType = { id: number; title: string; icon: string }
-// Footer Icons Type
-export type FooterIconsType = FooterIconType[]
-
-// Simple Icons
-export type SimpleIconsType = {
-  title: string
-  slug: string
-  hex: string
-  source: string
-  svg: string
-  path: string
-  guidelines: string
-  license: {
-    type: string
-    url: string
-  }
-}
