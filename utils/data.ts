@@ -9,6 +9,9 @@
  */
 'use client'
 
+import { ShieldListsShieldPropsType } from '@/interfaces/componentsInterfaces'
+import { shieldListValue } from '@/lib/utilsLib'
+
 import {
   HeaderIconsType,
   MetadataType,
@@ -128,11 +131,87 @@ export const shieldTypeOptions: ShieldTypeOptionsType = [
   'for-the-badge',
   'social',
 ]
-export const shieldLabelColors: shieldLabelColorsType = [
+export const labelColors: shieldLabelColorsType = [
   '2980b9',
   '2c3e50',
   'd35400',
   'bdc3c7',
   '000000',
   'ffffff',
+]
+
+// Shield List
+export const shieldLists: ShieldListsShieldPropsType = [
+  {
+    id: 1,
+    title: 'Shield Label',
+    icon: 'title',
+    value: (options, title) => {
+      return shieldListValue(options, title)
+    },
+  },
+  {
+    id: 2,
+    title: 'Shield Color',
+    icon: 'palette',
+    value: (options, title) => {
+      return shieldListValue(options, title)
+    },
+  },
+  {
+    id: 3,
+    title: 'Label Color',
+    icon: 'format-color-text',
+    value: (options, title) => {
+      return shieldListValue(options, title)
+    },
+  },
+  {
+    id: 4,
+    title: 'Logo Color',
+    icon: 'format-color-flat',
+    value: (options, title) => {
+      return shieldListValue(options, title)
+    },
+  },
+  {
+    id: 5,
+    title: 'Shield Style',
+    icon: 'style',
+    value: (options, title) => {
+      return shieldListValue(options, title)
+    },
+  },
+  {
+    id: 6,
+    title: 'Shield Width',
+    icon: 'aspect-ratio',
+    value: (options, title) => {
+      return shieldListValue(options, title)
+    },
+  },
+  {
+    id: 7,
+    title: 'Website',
+    icon: 'language',
+    value: (options, title) => {
+      return shieldListValue(options, title)
+    },
+  },
+  {
+    id: 8,
+    title: 'License',
+    icon: 'policy',
+    value: (options, title) => {
+      return shieldListValue(options, title)
+    },
+  },
+  {
+    id: 9,
+    title: 'Guidelines',
+    icon: 'gavel',
+    value: (options, title) => {
+      return shieldListValue(options, title)
+    },
+  },
 ]
