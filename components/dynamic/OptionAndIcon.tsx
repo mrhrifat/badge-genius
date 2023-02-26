@@ -1,3 +1,13 @@
+/**
+ * Title: OptionAndIcon
+ * Description:
+ * Filename: OptionAndIcon.tsx
+ * Path: /components/dynamic/OptionAndIcon.tsx
+ * Author: Mrh Rifat (Programmer)
+ * Date: Feb 25, 2023
+ *
+ */
+
 import { OptionAndIconType } from '@/types/componentsTypes'
 import { Grid } from '@mui/material'
 
