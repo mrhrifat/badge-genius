@@ -9,8 +9,8 @@
  */
 'use client'
 
-import { ShieldListsShieldPropsType } from '@/interfaces/componentsInterfaces'
 import { shieldListValue } from '@/lib/utilsLib'
+import { ShieldListsShieldPropsType } from '@/types/componentsTypes'
 
 import {
   HeaderIconsType,
