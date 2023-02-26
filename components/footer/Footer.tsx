@@ -1,3 +1,13 @@
+/**
+ * Title: Footer
+ * Description:
+ * Filename: Footer.tsx
+ * Path: /components/footer/Footer.tsx
+ * Author: Mrh Rifat (Programmer)
+ * Date: Feb 25, 2023
+ *
+ */
+
 import GitHubIcon from '@mui/icons-material/GitHub'
 import Box from '@mui/material/Box'
 import IconButton from '@mui/material/IconButton'
