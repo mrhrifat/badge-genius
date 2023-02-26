@@ -8,7 +8,7 @@
  *
  */
 
-import { HeaderIconType } from '@/types/utilsTypes'
+import { HeaderIconType } from '@/types/componentsTypes'
 import { headerIcons } from '@/utils/data'
 import { PersonAdd, Settings } from '@mui/icons-material'
 import { Icon, ListItemIcon, Menu, MenuItem } from '@mui/material'
