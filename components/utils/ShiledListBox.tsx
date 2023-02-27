@@ -19,11 +19,13 @@ import { ListChildComponentProps, VariableSizeList } from 'react-window'
 function renderRow(props: ListChildComponentProps) {
   const { data, index, style } = props
   const dataSet = data[index]
+  const someKey = dataSet[0].key // get the key prop from the data set
 
   return (
     <Typography
       component="li"
       {...dataSet[0]}
+      key={someKey} // pass the key prop directly
       noWrap
       style={{ ...style, padding: 8 }}>
       {dataSet[1]}
