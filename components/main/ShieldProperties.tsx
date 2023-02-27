@@ -10,12 +10,12 @@
 
 'use client'
 
+import { ShieldList } from '@/components/dynamic'
 import ShieldContext from '@/utils/ShieldContext'
 import List from '@mui/material/List'
 import Stack from '@mui/material/Stack'
 import { useContext } from 'react'
 import { shieldLists } from '../../utils/data'
-import ShieldList from '../dynamic/ShieldList'
 
 const ShieldProperties = () => {
   const shieldContextValue = useContext(ShieldContext)
