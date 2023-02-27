@@ -10,7 +10,7 @@
 
 import { optionRender } from '@/lib/utilsLib'
 import { TotalItemType } from '@/types/componentsTypes'
-import { Badge } from '@mui/material'
+import Badge from '@mui/material/Badge'
 
 const TotalItem = ({ value, icon }: TotalItemType) => {
   return (
