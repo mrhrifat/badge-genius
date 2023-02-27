@@ -8,10 +8,11 @@
  *
  */
 
+import { AlertMessage } from '@/components/dynamic'
 import CircleIcon from '@mui/icons-material/Circle'
-import { ListItemText, Stack } from '@mui/material'
+import ListItemText from '@mui/material/ListItemText'
+import Stack from '@mui/material/Stack'
 import useCopyToClipboard from '../hooks/useCopyToClipboard'
-import AlertMessage from './AlertMessage'
 
 const ColorPalette = (color: string) => {
   const [isCopied, handleCopy] = useCopyToClipboard()
