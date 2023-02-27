@@ -7,14 +7,19 @@
  * Date: Feb 20, 2023
  *
  */
+'use client'
 
-import { Container } from '@mui/material'
-import { FC } from 'react'
+import ShieldContext from '@/utils/ShieldContext'
+import Container from '@mui/material/Container'
+import { FC, useContext } from 'react'
 import Footer from './footer/Footer'
 import Header from './header/Header'
 import Home from './home/Home'
 
 const Root: FC = () => {
+  const shieldContextValue = useContext(ShieldContext)
+  console.log(shieldContextValue)
+
   return (
     <Container maxWidth="lg">
       <Header />
