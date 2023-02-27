@@ -8,10 +8,8 @@
  *
  */
 
+import { Download, ShieldMarkdown, ShieldSvg } from '@/components/main'
 import Stack from '@mui/material/Stack'
-import Download from './Download'
-import ShieldMarkdown from './ShieldMarkdown'
-import ShieldSvg from './ShieldSVG'
 
 const Operation = () => {
   return (
