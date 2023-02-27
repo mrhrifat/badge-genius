@@ -1,5 +1,5 @@
 import { regex } from '@/lib/utilsLib'
-import { Typography } from '@mui/material'
+import Typography from '@mui/material/Typography'
 import { FC } from 'react'
 
 export interface FilterValueInterface {

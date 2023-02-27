@@ -1,3 +1,13 @@
+/**
+ * Title: SvgToImg
+ * Description:
+ * Filename: SvgToImg.tsx
+ * Path: /components/utils/SvgToImg.tsx
+ * Author: Mrh Rifat (Programmer)
+ * Date: Feb 27, 2023
+ *
+ */
+
 const SvgToImg = (settings: any) => {
   /**
    * Simple function that converts a plain SVG string or SVG DOM Node into an image with custom dimensions.
@@ -24,7 +34,8 @@ const SvgToImg = (settings: any) => {
   }
 
   return new Promise((resolve) => {
-    let svgNode
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let svgNode: any
 
     // Create SVG Node if a plain string has been provided
     if (typeof _settings.svg === 'string') {
