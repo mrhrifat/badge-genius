@@ -38,8 +38,8 @@ const ShieldOptions = () => {
         >
       | SelectChangeEvent<string | number | null>
   ) => {
-    console.log(event.target.name)
-    console.log(event.target.value)
+    // console.log(event.target.name)
+    // console.log(event.target.value)
     const { value, name } = event.target
     if (name === 'Shield Style') {
       shieldContextValue?.setOptions({
