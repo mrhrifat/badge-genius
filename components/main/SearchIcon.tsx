@@ -10,6 +10,8 @@
 
 'use client'
 
+import { OptionAndIcon, TotalItem } from '@/components/dynamic'
+import { ShiledListBox } from '@/components/utils'
 import {
   generateShield,
   generateSimpleIcon,
@@ -20,11 +22,9 @@ import { HandleSelectIconHandlerType } from '@/types/componentsTypes'
 import { labelColors } from '@/utils/data'
 import ShieldContext from '@/utils/ShieldContext'
 import BadgeIcon from '@mui/icons-material/Badge'
-import { Autocomplete, TextField } from '@mui/material'
-import React, { ChangeEvent, useContext } from 'react'
-import OptionAndIcon from '../dynamic/OptionAndIcon'
-import TotalItem from '../dynamic/TotalItem'
-import { default as ShiledListBox } from '../utils/ShiledListBox'
+import Autocomplete from '@mui/material/Autocomplete'
+import TextField from '@mui/material/TextField'
+import { ChangeEvent, ReactNode, useContext } from 'react'
 
 const SearchIcon = () => {
   const shieldContextValue = useContext(ShieldContext)
@@ -35,7 +35,6 @@ const SearchIcon = () => {
   ) => {
     if (value) {
       const icons = generateSimpleIcon(value, shieldContextValue?.icons)
-      console.log(icons)
 
       const { title, hex, svg, license, guidelines, path, source, slug } = icons
 
@@ -53,6 +52,7 @@ const SearchIcon = () => {
         slug,
         labelColor: hex,
       })
+
       updateLabelColor(labelColors, hex)
       generateShield !== null ? shieldContextValue?.setShield('') : ''
     }
@@ -72,7 +72,7 @@ const SearchIcon = () => {
               <TextField {...params} label="Search Icon" />
             )}
             renderOption={(props, option, state) =>
-              [props, option, state.index] as React.ReactNode
+              [props, option, state.index] as ReactNode
             }
           />
         </>
