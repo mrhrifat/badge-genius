@@ -8,12 +8,14 @@
  *
  */
 
+import {
+  Operation,
+  SearchIcon,
+  ShieldOptions,
+  ShieldProperties,
+} from '@/components/main'
 import { Grid } from '@mui/material'
 import { FC } from 'react'
-import Operation from '../main/Operation'
-import SearchIcon from '../main/SearchIcon'
-import ShieldOptions from '../main/ShieldOptions'
-import ShieldProperties from '../main/ShieldProperties'
 
 const Home: FC = () => {
   return (
