@@ -7,7 +7,7 @@
   "license": "GPL 3.0",
   "homepage": "https://github.com/mrhrifat/sheild-icons",
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
