@@ -9,14 +9,15 @@
  */
 'use client'
 
+import { ToggleKey } from '@/components/dynamic'
+import { SvgToImg } from '@/components/utils'
 import ShieldContext from '@/utils/ShieldContext'
 import DownloadIcon from '@mui/icons-material/Download'
-import { Button, Stack } from '@mui/material'
+import Button from '@mui/material/Button'
+import Stack from '@mui/material/Stack'
 import { saveAs } from 'file-saver'
 import { ChangeEvent, useContext, useState } from 'react'
 import DownloadLink from 'react-download-link'
-import ToggleKey from '../dynamic/ToggleKey'
-import SvgToImg from '../utils/SvgToImg'
 
 const Download = () => {
   const shieldContextValue = useContext(ShieldContext)
