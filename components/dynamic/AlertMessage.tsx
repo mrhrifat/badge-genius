@@ -9,7 +9,8 @@
  */
 
 import { AlertMessageInterface } from '@/interfaces/componentsInterfaces'
-import { Alert, Snackbar } from '@mui/material'
+import Alert from '@mui/material/Alert'
+import Snackbar from '@mui/material/Snackbar'
 import { FC } from 'react'
 
 const AlertMessage: FC<AlertMessageInterface> = ({ isCopied }) => {
