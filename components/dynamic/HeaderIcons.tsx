@@ -10,9 +10,13 @@
 
 import { HeaderIconType } from '@/types/componentsTypes'
 import { headerIcons } from '@/utils/data'
-import { PersonAdd, Settings } from '@mui/icons-material'
-import { Icon, ListItemIcon, Menu, MenuItem } from '@mui/material'
+import PersonAddIcon from '@mui/icons-material/PersonAdd'
+import SettingsIcon from '@mui/icons-material/Settings'
+import Icon from '@mui/material/Icon'
 import IconButton from '@mui/material/IconButton'
+import ListItemIcon from '@mui/material/ListItemIcon'
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
 import Tooltip from '@mui/material/Tooltip'
 import React, { FC } from 'react'
 
@@ -81,13 +85,13 @@ const HeaderIcons: FC = () => {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}>
         <MenuItem>
           <ListItemIcon>
-            <PersonAdd fontSize="small" />
+            <PersonAddIcon fontSize="small" />
           </ListItemIcon>
           Simple Icons
         </MenuItem>
         <MenuItem>
           <ListItemIcon>
-            <Settings fontSize="small" />
+            <SettingsIcon fontSize="small" />
           </ListItemIcon>
           Shild IO
         </MenuItem>
