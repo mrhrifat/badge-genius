@@ -11,11 +11,13 @@
 'use client'
 
 /* eslint-disable react/no-children-prop */
+import { AlertMessage } from '@/components/dynamic'
 import ShieldContext from '@/utils/ShieldContext'
-import { List, ListItem, ListItemButton } from '@mui/material'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemButton from '@mui/material/ListItemButton'
 import { useContext } from 'react'
 import ReactMarkdown from 'react-markdown'
-import AlertMessage from '../dynamic/AlertMessage'
 import useCopyToClipboard from '../hooks/useCopyToClipboard'
 
 const ShieldMarkdown = () => {
