@@ -9,7 +9,7 @@
  */
 
 import { OptionAndIconType } from '@/types/componentsTypes'
-import { Grid } from '@mui/material'
+import Grid from '@mui/material/Grid'
 
 const OptionAndIcon = ({ firstItem, lastItem }: OptionAndIconType) => {
   return (
