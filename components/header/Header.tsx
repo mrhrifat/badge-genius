@@ -8,13 +8,13 @@
  *
  */
 
+import { HeaderIcons } from '@/components/dynamic'
+import { Theme } from '@/components/header'
 import { optionRender } from '@/lib/utilsLib'
 import ShieldContext from '@/utils/ShieldContext'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import { FC, useContext } from 'react'
-import HeaderIcons from '../dynamic/HeaderIcons'
-import Theme from './Theme'
 
 const Header: FC = () => {
   const shieldContextValue = useContext(ShieldContext)
