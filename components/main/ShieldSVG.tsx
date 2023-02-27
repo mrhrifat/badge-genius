@@ -10,29 +10,31 @@
 
 'use client'
 
+import { AlertMessage, RenderSVG } from '@/components/dynamic'
 import ShieldContext from '@/utils/ShieldContext'
-import { Box, List, ListItem, ListItemButton } from '@mui/material'
+import Box from '@mui/material/Box'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemButton from '@mui/material/ListItemButton'
 import { useContext } from 'react'
-import AlertMessage from '../dynamic/AlertMessage'
 import useCopyToClipboard from '../hooks/useCopyToClipboard'
 
 const ShieldSvg = () => {
   const shieldContextValue = useContext(ShieldContext)
   const [isCopied, handleCopy] = useCopyToClipboard()
+  const handleClick = () => {
+    if (shieldContextValue?.options.svg) {
+      handleCopy(shieldContextValue?.options.svg)
+    }
+    return false
+  }
 
   return (
     <>
-      {shieldContextValue?.options.svg ? (
+      {shieldContextValue?.options.svg !== null ? (
         <List disablePadding>
           <ListItem disablePadding>
-            <ListItemButton
-              sx={{ padding: '0 1rem' }}
-              onClick={() => {
-                const text = 'Not ready yet!'
-                shieldContextValue?.options.svg === null
-                  ? text
-                  : handleCopy(shieldContextValue?.options.svg)
-              }}>
+            <ListItemButton sx={{ padding: '0 1rem' }} onClick={handleClick}>
               <Box
                 width={100}
                 sx={{
@@ -40,6 +42,12 @@ const ShieldSvg = () => {
                   fill: shieldContextValue?.theme === 'light' ? '#000' : '#fff',
                 }}>
                 {/* <InlineSVG src={shieldContextValue?.options.svg} /> */}
+                <RenderSVG
+                  title={shieldContextValue?.options.title}
+                  path={shieldContextValue?.options.path}
+                  width={100}
+                  height={100}
+                />
               </Box>
             </ListItemButton>
           </ListItem>
