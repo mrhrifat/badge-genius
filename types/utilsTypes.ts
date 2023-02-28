@@ -9,11 +9,11 @@
  */
 
 import { Dispatch, SetStateAction } from 'react'
+import { SimpleIcon } from 'simple-icons'
 
 // Metadata
 export type MetadataType = {
   title: string
-  viewport: object
   description: string
   keywords: string[]
   icons: object
@@ -25,7 +25,12 @@ export type MetadataType = {
   colorScheme: string
   creator: string
   publisher: string
-  stylesheet: string
+  copyright: string
+  distribution: string
+  rating: string
+  author: string
+  owner: string
+  coverage: string
 }
 
 // Shild Context Value
@@ -37,7 +42,7 @@ export type ShieldContextValueType = {
   shield: string
   setShield: Dispatch<SetStateAction<string>>
   selectedIcon: object
-  setSelectedIcon: Dispatch<SetStateAction<string>>
+  setSelectedIcon: Dispatch<SetStateAction<SimpleIcon>>
   icons: object
 }
 
@@ -60,4 +65,3 @@ export type OptionsType = {
 export type ShieldTypeOptionsType = string[]
 
 export type shieldLabelColorsType = string[]
-
