@@ -8,14 +8,9 @@
  *
  */
 
+import { RenderSVGType } from '@/types/componentsTypes'
 import { FC } from 'react'
 
-export type RenderSVGType = {
-  width: number
-  height: number
-  title: string | null | undefined
-  path: string | null | undefined
-}
 const RenderSVG: FC<RenderSVGType> = ({ width, height, title, path }) => {
   return (
     <svg
