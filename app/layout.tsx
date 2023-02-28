@@ -9,19 +9,13 @@
  */
 
 import '@/styles/globals.css'
-
+import { MetadataType } from '@/types/utilsTypes'
 import { dosis } from '@/utils/fonts'
-import Script from 'next/script'
-import React from 'react'
-Script
+import { ReactNode } from 'react'
+
 // Metadata
-export const metadata = {
+export const metadata: MetadataType = {
   title: 'Shield Icons',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
   description:
     'Build & Download 2401 popular brands Badge, SVG, Hex Code & so on Shield Icons to use in GitHub Markdown or Any Web Pages',
   keywords: [
@@ -55,20 +49,25 @@ export const metadata = {
   generator: 'Next.js',
   applicationName: 'Shield Icons',
   referrer: 'origin-when-crossorigin',
-  authors: [{ name: 'Mrh Rifat' }],
+  author: 'Mrh Rifat',
+  authors: [
+    { name: 'Mrh Rifat' },
+    { name: 'Rifat' },
+    { name: 'Rakibul Hassan Rifat' },
+  ],
+  copyright: 'Copyright Mrh Rifat - Shield Icons',
+  distribution: 'Global',
+  coverage: 'Worldwide',
+  rating: 'General',
+  owner: 'Mrh Rifat',
   themeColor: 'Light Blye',
   colorScheme: 'light',
   creator: 'Mrh Rifat',
   publisher: 'Mrh Rifat',
-  stylesheet: 'https://fonts.googleapis.com/icon?family=Material+Icons',
 }
 
 // Root
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={dosis.className}>
       <body>{children}</body>
