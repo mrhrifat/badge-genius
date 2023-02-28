@@ -16,7 +16,7 @@ import { OptionsType } from '@/types/utilsTypes'
 import { SelectChangeEvent, SvgIconProps } from '@mui/material'
 import { ChangeEvent, Dispatch, ReactElement, SetStateAction } from 'react'
 
-// Toggle Key Types
+// ToggleKey - ToggleKeyInterface
 export interface ToggleKeyInterface {
   value: string | undefined
   // eslint-disable-next-line no-unused-vars
@@ -24,25 +24,17 @@ export interface ToggleKeyInterface {
   options: ToggleKeyOptionsType
 }
 
-// Alert Message
+// AlertMessage - AlertMessageInterface
 export interface AlertMessageInterface {
   isCopied: boolean
 }
 
-// Color Palette
+// ColorPalette - ColorPaletteInterface
 export interface ColorPaletteInterface {
   color: string
 }
 
-// ShielListInterace
-export interface ShielListInterace {
-  icon: ReactElement<SvgIconProps> | string
-  title: string
-  // eslint-disable-next-line no-unused-vars
-  value: (options: OptionsType | undefined, title: string) => void
-}
-
-// Shield Form
+// ShieldForm - ShieldFormInterface
 export interface ShieldFormInterface {
   title: string
   items: SheildFormItemsType
@@ -58,17 +50,16 @@ export interface ShieldFormInterface {
   menuProps?: object
 }
 
-// useCopyToClipboard
-export interface useCopyToClipboard {
-  isCopid: boolean
-  // handleCopy: (value: any) => void
-  setIsCopid: Dispatch<SetStateAction<boolean>>
+// ShieldListInterace - ShielListInterace
+export interface ShielListInterace {
+  icon: ReactElement<SvgIconProps> | string
+  title: string
+  // eslint-disable-next-line no-unused-vars
+  value: (options: OptionsType | undefined, title: string) => void
 }
 
-export interface ShieldListShieldPropInterface {
-  id: number
-  title: string
-  icon: ReactElement<SvgIconProps> | string
-  // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-explicit-any
-  value: (options: OptionsType | undefined, title: string) => any
+// useCopyToClipboard - UseCopyToClipboardInterface
+export interface UseCopyToClipboardInterface {
+  isCopid: boolean
+  setIsCopid: Dispatch<SetStateAction<boolean>>
 }
