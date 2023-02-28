@@ -19,6 +19,7 @@ import { FC, useContext } from 'react'
 
 const Header: FC = () => {
   const shieldContextValue = useContext(ShieldContext)
+
   return (
     <Box my={3}>
       <Stack
@@ -33,6 +34,7 @@ const Header: FC = () => {
           <HeaderIcons />
         </Box>
       </Stack>
+
       <Stack
         direction="row"
         // direction={{ xs: 'column', sm: 'row' }}
