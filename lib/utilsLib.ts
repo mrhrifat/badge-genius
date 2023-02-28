@@ -10,22 +10,28 @@
 
 import ColorPalette from '@/components/dynamic/ColorPalette'
 import {
+  HandleWhiteSpaceInterface,
   OptionRenderInterface,
   SimpleIconsInterface,
 } from '@/interfaces/utilsInterfaces'
 import { OptionsType } from '@/types/utilsTypes'
 import { Dispatch, SetStateAction } from 'react'
 
-// Options Render (Simple Icon)
+// OptionRender
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const optionRender: OptionRenderInterface = (value: any) =>
   Object.keys(value).map((item) => item.slice(2))
 
 // Handle White Space
-export const handleWhiteSpace = (value: string | null) => {
-  const title = new RegExp(/\s|-/g)
-  const replaceTitle = value?.replace(title, '%20')
-  return replaceTitle
+export const handleWhiteSpace: HandleWhiteSpaceInterface = (
+  value: string | null
+) => {
+  if (value) {
+    const title = new RegExp(/\s|-/g)
+    const replaceTitle = value?.replace(title, '%20')
+    return replaceTitle
+  }
+  return false
 }
 
 // Generate Shield
@@ -33,9 +39,6 @@ export const generateShield = (
   value: OptionsType | undefined,
   setShield: Dispatch<SetStateAction<string>> | undefined
 ) => {
-  // const title = new RegExp(/\s|-/g);
-  // const replaceTitle = value.title.replace(title, '%20');
-
   if (value && setShield) {
     const URL = `https://img.shields.io/badge/${handleWhiteSpace(
       value?.title
@@ -46,9 +49,8 @@ export const generateShield = (
     }${value.labelColor !== value.hex ? `&labelColor=${value.labelColor}` : ''}`
 
     setShield(URL.replaceAll(' ', ''))
-  } else {
-    return false
   }
+  return false
 }
 
 // Generate Logo Width
@@ -99,14 +101,6 @@ export const shieldListValue = (
 export const regex =
   /(?:https?):\/\/(\w+:?\w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+=&%!\-/]))?/g
 
-// // Colusion of Color
-// export const colorColusion = (options, labelColors, setOptions) => {
-//   if (options.labelColor === 'ffffff') {
-//     return setOptions({ ...options, logoColor: '000000' })
-//   }
-//   return false
-// }
-
 // Generate Simple Icons
 export const generateSimpleIcon = (
   event: string,
@@ -116,6 +110,24 @@ export const generateSimpleIcon = (
   const prefix = 'si'
   return icons[`${prefix}${event}`]
 }
+
+// Download SVG
+export const triggerDownload = (imgURL: string, fileName: string) => {
+  const a = document.createElement('a')
+
+  a.setAttribute('download', `${fileName}.svg`)
+  a.setAttribute('href', imgURL)
+  a.setAttribute('target', '_blank')
+  a.click()
+}
+
+// // Colusion of Color
+// export const colorColusion = (options, labelColors, setOptions) => {
+//   if (options.labelColor === 'ffffff') {
+//     return setOptions({ ...options, logoColor: '000000' })
+//   }
+//   return false
+// }
 
 // Handle Empty Field Search Icon
 // export const emptyAlert = (value) => {
@@ -127,16 +139,6 @@ export const generateSimpleIcon = (
 //   }
 //   return value
 // }
-
-// Download SVG
-export const triggerDownload = (imgURL: string, fileName: string) => {
-  const a = document.createElement('a')
-
-  a.setAttribute('download', `${fileName}.svg`)
-  a.setAttribute('href', imgURL)
-  a.setAttribute('target', '_blank')
-  a.click()
-}
 
 // // Download Icons on SVG
 // export const downloadSvgImg = (svgData) => {
