@@ -8,10 +8,10 @@
  *
  */
 
+import { ShieldListShieldPropInterface } from '@/interfaces/utilsInterfaces'
 import { Dispatch, SetStateAction } from 'react'
-import { SimpleIcon } from 'simple-icons'
 
-// Metadata
+// layout - Metadata Type
 export type MetadataType = {
   title: string
   description: string
@@ -33,7 +33,7 @@ export type MetadataType = {
   coverage: string
 }
 
-// Shild Context Value
+// page - Shild Context Value Type
 export type ShieldContextValueType = {
   theme: string
   setTheme: Dispatch<SetStateAction<string>>
@@ -41,12 +41,10 @@ export type ShieldContextValueType = {
   setOptions: Dispatch<SetStateAction<OptionsType>>
   shield: string
   setShield: Dispatch<SetStateAction<string>>
-  selectedIcon: object
-  setSelectedIcon: Dispatch<SetStateAction<SimpleIcon>>
   icons: object
 }
 
-// Options
+// page - Options Data Type
 export type OptionsType = {
   title: string | null
   svg: string | null
@@ -62,6 +60,11 @@ export type OptionsType = {
   style: string
 }
 
+// shieldTypeOptions - ShieldTypeOptionsType
 export type ShieldTypeOptionsType = string[]
 
-export type shieldLabelColorsType = string[]
+// labelColors - ShieldLabelColorsType
+export type ShieldLabelColorsType = string[]
+
+// Shield List Shild Props
+export type ShieldListsShieldPropsType = ShieldListShieldPropInterface[]
