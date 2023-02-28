@@ -10,18 +10,16 @@
 'use client'
 
 import { shieldListValue } from '@/lib/utilsLib'
-import {
-  HeaderIconsType,
-  ShieldListsShieldPropsType,
-} from '@/types/componentsTypes'
-
+import { FooterIconType, HeaderIconsType } from '@/types/componentsTypes'
 import {
   MetadataType,
   OptionsType,
-  shieldLabelColorsType,
+  ShieldLabelColorsType,
+  ShieldListsShieldPropsType,
   ShieldTypeOptionsType,
 } from '@/types/utilsTypes'
 
+// layout - Metadata Data
 export const metaData: MetadataType = {
   title: 'Shield Icons',
   description:
@@ -74,7 +72,7 @@ export const metaData: MetadataType = {
   publisher: 'Mrh Rifat',
 }
 
-// // Option Object
+// page - Options Data
 export const optionsdata: OptionsType = {
   title: null,
   svg: null,
@@ -90,14 +88,14 @@ export const optionsdata: OptionsType = {
   style: 'for-the-badge',
 }
 
-// Footer Icons Data
-export const footerIcons = {
+// Footer - Footer Icons Data
+export const footerIcons: FooterIconType = {
   id: 0,
   title: 'GitHub',
   icon: 'github',
 }
 
-// Header Icons Data
+// Header - Header Icons Data
 export const headerIcons: HeaderIconsType = [
   {
     id: 0,
@@ -129,7 +127,7 @@ export const headerIcons: HeaderIconsType = [
   },
 ]
 
-// // Options
+// ShieldTypeOptions
 export const shieldTypeOptions: ShieldTypeOptionsType = [
   'plastic',
   'flat',
@@ -137,7 +135,9 @@ export const shieldTypeOptions: ShieldTypeOptionsType = [
   'for-the-badge',
   'social',
 ]
-export const labelColors: shieldLabelColorsType = [
+
+// LableColors
+export const labelColors: ShieldLabelColorsType = [
   '2980b9',
   '2c3e50',
   'd35400',
@@ -146,7 +146,7 @@ export const labelColors: shieldLabelColorsType = [
   'ffffff',
 ]
 
-// Shield List
+// ShieldLists
 export const shieldLists: ShieldListsShieldPropsType = [
   {
     id: 1,
