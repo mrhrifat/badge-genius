@@ -21,10 +21,10 @@ import { useState } from 'react'
 import * as icons from 'simple-icons'
 
 export default function Home() {
-  const [theme, setTheme] = useState('light')
+  // State Declaration for Context API
+  const [theme, setTheme] = useState('dark')
   const [options, setOptions] = useState(optionsdata)
   const [shield, setShield] = useState('')
-  const [selectedIcon, setSelectedIcon] = useState(icons.si1password)
 
   return (
     <ShieldContext.Provider
@@ -35,8 +35,6 @@ export default function Home() {
         setOptions,
         shield,
         setShield,
-        selectedIcon,
-        setSelectedIcon,
         icons,
       }}>
       <ShieldContext.Consumer>
