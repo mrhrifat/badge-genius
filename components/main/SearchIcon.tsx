@@ -24,9 +24,9 @@ import ShieldContext from '@/utils/ShieldContext'
 import BadgeIcon from '@mui/icons-material/Badge'
 import Autocomplete from '@mui/material/Autocomplete'
 import TextField from '@mui/material/TextField'
-import { ChangeEvent, ReactNode, useContext } from 'react'
+import { ChangeEvent, FC, ReactNode, useContext } from 'react'
 
-const SearchIcon = () => {
+const SearchIcon: FC = () => {
   const shieldContextValue = useContext(ShieldContext)
 
   const handleSelectIcon: HandleSelectIconHandlerType = (
@@ -37,8 +37,6 @@ const SearchIcon = () => {
       const icons = generateSimpleIcon(value, shieldContextValue?.icons)
 
       const { title, hex, svg, license, guidelines, path, source, slug } = icons
-
-      shieldContextValue?.setSelectedIcon(value)
 
       shieldContextValue?.setOptions({
         ...shieldContextValue?.options,

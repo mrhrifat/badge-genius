@@ -41,7 +41,6 @@ const ShieldSvg = () => {
                   cursor: 'pointer',
                   fill: shieldContextValue?.theme === 'light' ? '#000' : '#fff',
                 }}>
-                {/* <InlineSVG src={shieldContextValue?.options.svg} /> */}
                 <RenderSVG
                   title={shieldContextValue?.options.title}
                   path={shieldContextValue?.options.path}
