@@ -8,48 +8,16 @@
  *
  */
 
-import { ShieldListShieldPropInterface } from '@/interfaces/componentsInterfaces'
 import { SvgIconProps } from '@mui/material'
 import { ChangeEvent, ReactElement, ReactNode } from 'react'
 
-// Toggle Key Option
-export type ToggleKeyOptionType = {
-  id: number
-  value: string
-  title: string
-}
-
-// Toggle Key Options
-export type ToggleKeyOptionsType = ToggleKeyOptionType[]
-
-// Total Item
-export type TotalItemType = {
-  value: object | undefined
-  icon: ReactElement<SvgIconProps>
-}
-
-// Option And Icon
-export type OptionAndIconType = {
-  firstItem: ReactNode
-  lastItem: ReactNode
-}
-
-// Shield List Shild Props
-export type ShieldListsShieldPropsType = ShieldListShieldPropInterface[]
-
-// Search Icon Handle Select Icon
-export type HandleSelectIconHandlerType = (
-  // eslint-disable-next-line no-unused-vars
-  event: ChangeEvent<object>,
-  // eslint-disable-next-line no-unused-vars
-  value: string | null
-) => void
-
+// HeaderIcons - ItemHeaderIconType
 export type ItemHeaderIconType = {
   id: number
   itemTitle: string
 }
 
+// HeaderIcons - HeaderIconType
 export type HeaderIconType = {
   id: number
   title: string
@@ -57,11 +25,51 @@ export type HeaderIconType = {
   url: string
   item?: ItemHeaderIconType[]
 }
+// HeaderIcons - HeaderIconsType
 export type HeaderIconsType = HeaderIconType[]
 
-// Footer Icon Type
+// ToggleKey -  ToggleKeyOptionType
+export type ToggleKeyOptionType = {
+  id: number
+  value: string
+  title: string
+}
+
+// ToggleKey - ToggleKeyOptionsType
+export type ToggleKeyOptionsType = ToggleKeyOptionType[]
+
+// SearchIcon - Handle Select Icon
+export type HandleSelectIconHandlerType = (
+  // eslint-disable-next-line no-unused-vars
+  event: ChangeEvent<object>,
+  // eslint-disable-next-line no-unused-vars
+  value: string | null
+) => void
+
+// OptionAndIcon - OptionAndIconType
+export type OptionAndIconType = {
+  firstItem: ReactNode
+  lastItem: ReactNode
+}
+
+// TotalItem - TotalItemType
+export type TotalItemType = {
+  value: object | undefined
+  icon: ReactElement<SvgIconProps>
+}
+
+// RenderSVG - RenderSVGType
+export type RenderSVGType = {
+  width: number
+  height: number
+  title: string | null | undefined
+  path: string | null | undefined
+}
+
+// FooterIcon - FooterIconType
 export type FooterIconType = { id: number; title: string; icon: string }
-// Footer Icons Type
+
+// FooterIcons - FooterIconsType
 export type FooterIconsType = FooterIconType[]
 
 // Shield Form Items
