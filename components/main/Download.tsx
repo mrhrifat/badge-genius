@@ -10,12 +10,11 @@
 'use client'
 
 import { ToggleKey } from '@/components/dynamic'
-import { SvgToImg } from '@/components/utils'
+import { svgStringToNode, svgToPngConverter } from '@/lib/utilsLib'
 import ShieldContext from '@/utils/ShieldContext'
 import DownloadIcon from '@mui/icons-material/Download'
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
-import { saveAs } from 'file-saver'
 import { ChangeEvent, useContext, useState } from 'react'
 import DownloadLink from 'react-download-link'
 
@@ -23,31 +22,20 @@ const Download = () => {
   const shieldContextValue = useContext(ShieldContext)
   const [type, setType] = useState('svg')
 
-  const downloadPNG = (svg: string | Blob, fileName: string) => {
-    SvgToImg({
-      svg,
-      mimetype: 'image/png',
-      width: 250,
-      height: 250,
-      quality: 1,
-      outputFormat: 'base64',
-    })
-      .then((outputData) => {
-        const data = atob(outputData as string)
-        const dataArray = new Uint8Array(data.length)
-
-        for (let i = 0; i < data.length; i++) {
-          dataArray[i] = data.charCodeAt(i)
-        }
-
-        const blob = new Blob([dataArray], { type: 'image/png' })
-        saveAs(blob, fileName)
-      })
-      .catch(() => new Error('SVG to PNG Conversion failed!'))
-  }
-
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleChange = (event: ChangeEvent<unknown>, value: any) => {
     setType(value)
+  }
+
+  const imageProcessing = (
+    value: string | null | undefined,
+    title: string | null | undefined
+  ) => {
+    if (value && title) {
+      const svgNode = svgStringToNode(value)
+      svgToPngConverter(svgNode, title)
+    }
+    return false
   }
 
   return (
@@ -95,10 +83,9 @@ const Download = () => {
           variant="contained"
           endIcon={<DownloadIcon />}
           onClick={() =>
-            shieldContextValue?.options?.svg &&
-            downloadPNG(
-              shieldContextValue?.options?.svg,
-              `${shieldContextValue?.options?.title}.${type}`
+            imageProcessing(
+              shieldContextValue?.options.svg,
+              shieldContextValue?.options.title
             )
           }>
           Download
