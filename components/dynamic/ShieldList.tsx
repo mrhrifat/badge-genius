@@ -22,8 +22,8 @@ const ShieldList: FC<ShielListInterace> = ({ icon, title, value }) => {
       <ListItem disablePadding>
         <ListItemIcon>{icon}</ListItemIcon>
         <ListItemText primary={title} />
+        <FilterValue value={value} />
       </ListItem>
-      <FilterValue value={value} />
       <Divider />
     </>
   )
