@@ -1,13 +1,18 @@
-import { regex } from '@/lib/utilsLib'
+import { regex, shieldListValue } from '@/lib/utilsLib'
+import ShieldContext from '@/utils/ShieldContext'
 import Typography from '@mui/material/Typography'
-import { FC } from 'react'
+import React, { FC, useContext } from 'react'
 
 export interface FilterValueInterface {
-  value: any
+  title: string
 }
 
-const FilterValue: FC<FilterValueInterface> = ({ value }) => {
-  if (regex.test(value) === true)
+const FilterValue: FC<FilterValueInterface> = ({ title }) => {
+  const shieldContextValue = useContext(ShieldContext)
+
+  const value: any = shieldListValue(shieldContextValue?.options, title)
+
+  if (regex.test(value) === true) {
     return (
       <a
         href={value}
@@ -17,7 +22,8 @@ const FilterValue: FC<FilterValueInterface> = ({ value }) => {
         Visit Now
       </a>
     )
+  }
   return <Typography variant="subtitle1">{value}</Typography>
 }
 
-export default FilterValue
+export default React.memo(FilterValue)
