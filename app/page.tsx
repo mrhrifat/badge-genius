@@ -13,9 +13,7 @@
 import Root from '@/components/Root'
 import { darkTheme, lightTheme } from '@/themes/theme'
 import { optionsdata } from '@/utils/data'
-import { emotionCache } from '@/utils/emotionCache'
 import ShieldContext from '@/utils/ShieldContext'
-import { CacheProvider } from '@emotion/react'
 import { CssBaseline, ThemeProvider } from '@mui/material'
 import { useState } from 'react'
 import * as icons from 'simple-icons'
@@ -39,12 +37,10 @@ export default function Home() {
       }}>
       <ShieldContext.Consumer>
         {() => (
-          <CacheProvider value={emotionCache}>
-            <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-              <CssBaseline />
-              <Root />
-            </ThemeProvider>
-          </CacheProvider>
+          <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+            <CssBaseline />
+            <Root />
+          </ThemeProvider>
         )}
       </ShieldContext.Consumer>
     </ShieldContext.Provider>
