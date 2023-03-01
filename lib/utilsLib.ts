@@ -75,19 +75,22 @@ export const shieldListValue = (
   options: OptionsType | undefined,
   title: string
 ) => {
+  const loading = '...'
+
   if (options && title) {
-    const text = 'Not ready yet'
     if (title === 'Shield Label') return options?.title
-    if (title === 'Shield Color')
-      return ColorPalette(options.hex === null ? text : options?.hex)
-    if (title === 'Label Color')
-      return ColorPalette(
-        options?.labelColor === null ? text : options?.labelColor
-      )
-    if (title === 'Logo Color')
-      return ColorPalette(
-        options?.logoColor === null ? text : options?.logoColor
-      )
+
+    if (
+      options.hex === null ||
+      options.labelColor === null ||
+      options.logoColor === null
+    ) {
+      return loading
+    } else {
+      if (title === 'Shield Color') return ColorPalette(options.hex)
+      if (title === 'Label Color') return ColorPalette(options?.labelColor)
+      if (title === 'Logo Color') return ColorPalette(options?.logoColor)
+    }
     if (title === 'Shield Style') return options?.style
     if (title === 'Shield Width') return options?.logoWidth
     if (title === 'Website') return options?.source
