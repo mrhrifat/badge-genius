@@ -124,6 +124,48 @@ export const triggerDownload = (imgURL: string, fileName: string) => {
   a.click()
 }
 
+
+
+// SVG to PNG Converter
+export const svgToPngConverter = (svg: Node, title: string): Promise<void> => {
+  return new Promise((resolve, reject) => {
+    const svgData = new XMLSerializer().serializeToString(svg)
+    const svgDataBase64 = btoa(unescape(encodeURIComponent(svgData)))
+    const svgDataUrl = `data:image/svg+xml;charset=utf-8;base64,${svgDataBase64}`
+
+    const image = new Image()
+
+    image.addEventListener('load', () => {
+      const width = '200'
+      const height = '200'
+      const canvas = document.createElement('canvas')
+
+      canvas.setAttribute('width', width)
+      canvas.setAttribute('height', height)
+
+      const context = canvas.getContext('2d')
+      if (!context) {
+        reject(new Error('Failed to create canvas context'))
+        return
+      }
+
+      context.drawImage(image, 0, 0, Number(width), Number(height))
+
+      const a = document.createElement('a')
+      a.setAttribute('download', `${title}.png`)
+      a.setAttribute('href', canvas.toDataURL('image/png'))
+      a.click()
+
+      resolve()
+    })
+
+    image.addEventListener('error', () => {
+      reject(new Error('Failed to load image'))
+    })
+
+    image.src = svgDataUrl
+  })
+}
 // // Colusion of Color
 // export const colorColusion = (options, labelColors, setOptions) => {
 //   if (options.labelColor === 'ffffff') {
