@@ -46,16 +46,16 @@ export type ShieldContextValueType = {
 
 // page - Options Data Type
 export type OptionsType = {
-  title: string | null
-  svg: string | null
-  hex: string | null
-  license: string | null | undefined | object
-  guidelines: string | null
-  path: string | null
-  source: string | null
-  slug: string | null
-  labelColor: string | null
-  logoColor: string | null
+  title: string
+  svg: string
+  hex: string
+  license: string
+  guidelines: string
+  path: string
+  source: string
+  slug: string
+  labelColor: string
+  logoColor: string
   logoWidth: number | string
   style: string
 }
