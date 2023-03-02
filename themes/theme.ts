@@ -30,3 +30,10 @@ export const darkTheme = createTheme({
     fontFamily: [dosis.style.fontFamily, roboto.style.fontFamily].join(''),
   },
 })
+
+export const homeGridStyle = {
+  border: '1px solid #EEE',
+  padding: 3,
+  borderRadius: 3,
+  boxShadow: '0 20px 27px 0 rgb(0 0 0 / 5%)',
+}
