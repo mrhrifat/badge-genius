@@ -8,7 +8,6 @@
  *
  */
 
-import { OptionsType } from '@/types/utilsTypes'
 import { SvgIconProps } from '@mui/material'
 import { ReactElement } from 'react'
 
@@ -36,8 +35,6 @@ export interface ShieldListShieldPropInterface {
   id: number
   title: string
   icon: ReactElement<SvgIconProps> | string
-  // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-explicit-any
-  value: (options: OptionsType | undefined, title: string) => any
 }
 
 // OptionRender - OptionRenderInterface
