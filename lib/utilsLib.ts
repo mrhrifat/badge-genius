@@ -114,16 +114,6 @@ export const generateSimpleIcon = (
   return icons[`${prefix}${event}`]
 }
 
-// Download SVG
-export const triggerDownload = (imgURL: string, fileName: string) => {
-  const a = document.createElement('a')
-
-  a.setAttribute('download', `${fileName}.svg`)
-  a.setAttribute('href', imgURL)
-  a.setAttribute('target', '_blank')
-  a.click()
-}
-
 export const svgStringToNode = (svgString: string): Node => {
   const parser = new DOMParser()
   const svg = parser.parseFromString(svgString, 'image/svg+xml').documentElement
