@@ -124,7 +124,11 @@ export const triggerDownload = (imgURL: string, fileName: string) => {
   a.click()
 }
 
-
+export const svgStringToNode = (svgString: string): Node => {
+  const parser = new DOMParser()
+  const svg = parser.parseFromString(svgString, 'image/svg+xml').documentElement
+  return svg
+}
 
 // SVG to PNG Converter
 export const svgToPngConverter = (svg: Node, title: string): Promise<void> => {
