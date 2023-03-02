@@ -1,4 +1,4 @@
 import FilterValue from './FilterValue'
-import ShiledListBox from './ShiledListBox'
+import ShiledListBox from './ShieldListBox'
 
 export { FilterValue, ShiledListBox }
