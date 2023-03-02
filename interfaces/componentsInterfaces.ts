@@ -12,7 +12,6 @@ import {
   SheildFormItemsType,
   ToggleKeyOptionsType,
 } from '@/types/componentsTypes'
-import { OptionsType } from '@/types/utilsTypes'
 import { SelectChangeEvent, SvgIconProps } from '@mui/material'
 import { ChangeEvent, Dispatch, ReactElement, SetStateAction } from 'react'
 
@@ -54,8 +53,6 @@ export interface ShieldFormInterface {
 export interface ShielListInterace {
   icon: ReactElement<SvgIconProps> | string
   title: string
-  // eslint-disable-next-line no-unused-vars
-  value: (options: OptionsType | undefined, title: string) => void
 }
 
 // useCopyToClipboard - UseCopyToClipboardInterface
