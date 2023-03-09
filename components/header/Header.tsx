@@ -31,7 +31,7 @@ const Header: FC = () => {
           Shield Icons
         </Typography>
         <Box alignSelf="center">
-          <HeaderIcons />
+          <HeaderIcons theme={shieldContextValue?.theme} />
         </Box>
       </Stack>
 
