@@ -49,7 +49,7 @@ export type OptionsType = {
   title: string
   svg: string
   hex: string
-  license: string
+  license: string | { type: string; url: string } | null | undefined
   guidelines: string
   path: string
   source: string
@@ -58,7 +58,10 @@ export type OptionsType = {
   logoColor: string
   logoWidth: number | string
   style: string
+  category: string
 }
+
+export type ShieldCategoriesType = string[]
 
 // shieldTypeOptions - ShieldTypeOptionsType
 export type ShieldTypeOptionsType = string[]
