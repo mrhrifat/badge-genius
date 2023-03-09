@@ -23,6 +23,11 @@ export interface ToggleKeyInterface {
   options: ToggleKeyOptionsType
 }
 
+// HeaderIcons - HeaderIconsInterface
+export interface HeaderIconsInterface {
+  theme: string | undefined
+}
+
 // AlertMessage - AlertMessageInterface
 export interface AlertMessageInterface {
   isCopied: boolean
