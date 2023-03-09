@@ -13,6 +13,7 @@ import { FooterIconType, HeaderIconsType } from '@/types/componentsTypes'
 import {
   MetadataType,
   OptionsType,
+  ShieldCategoriesType,
   ShieldLabelColorsType,
   ShieldListsShieldPropsType,
   ShieldTypeOptionsType,
@@ -123,6 +124,82 @@ export const headerIcons: HeaderIconsType = [
       { id: 0, itemTitle: 'Simple Icons' },
       { id: 1, itemTitle: 'Sheild IO' },
     ],
+  },
+]
+
+// ShieldOptions - ShieldCategories
+export const shieldCategories: ShieldCategoriesType = [
+  {
+    id: 0,
+    title: 'Build',
+  },
+  {
+    id: 1,
+    title: 'Code Coverage',
+  },
+  {
+    id: 2,
+    title: 'Test Results',
+  },
+  {
+    id: 3,
+    title: 'Analysis',
+  },
+  {
+    id: 4,
+    title: 'Chat',
+  },
+  {
+    id: 5,
+    title: 'Dependencies',
+  },
+  {
+    id: 6,
+    title: 'Size',
+  },
+  {
+    id: 7,
+    title: 'Downloads',
+  },
+  {
+    id: 8,
+    title: 'Funding',
+  },
+  {
+    id: 9,
+    title: 'Issue Tracking',
+  },
+  {
+    id: 10,
+    title: 'License',
+  },
+  {
+    id: 11,
+    title: 'Rating',
+  },
+  {
+    id: 12,
+    title: 'Social',
+  },
+  {
+    id: 13,
+    title: 'Version',
+  },
+  {
+    id: 14,
+    title: 'Platform & Version Support',
+  },
+  {
+    id: 15,
+    title: 'Monitoring',
+  },
+  {
+    id: 16,
+    title: 'Activity',
+  },
+  {
+    id: 17,
+    title: 'Other',
   },
 ]
 
