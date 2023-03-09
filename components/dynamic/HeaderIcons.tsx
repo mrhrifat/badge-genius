@@ -8,11 +8,11 @@
  *
  */
 
+import { HeaderIconsInterface } from '@/interfaces/componentsInterfaces'
 import { HeaderIconType } from '@/types/componentsTypes'
 import { headerIcons } from '@/utils/data'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
 import SettingsIcon from '@mui/icons-material/Settings'
-import Icon from '@mui/material/Icon'
 import IconButton from '@mui/material/IconButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import Menu from '@mui/material/Menu'
@@ -20,10 +20,11 @@ import MenuItem from '@mui/material/MenuItem'
 import Tooltip from '@mui/material/Tooltip'
 import React, { FC } from 'react'
 
-const HeaderIcons: FC = () => {
+const HeaderIcons: FC<HeaderIconsInterface> = ({ theme }) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
   const open = Boolean(anchorEl)
 
+  // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget)
   }
@@ -43,7 +44,13 @@ const HeaderIcons: FC = () => {
               aria-controls={open ? 'account-menu' : undefined}
               aria-haspopup="true"
               aria-expanded={open ? 'true' : undefined}>
-              <Icon>{headerIcon.icon}</Icon>
+              <svg
+                width="21"
+                height="21"
+                viewBox="0 0 512 512"
+                fill={theme === 'light' ? '#22A6B3' : '#38BDF8'}>
+                <path d={headerIcon.icon} />
+              </svg>
             </IconButton>
           </a>
         </Tooltip>
