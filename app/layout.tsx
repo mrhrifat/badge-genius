@@ -11,7 +11,6 @@
 import '@/styles/globals.css'
 import { MetadataType } from '@/types/utilsTypes'
 import { dosis } from '@/utils/fonts'
-import Head from 'next/head'
 import { ReactNode } from 'react'
 
 // Metadata Data
@@ -71,12 +70,6 @@ export const metadata: MetadataType = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={dosis.className}>
-      <Head>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        />
-      </Head>
       <body>{children}</body>
     </html>
   )
