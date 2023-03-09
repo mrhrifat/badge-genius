@@ -11,9 +11,10 @@
 'use client'
 
 import { generateOptionsLogoWidth, generateShield } from '@/lib/utilsLib'
-import { labelColors, shieldTypeOptions } from '@/utils/data'
+import { labelColors, shieldCategories, shieldTypeOptions } from '@/utils/data'
 import ShieldContext from '@/utils/ShieldContext'
 import AspectRatioIcon from '@mui/icons-material/AspectRatio'
+import CategoryIcon from '@mui/icons-material/Category'
 import FormatColorFillIcon from '@mui/icons-material/FormatColorFill'
 import FormatColorTextIcon from '@mui/icons-material/FormatColorText'
 import StyleIcon from '@mui/icons-material/Style'
@@ -41,7 +42,12 @@ const ShieldOptions = () => {
     // console.log(event.target.name)
     // console.log(event.target.value)
     const { value, name } = event.target
-    if (name === 'Shield Style') {
+    if (name === 'Shield Category') {
+      shieldContextValue?.setOptions({
+        ...shieldContextValue?.options,
+        category: value as string,
+      })
+    } else if (name === 'Shield Style') {
       shieldContextValue?.setOptions({
         ...shieldContextValue?.options,
         style: value as string,
@@ -66,6 +72,23 @@ const ShieldOptions = () => {
 
   return (
     <Stack direction="column" gap={2} mt={2}>
+      <OptionAndIcon
+        firstItem={
+          <ShieldForm
+            title="Shield Category"
+            items={shieldCategories}
+            optionsState={shieldContextValue?.options.category}
+            handleOptionsChange={handleOptionsChange}
+          />
+        }
+        lastItem={
+          <TotalItem
+            value={shieldCategories}
+            icon={<CategoryIcon color="action" />}
+          />
+        }
+      />
+
       <OptionAndIcon
         firstItem={
           <ShieldForm
