@@ -10,6 +10,7 @@
 
 'use client'
 
+import { OptionAndIcon, ShieldForm, TotalItem } from '@/components/dynamic'
 import { generateOptionsLogoWidth, generateShield } from '@/lib/utilsLib'
 import { labelColors, shieldCategories, shieldTypeOptions } from '@/utils/data'
 import ShieldContext from '@/utils/ShieldContext'
@@ -17,14 +18,12 @@ import AspectRatioIcon from '@mui/icons-material/AspectRatio'
 import CategoryIcon from '@mui/icons-material/Category'
 import FormatColorFillIcon from '@mui/icons-material/FormatColorFill'
 import FormatColorTextIcon from '@mui/icons-material/FormatColorText'
+import ShieldIcon from '@mui/icons-material/Shield'
 import StyleIcon from '@mui/icons-material/Style'
 import { SelectChangeEvent } from '@mui/material'
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import { ChangeEvent, useContext } from 'react'
-import OptionAndIcon from '../dynamic/OptionAndIcon'
-import ShieldForm from '../dynamic/ShieldForm'
-import TotalItem from '../dynamic/TotalItem'
 
 const ShieldOptions = () => {
   const shieldContextValue = useContext(ShieldContext)
@@ -74,6 +73,12 @@ const ShieldOptions = () => {
     <Stack direction="column" gap={2} mt={2}>
       <OptionAndIcon
         firstItem={
+          <TotalItem
+            value={shieldCategories}
+            icon={<CategoryIcon color="action" />}
+          />
+        }
+        lastItem={
           <ShieldForm
             title="Shield Category"
             items={shieldCategories}
@@ -81,16 +86,16 @@ const ShieldOptions = () => {
             handleOptionsChange={handleOptionsChange}
           />
         }
-        lastItem={
-          <TotalItem
-            value={shieldCategories}
-            icon={<CategoryIcon color="action" />}
-          />
-        }
       />
 
       <OptionAndIcon
         firstItem={
+          <TotalItem
+            value={shieldTypeOptions}
+            icon={<StyleIcon color="action" />}
+          />
+        }
+        lastItem={
           <ShieldForm
             title="Shield Style"
             items={shieldTypeOptions}
@@ -98,16 +103,16 @@ const ShieldOptions = () => {
             handleOptionsChange={handleOptionsChange}
           />
         }
-        lastItem={
-          <TotalItem
-            value={shieldTypeOptions}
-            icon={<StyleIcon color="action" />}
-          />
-        }
       />
 
       <OptionAndIcon
         firstItem={
+          <TotalItem
+            value={labelColors}
+            icon={<FormatColorTextIcon color="action" />}
+          />
+        }
+        lastItem={
           <ShieldForm
             title="Label Color"
             items={labelColors}
@@ -115,16 +120,16 @@ const ShieldOptions = () => {
             handleOptionsChange={handleOptionsChange}
           />
         }
-        lastItem={
-          <TotalItem
-            value={labelColors}
-            icon={<FormatColorTextIcon color="action" />}
-          />
-        }
       />
 
       <OptionAndIcon
         firstItem={
+          <TotalItem
+            value={labelColors}
+            icon={<FormatColorFillIcon color="action" />}
+          />
+        }
+        lastItem={
           <ShieldForm
             title="Logo Color"
             items={labelColors}
@@ -132,16 +137,16 @@ const ShieldOptions = () => {
             handleOptionsChange={handleOptionsChange}
           />
         }
-        lastItem={
-          <TotalItem
-            value={labelColors}
-            icon={<FormatColorFillIcon color="action" />}
-          />
-        }
       />
 
       <OptionAndIcon
         firstItem={
+          <TotalItem
+            value={generateOptionsLogoWidth()}
+            icon={<AspectRatioIcon color="action" />}
+          />
+        }
+        lastItem={
           <ShieldForm
             title="Logo Width"
             items={generateOptionsLogoWidth()}
@@ -150,23 +155,19 @@ const ShieldOptions = () => {
             menuProps={{ PaperProps: { sx: { maxHeight: 200 } } }}
           />
         }
-        lastItem={
-          <TotalItem
-            value={generateOptionsLogoWidth()}
-            icon={<AspectRatioIcon color="action" />}
-          />
-        }
       />
 
       <Button
-        disabled={shieldContextValue?.options.svg === null}
+        disabled={shieldContextValue?.options.title === ''}
         variant="contained"
         onClick={() => {
           generateShield(
             shieldContextValue?.options,
             shieldContextValue?.setShield
           )
-        }}>
+        }}
+        sx={{ justifyContent: 'space-around' }}
+        endIcon={<ShieldIcon />}>
         Generate Badge
       </Button>
     </Stack>

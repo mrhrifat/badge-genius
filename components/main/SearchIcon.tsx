@@ -59,24 +59,22 @@ const SearchIcon: FC = () => {
   return (
     <OptionAndIcon
       firstItem={
-        <>
-          <Autocomplete
-            id="iconsList"
-            options={optionRender(shieldContextValue?.icons)}
-            disableListWrap
-            ListboxComponent={ShiledListBox}
-            onChange={(event, value) => handleSelectIcon(event, value)}
-            renderInput={(params) => (
-              <TextField {...params} label="Search Icon" />
-            )}
-            renderOption={(props, option, state) =>
-              [props, option, state.index] as ReactNode
-            }
-          />
-        </>
+        <TotalItem value={shieldContextValue?.icons} icon={<BadgeIcon />} />
       }
       lastItem={
-        <TotalItem value={shieldContextValue?.icons} icon={<BadgeIcon />} />
+        <Autocomplete
+          id="iconsList"
+          options={optionRender(shieldContextValue?.icons)}
+          disableListWrap
+          ListboxComponent={ShiledListBox}
+          onChange={(event, value) => handleSelectIcon(event, value)}
+          renderInput={(params) => (
+            <TextField {...params} label="Search Icon" />
+          )}
+          renderOption={(props, option, state) =>
+            [props, option, state.index] as ReactNode
+          }
+        />
       }
     />
   )
