@@ -12,7 +12,6 @@
 
 import { AlertMessage, RenderSVG } from '@/components/dynamic'
 import ShieldContext from '@/utils/ShieldContext'
-import Box from '@mui/material/Box'
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 import ListItemButton from '@mui/material/ListItemButton'
@@ -36,23 +35,20 @@ const ShieldSvg = () => {
         <List disablePadding>
           <ListItem disablePadding>
             <ListItemButton
-              sx={{ padding: '0 1rem' }}
+              sx={{
+                padding: '0 1rem',
+                cursor: 'pointer',
+                fill: (theme) =>
+                  theme.palette.mode === 'light' ? '#000' : '#fff',
+              }}
               onClick={handleClick}
               disabled={shieldContextValue?.options.svg === ''}>
-              <Box
+              <RenderSVG
+                title={shieldContextValue?.options.title}
+                path={shieldContextValue?.options.path}
                 width={100}
-                sx={{
-                  cursor: 'pointer',
-                  fill: (theme) =>
-                    theme.palette.mode === 'light' ? '#000' : '#fff',
-                }}>
-                <RenderSVG
-                  title={shieldContextValue?.options.title}
-                  path={shieldContextValue?.options.path}
-                  width={100}
-                  height={100}
-                />
-              </Box>
+                height={100}
+              />
             </ListItemButton>
           </ListItem>
         </List>
