@@ -8,9 +8,6 @@
  *
  */
 
-import { SvgIconProps } from '@mui/material'
-import { ReactElement } from 'react'
-
 // SimpleIcons - SimpleIconsInterface
 export interface SimpleIconsInterface {
   title: string
@@ -34,7 +31,7 @@ export interface SimpleIconsInterface {
 export interface ShieldListShieldPropInterface {
   id: number
   title: string
-  icon: ReactElement<SvgIconProps> | string
+  icon: string
 }
 
 // OptionRender - OptionRenderInterface
