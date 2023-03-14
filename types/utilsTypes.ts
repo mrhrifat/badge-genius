@@ -74,6 +74,8 @@ export type ShieldListsShieldPropsType = ShieldListShieldPropInterface[]
 
 // GenerateShield
 export type GenerateShieldType = (
+  // eslint-disable-next-line no-unused-vars
   value: OptionsType | undefined,
+  // eslint-disable-next-line no-unused-vars
   setShield: Dispatch<SetStateAction<string>> | undefined
 ) => string | boolean
