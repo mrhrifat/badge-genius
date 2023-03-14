@@ -71,3 +71,9 @@ export type ShieldLabelColorsType = string[]
 
 // Shield List Shild Props
 export type ShieldListsShieldPropsType = ShieldListShieldPropInterface[]
+
+// GenerateShield
+export type GenerateShieldType = (
+  value: OptionsType | undefined,
+  setShield: Dispatch<SetStateAction<string>> | undefined
+) => string | boolean
