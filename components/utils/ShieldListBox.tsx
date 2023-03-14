@@ -10,16 +10,18 @@
 
 'use client'
 
+import ShieldContext from '@/utils/ShieldContext'
 import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
 import useMediaQuery from '@mui/material/useMediaQuery'
-import React from 'react'
+import React, { useContext } from 'react'
 import { ListChildComponentProps, VariableSizeList } from 'react-window'
 
 function renderRow(props: ListChildComponentProps) {
   const { data, index, style } = props
   const dataSet = data[index]
   const someKey = dataSet[0].key // get the key prop from the data set
+  // console.log(dataSet)
 
   return (
     <Typography
@@ -33,10 +35,10 @@ function renderRow(props: ListChildComponentProps) {
   )
 }
 
-const OuterElementContext = React.createContext({})
+// const OuterElementContext = React.createContext({})
 // eslint-disable-next-line react/display-name
 const OuterElementType = React.forwardRef<HTMLDivElement>((props, ref) => {
-  const outerProps = React.useContext(OuterElementContext)
+  const outerProps = useContext(ShieldContext)
   return <div ref={ref} {...props} {...outerProps} />
 })
 
@@ -92,7 +94,7 @@ const ShiledListBox = React.forwardRef<
 
   return (
     <div ref={ref}>
-      <OuterElementContext.Provider value={other}>
+      <ShieldContext.Provider value={other as any}>
         <VariableSizeList
           itemData={itemData}
           height={getHeight() + 2 * 8}
@@ -105,7 +107,7 @@ const ShiledListBox = React.forwardRef<
           itemCount={itemCount}>
           {renderRow}
         </VariableSizeList>
-      </OuterElementContext.Provider>
+      </ShieldContext.Provider>
     </div>
   )
 })
