@@ -31,7 +31,7 @@ const ShieldForm: FC<ShieldFormInterface> = ({
         id={title}
         sx={{
           '& .MuiOutlinedInput-input': {
-            padding: '13px',
+            padding: '11px',
           },
         }}
         value={optionsState}
