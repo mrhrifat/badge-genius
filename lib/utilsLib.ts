@@ -14,7 +14,7 @@ import {
   OptionRenderInterface,
   SimpleIconsInterface,
 } from '@/interfaces/utilsInterfaces'
-import { OptionsType } from '@/types/utilsTypes'
+import { GenerateShieldType, OptionsType } from '@/types/utilsTypes'
 import { Dispatch, SetStateAction } from 'react'
 
 // OptionRender
@@ -33,16 +33,19 @@ export const handleWhiteSpace: HandleWhiteSpaceInterface = (
   }
   return false
 }
+// https://img.shields.io/github/sponsors/mrhrifat?style=plastic
 
 // Generate Shield
-export const generateShield = (
+export const generateShield: GenerateShieldType = (
   value: OptionsType | undefined,
   setShield: Dispatch<SetStateAction<string>> | undefined
 ) => {
   if (value && setShield) {
-    const URL = `https://img.shields.io/badge/${handleWhiteSpace(
-      value?.title
-    )}-${value.hex}?style=${value.style}&logo=${handleWhiteSpace(
+    const URL = `https://img.shields.io/${
+      value.category === 'Badge' ? 'badge' : 'github'
+    }/${handleWhiteSpace(value?.title)}-${
+      value.hex
+    }?style=${shieldTypeOptionToReal(value.style)}&logo=${handleWhiteSpace(
       value.title
     )}&logoColor=${value.logoColor}${
       value.logoWidth !== 14 ? `&logoWidth=${value.logoWidth}` : ''
@@ -51,6 +54,12 @@ export const generateShield = (
     setShield(URL.replaceAll(' ', ''))
   }
   return false
+}
+
+// Regex to Options Style
+export const paintOptionStyle = (arr: string[]): string[] => {
+  const regex = /-/g
+  return arr.map((i) => i.replace(regex, ''))
 }
 
 // Generate Logo Width
@@ -79,6 +88,7 @@ export const shieldListValue = (
 
   if (options && title) {
     if (title === 'Shield Label') return options?.title
+    if (title === 'Shield Category') return options?.category
 
     if (
       options.hex === null ||
@@ -160,30 +170,20 @@ export const svgToPngConverter = (svg: Node, title: string): Promise<void> => {
     image.src = svgDataUrl
   })
 }
-// // Colusion of Color
-// export const colorColusion = (options, labelColors, setOptions) => {
-//   if (options.labelColor === 'ffffff') {
-//     return setOptions({ ...options, logoColor: '000000' })
-//   }
-//   return false
-// }
 
-// Handle Empty Field Search Icon
-// export const emptyAlert = (value) => {
-//   if (value === null) return value
-//   if (value === undefined) {
-//     return (
-//       <Alert severity="error">This is an error alert — check it out!</Alert>
-//     )
-//   }
-//   return value
-// }
-
-// // Download Icons on SVG
-// export const downloadSvgImg = (svgData) => {
-//   const data = new XMLSerializer().serializeToString(svgData)
-//   const svgBlob = new Blob([data], { type: 'image/svg+xml;charset=utf-8' })
-//   const url = URL.createObjectURL(svgBlob)
-
-//   triggerDownload(url)
-// }
+export const shieldTypeOptionToReal = (type: string) => {
+  switch (type) {
+    case 'Flat':
+      return 'flat'
+    case 'Flat Square':
+      return 'flat-squre'
+    case 'For The Badge':
+      return 'for-the-badge'
+    case 'Plastic':
+      return 'plastic'
+    case 'Social':
+      return 'social'
+    default:
+      return 'for-the-badge'
+  }
+}
