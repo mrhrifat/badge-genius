@@ -13,11 +13,11 @@ import Grid from '@mui/material/Grid'
 
 const OptionAndIcon = ({ firstItem, lastItem }: OptionAndIconType) => {
   return (
-    <Grid container>
-      <Grid item xs={10}>
+    <Grid container gap={1}>
+      <Grid item xs={2} alignSelf="center" textAlign="center">
         {firstItem}
       </Grid>
-      <Grid item xs={2} alignSelf="center" textAlign="center">
+      <Grid item xs={9}>
         {lastItem}
       </Grid>
     </Grid>
