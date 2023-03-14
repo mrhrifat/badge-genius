@@ -12,8 +12,8 @@ import {
   SheildFormItemsType,
   ToggleKeyOptionsType,
 } from '@/types/componentsTypes'
-import { SelectChangeEvent, SvgIconProps } from '@mui/material'
-import { ChangeEvent, Dispatch, ReactElement, SetStateAction } from 'react'
+import { SelectChangeEvent } from '@mui/material'
+import { ChangeEvent, Dispatch, SetStateAction } from 'react'
 
 // ToggleKey - ToggleKeyInterface
 export interface ToggleKeyInterface {
@@ -21,11 +21,6 @@ export interface ToggleKeyInterface {
   // eslint-disable-next-line no-unused-vars
   handleChange: (event: ChangeEvent<unknown>, value: string) => void
   options: ToggleKeyOptionsType
-}
-
-// HeaderIcons - HeaderIconsInterface
-export interface HeaderIconsInterface {
-  theme: string | undefined
 }
 
 // AlertMessage - AlertMessageInterface
@@ -56,7 +51,7 @@ export interface ShieldFormInterface {
 
 // ShieldListInterace - ShielListInterace
 export interface ShielListInterace {
-  icon: ReactElement<SvgIconProps> | string
+  icon: string
   title: string
 }
 
