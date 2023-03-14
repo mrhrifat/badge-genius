@@ -25,7 +25,6 @@ const ColorPalette = (color: string) => {
         alignSelf="center"
         onClick={() => handleCopy(color)}
         sx={{ cursor: 'pointer' }}>
-        <ListItemText>{color}</ListItemText>
         <CircleIcon
           sx={{
             color: `#${color}`,
@@ -35,6 +34,7 @@ const ColorPalette = (color: string) => {
             cursor: 'pointer',
           }}
         />
+        <ListItemText>{color}</ListItemText>
       </Stack>
       <AlertMessage isCopied={isCopied} />
     </>
