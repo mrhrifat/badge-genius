@@ -22,6 +22,7 @@ import useCopyToClipboard from '../hooks/useCopyToClipboard'
 const ShieldSvg = () => {
   const shieldContextValue = useContext(ShieldContext)
   const [isCopied, handleCopy] = useCopyToClipboard()
+
   const handleClick = () => {
     if (shieldContextValue?.options.svg) {
       handleCopy(shieldContextValue?.options.svg)
@@ -31,15 +32,19 @@ const ShieldSvg = () => {
 
   return (
     <>
-      {shieldContextValue?.options.svg !== null ? (
+      {shieldContextValue?.options.svg !== '' ? (
         <List disablePadding>
           <ListItem disablePadding>
-            <ListItemButton sx={{ padding: '0 1rem' }} onClick={handleClick}>
+            <ListItemButton
+              sx={{ padding: '0 1rem' }}
+              onClick={handleClick}
+              disabled={shieldContextValue?.options.svg === ''}>
               <Box
                 width={100}
                 sx={{
                   cursor: 'pointer',
-                  fill: shieldContextValue?.theme === 'light' ? '#000' : '#fff',
+                  fill: (theme) =>
+                    theme.palette.mode === 'light' ? '#000' : '#fff',
                 }}>
                 <RenderSVG
                   title={shieldContextValue?.options.title}
