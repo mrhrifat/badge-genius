@@ -9,6 +9,7 @@
  */
 
 import ColorPalette from '@/components/dynamic/ColorPalette'
+import { renderWebsite } from '@/components/utils/FilterValue'
 import {
   HandleWhiteSpaceInterface,
   OptionRenderInterface,
@@ -33,12 +34,14 @@ export const handleWhiteSpace: HandleWhiteSpaceInterface = (
   }
   return false
 }
+
+
 // https://img.shields.io/github/sponsors/mrhrifat?style=plastic
 
 // Generate Shield
 export const generateShield: GenerateShieldType = (
-  value: OptionsType | undefined,
-  setShield: Dispatch<SetStateAction<string>> | undefined
+  value: OptionsType,
+  setShield: Dispatch<SetStateAction<string>>
 ) => {
   if (value && setShield) {
     const URL = `https://img.shields.io/${
@@ -54,6 +57,28 @@ export const generateShield: GenerateShieldType = (
     setShield(URL.replaceAll(' ', ''))
   }
   return false
+}
+
+// Reset
+export const resetDefault = (
+  value: OptionsType,
+  setShield: Dispatch<SetStateAction<string>>
+) => {
+  value.title = ''
+  value.svg = ''
+  value.hex = 'FFFFFF'
+  value.license = ''
+  value.guidelines = ''
+  value.path = ''
+  value.source = ''
+  value.slug = ''
+  value.labelColor = 'FFFFFF'
+  value.logoColor = 'FFFFFF'
+  value.logoWidth = 14
+  value.style = 'For The Badge'
+  value.category = 'Badge'
+
+  setShield('')
 }
 
 // Regex to Options Style
@@ -80,30 +105,16 @@ export const updateLabelColor = (labelColors: string[], hex: string) => {
 }
 
 // Shield List value
-export const shieldListValue = (
-  options: OptionsType | undefined,
-  title: string
-) => {
-  const loading = '...'
-
+export const shieldListValue = (options: OptionsType, title: string) => {
   if (options && title) {
     if (title === 'Shield Label') return options?.title
     if (title === 'Shield Category') return options?.category
-
-    if (
-      options.hex === null ||
-      options.labelColor === null ||
-      options.logoColor === null
-    ) {
-      return loading
-    } else {
-      if (title === 'Shield Color') return ColorPalette(options.hex)
-      if (title === 'Label Color') return ColorPalette(options?.labelColor)
-      if (title === 'Logo Color') return ColorPalette(options?.logoColor)
-    }
+    if (title === 'Shield Color') return ColorPalette(options.hex)
+    if (title === 'Label Color') return ColorPalette(options?.labelColor)
+    if (title === 'Logo Color') return ColorPalette(options?.logoColor)
     if (title === 'Shield Style') return options?.style
     if (title === 'Shield Width') return options?.logoWidth
-    if (title === 'Website') return options?.source
+    if (title === 'Website') return renderWebsite(options?.source)
     if (title === 'License') return options?.license
     if (title === 'Guidelines') return options?.guidelines
   }
