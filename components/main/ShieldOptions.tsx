@@ -11,19 +11,25 @@
 'use client'
 
 import { OptionAndIcon, ShieldForm, TotalItem } from '@/components/dynamic'
-import { generateOptionsLogoWidth, generateShield } from '@/lib/utilsLib'
+import {
+  generateOptionsLogoWidth,
+  generateShield,
+  resetDefault,
+} from '@/lib/utilsLib'
+import { ShieldContextValueType } from '@/types/utilsTypes'
 import { labelColors, shieldCategories, shieldTypeOptions } from '@/utils/data'
 import ShieldContext from '@/utils/ShieldContext'
 import AspectRatioIcon from '@mui/icons-material/AspectRatio'
 import CategoryIcon from '@mui/icons-material/Category'
+import ClearAllIcon from '@mui/icons-material/ClearAll'
 import FormatColorFillIcon from '@mui/icons-material/FormatColorFill'
 import FormatColorTextIcon from '@mui/icons-material/FormatColorText'
 import ShieldIcon from '@mui/icons-material/Shield'
 import StyleIcon from '@mui/icons-material/Style'
 import { SelectChangeEvent } from '@mui/material'
-import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import { ChangeEvent, useContext } from 'react'
+import CustomButton from '../dynamic/CustomButton'
 
 const ShieldOptions = () => {
   const shieldContextValue = useContext(ShieldContext)
@@ -67,6 +73,26 @@ const ShieldOptions = () => {
         logoColor: value as string,
       })
     }
+  }
+
+  // Handle Reset Default
+  const handleResetDefault = (
+    shieldContextValue: ShieldContextValueType | null
+  ) => {
+    if (shieldContextValue?.options !== undefined) {
+      resetDefault(shieldContextValue?.options, shieldContextValue?.setShield)
+    }
+    return false
+  }
+
+  // Handle Generate Shield
+  const handleGenerateShield = (
+    shieldContextValue: ShieldContextValueType | null
+  ) => {
+    if (shieldContextValue?.options) {
+      generateShield(shieldContextValue?.options, shieldContextValue?.setShield)
+    }
+    return false
   }
 
   return (
@@ -157,19 +183,19 @@ const ShieldOptions = () => {
         }
       />
 
-      <Button
-        disabled={shieldContextValue?.options.title === ''}
-        variant="contained"
-        onClick={() => {
-          generateShield(
-            shieldContextValue?.options,
-            shieldContextValue?.setShield
-          )
-        }}
-        sx={{ justifyContent: 'space-around' }}
-        endIcon={<ShieldIcon />}>
-        Generate Badge
-      </Button>
+      <CustomButton
+        title={'Generate Shield'}
+        disable={shieldContextValue?.options.title === ''}
+        handleClick={() => handleGenerateShield(shieldContextValue)}
+        icon={<ShieldIcon />}
+      />
+
+      <CustomButton
+        title="Reset Default"
+        icon={<ClearAllIcon />}
+        disable={shieldContextValue?.options.title === ''}
+        handleClick={() => handleResetDefault(shieldContextValue)}
+      />
     </Stack>
   )
 }
