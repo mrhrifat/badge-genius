@@ -13,10 +13,10 @@ import { ToggleKey } from '@/components/dynamic'
 import { svgStringToNode, svgToPngConverter } from '@/lib/utilsLib'
 import ShieldContext from '@/utils/ShieldContext'
 import DownloadIcon from '@mui/icons-material/Download'
-import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import { ChangeEvent, useContext, useState } from 'react'
 import DownloadLink from 'react-download-link'
+import CustomButton from '../dynamic/CustomButton'
 
 const Download = () => {
   const shieldContextValue = useContext(ShieldContext)
@@ -27,6 +27,7 @@ const Download = () => {
     setType(value)
   }
 
+  // PNG Image Processing
   const imageProcessing = (
     value: string | null | undefined,
     title: string | null | undefined
@@ -57,32 +58,28 @@ const Download = () => {
               textDecoration: 'none',
             }}
             label={
-              <Button
-                disabled={shieldContextValue?.options.svg === ''}
-                fullWidth
-                variant="contained"
-                endIcon={<DownloadIcon />}>
-                Download
-              </Button>
+              <CustomButton
+                title={'Download'}
+                disable={shieldContextValue?.options.svg === ''}
+                icon={<DownloadIcon />}
+              />
             }
             filename={`${shieldContextValue?.options.title}.${type}`}
             exportFile={() => shieldContextValue?.options?.svg}
           />
         </>
       ) : (
-        <Button
-          fullWidth
-          disabled={shieldContextValue?.options.svg === ''}
-          variant="contained"
-          endIcon={<DownloadIcon />}
-          onClick={() =>
+        <CustomButton
+          title={'Download'}
+          disable={shieldContextValue?.options.svg === ''}
+          handleClick={() =>
             imageProcessing(
               shieldContextValue?.options.svg,
               shieldContextValue?.options.title
             )
-          }>
-          Download
-        </Button>
+          }
+          icon={<DownloadIcon />}
+        />
       )}
     </Stack>
   )
