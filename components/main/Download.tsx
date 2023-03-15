@@ -10,7 +10,7 @@
 'use client'
 
 import { ToggleKey } from '@/components/dynamic'
-import { svgStringToNode, svgToPngConverter } from '@/lib/utilsLib'
+import { imageProcessing } from '@/lib/utilsLib'
 import ShieldContext from '@/utils/ShieldContext'
 import DownloadIcon from '@mui/icons-material/Download'
 import Stack from '@mui/material/Stack'
@@ -22,22 +22,45 @@ const Download = () => {
   const shieldContextValue = useContext(ShieldContext)
   const [type, setType] = useState('svg')
 
+  // Handle Type Change
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleChange = (event: ChangeEvent<unknown>, value: any) => {
     setType(value)
   }
 
-  // PNG Image Processing
-  const imageProcessing = (
-    value: string | null | undefined,
-    title: string | null | undefined
-  ) => {
-    if (value && title) {
-      const svgNode = svgStringToNode(value)
-      svgToPngConverter(svgNode, title)
-    }
-    return false
-  }
+  // Render SVG Download
+  const renderSvgDownload = (
+    <DownloadLink
+      style={{
+        borderRadius: '0 0 14px 0',
+        textDecoration: 'none',
+      }}
+      label={
+        <CustomButton
+          title={'Download'}
+          disable={shieldContextValue?.options.svg === ''}
+          icon={<DownloadIcon />}
+        />
+      }
+      filename={`${shieldContextValue?.options.title}.${type}`}
+      exportFile={() => shieldContextValue?.options?.svg}
+    />
+  )
+
+  // Render PNG Download
+  const renderPngDownload = (
+    <CustomButton
+      title={'Download'}
+      disable={shieldContextValue?.options.svg === ''}
+      handleClick={() =>
+        imageProcessing(
+          shieldContextValue?.options.svg,
+          shieldContextValue?.options.title
+        )
+      }
+      icon={<DownloadIcon />}
+    />
+  )
 
   return (
     <Stack direction="column" gap={2}>
@@ -50,37 +73,7 @@ const Download = () => {
         ]}
       />
 
-      {type === 'svg' ? (
-        <>
-          <DownloadLink
-            style={{
-              borderRadius: '0 0 14px 0',
-              textDecoration: 'none',
-            }}
-            label={
-              <CustomButton
-                title={'Download'}
-                disable={shieldContextValue?.options.svg === ''}
-                icon={<DownloadIcon />}
-              />
-            }
-            filename={`${shieldContextValue?.options.title}.${type}`}
-            exportFile={() => shieldContextValue?.options?.svg}
-          />
-        </>
-      ) : (
-        <CustomButton
-          title={'Download'}
-          disable={shieldContextValue?.options.svg === ''}
-          handleClick={() =>
-            imageProcessing(
-              shieldContextValue?.options.svg,
-              shieldContextValue?.options.title
-            )
-          }
-          icon={<DownloadIcon />}
-        />
-      )}
+      {type === 'svg' ? renderSvgDownload : renderPngDownload}
     </Stack>
   )
 }

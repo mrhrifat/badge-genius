@@ -181,6 +181,17 @@ export const svgToPngConverter = (svg: Node, title: string): Promise<void> => {
   })
 }
 
+// PNG Image Processing
+export const imageProcessing = (
+  value: string | null | undefined,
+  title: string | null | undefined
+) => {
+  if (value && title) {
+    const svgNode = svgStringToNode(value)
+    svgToPngConverter(svgNode, title)
+  }
+  return false
+}
 // Sheild Type Option Convert To Real Value
 export const shieldTypeOptionToReal = (type: string) => {
   switch (type) {
