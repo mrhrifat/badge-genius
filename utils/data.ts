@@ -76,7 +76,7 @@ export const metaData: MetadataType = {
 export const optionsdata: OptionsType = {
   title: '',
   svg: '',
-  hex: '',
+  hex: 'FFFFFF',
   license: '',
   guidelines: '',
   path: '',
