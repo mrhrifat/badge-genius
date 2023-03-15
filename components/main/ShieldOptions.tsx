@@ -10,7 +10,12 @@
 
 'use client'
 
-import { OptionAndIcon, ShieldForm, TotalItem } from '@/components/dynamic'
+import {
+  CustomButton,
+  OptionAndIcon,
+  ShieldForm,
+  TotalItem,
+} from '@/components/dynamic'
 import {
   generateOptionsLogoWidth,
   generateShield,
@@ -29,7 +34,6 @@ import StyleIcon from '@mui/icons-material/Style'
 import { SelectChangeEvent } from '@mui/material'
 import Stack from '@mui/material/Stack'
 import { ChangeEvent, useContext } from 'react'
-import CustomButton from '../dynamic/CustomButton'
 
 const ShieldOptions = () => {
   const shieldContextValue = useContext(ShieldContext)
