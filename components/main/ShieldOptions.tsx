@@ -95,93 +95,114 @@ const ShieldOptions = () => {
     return false
   }
 
+  // Shield Category
+  const renderShieldCategory = (
+    <OptionAndIcon
+      firstItem={
+        <TotalItem
+          value={shieldCategories}
+          icon={<CategoryIcon color="action" />}
+        />
+      }
+      lastItem={
+        <ShieldForm
+          title="Shield Category"
+          items={shieldCategories}
+          optionsState={shieldContextValue?.options.category}
+          handleOptionsChange={handleOptionsChange}
+        />
+      }
+    />
+  )
+
+  // Shield Style
+  const renderShieldStyle = (
+    <OptionAndIcon
+      firstItem={
+        <TotalItem
+          value={shieldTypeOptions}
+          icon={<StyleIcon color="action" />}
+        />
+      }
+      lastItem={
+        <ShieldForm
+          title="Shield Style"
+          items={shieldTypeOptions}
+          optionsState={shieldContextValue?.options.style}
+          handleOptionsChange={handleOptionsChange}
+        />
+      }
+    />
+  )
+
+  // Label Color
+  const renderLabelColor = (
+    <OptionAndIcon
+      firstItem={
+        <TotalItem
+          value={labelColors}
+          icon={<FormatColorTextIcon color="action" />}
+        />
+      }
+      lastItem={
+        <ShieldForm
+          title="Label Color"
+          items={labelColors}
+          optionsState={shieldContextValue?.options.labelColor}
+          handleOptionsChange={handleOptionsChange}
+        />
+      }
+    />
+  )
+
+  // Logo Color
+  const renderLogoColor = (
+    <OptionAndIcon
+      firstItem={
+        <TotalItem
+          value={labelColors}
+          icon={<FormatColorFillIcon color="action" />}
+        />
+      }
+      lastItem={
+        <ShieldForm
+          title="Logo Color"
+          items={labelColors}
+          optionsState={shieldContextValue?.options.logoColor}
+          handleOptionsChange={handleOptionsChange}
+        />
+      }
+    />
+  )
+
+  // Logo Width
+  const renderLogoWidth = (
+    <OptionAndIcon
+      firstItem={
+        <TotalItem
+          value={generateOptionsLogoWidth()}
+          icon={<AspectRatioIcon color="action" />}
+        />
+      }
+      lastItem={
+        <ShieldForm
+          title="Logo Width"
+          items={generateOptionsLogoWidth()}
+          optionsState={shieldContextValue?.options.logoWidth}
+          handleOptionsChange={handleOptionsChange}
+          menuProps={{ PaperProps: { sx: { maxHeight: 200 } } }}
+        />
+      }
+    />
+  )
+
   return (
     <Stack direction="column" gap={2} mt={2}>
-      <OptionAndIcon
-        firstItem={
-          <TotalItem
-            value={shieldCategories}
-            icon={<CategoryIcon color="action" />}
-          />
-        }
-        lastItem={
-          <ShieldForm
-            title="Shield Category"
-            items={shieldCategories}
-            optionsState={shieldContextValue?.options.category}
-            handleOptionsChange={handleOptionsChange}
-          />
-        }
-      />
-
-      <OptionAndIcon
-        firstItem={
-          <TotalItem
-            value={shieldTypeOptions}
-            icon={<StyleIcon color="action" />}
-          />
-        }
-        lastItem={
-          <ShieldForm
-            title="Shield Style"
-            items={shieldTypeOptions}
-            optionsState={shieldContextValue?.options.style}
-            handleOptionsChange={handleOptionsChange}
-          />
-        }
-      />
-
-      <OptionAndIcon
-        firstItem={
-          <TotalItem
-            value={labelColors}
-            icon={<FormatColorTextIcon color="action" />}
-          />
-        }
-        lastItem={
-          <ShieldForm
-            title="Label Color"
-            items={labelColors}
-            optionsState={shieldContextValue?.options.labelColor}
-            handleOptionsChange={handleOptionsChange}
-          />
-        }
-      />
-
-      <OptionAndIcon
-        firstItem={
-          <TotalItem
-            value={labelColors}
-            icon={<FormatColorFillIcon color="action" />}
-          />
-        }
-        lastItem={
-          <ShieldForm
-            title="Logo Color"
-            items={labelColors}
-            optionsState={shieldContextValue?.options.logoColor}
-            handleOptionsChange={handleOptionsChange}
-          />
-        }
-      />
-
-      <OptionAndIcon
-        firstItem={
-          <TotalItem
-            value={generateOptionsLogoWidth()}
-            icon={<AspectRatioIcon color="action" />}
-          />
-        }
-        lastItem={
-          <ShieldForm
-            title="Logo Width"
-            items={generateOptionsLogoWidth()}
-            optionsState={shieldContextValue?.options.logoWidth}
-            handleOptionsChange={handleOptionsChange}
-            menuProps={{ PaperProps: { sx: { maxHeight: 200 } } }}
-          />
-        }
-      />
+      {renderShieldCategory}
+      {renderShieldStyle}
+      {renderLabelColor}
+      {renderLogoColor}
+      {renderLogoWidth}
 
       <CustomButton
         title={'Generate Shield'}
