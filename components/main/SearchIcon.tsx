@@ -13,7 +13,6 @@
 import { OptionAndIcon, TotalItem } from '@/components/dynamic'
 import { ShiledListBox } from '@/components/utils'
 import {
-  generateShield,
   generateSimpleIcon,
   optionRender,
   updateLabelColor,
@@ -52,7 +51,7 @@ const SearchIcon: FC = () => {
       })
 
       updateLabelColor(labelColors, hex)
-      generateShield !== null ? shieldContextValue?.setShield('') : ''
+      shieldContextValue?.setShield('')
     }
   }
 
