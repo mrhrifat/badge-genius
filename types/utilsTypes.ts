@@ -49,7 +49,8 @@ export type OptionsType = {
   title: string
   svg: string
   hex: string
-  license: string | { type: string; url: string } | null | undefined
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  license: any
   guidelines: string
   path: string
   source: string
@@ -75,7 +76,7 @@ export type ShieldListsShieldPropsType = ShieldListShieldPropInterface[]
 // GenerateShield
 export type GenerateShieldType = (
   // eslint-disable-next-line no-unused-vars
-  value: OptionsType | undefined,
+  value: OptionsType,
   // eslint-disable-next-line no-unused-vars
-  setShield: Dispatch<SetStateAction<string>> | undefined
-) => string | boolean
+  setShield: Dispatch<SetStateAction<string>>
+) => void
