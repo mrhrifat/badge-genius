@@ -1,12 +1,6 @@
-import { Icon } from '@mui/material'
+import { RenderIconInterface } from '@/interfaces/componentsInterfaces'
+import Icon from '@mui/material/Icon'
 import { FC } from 'react'
-
-export interface RenderIconInterface {
-  icon: string
-  width: number
-  height: number
-  viewBox: string
-}
 
 const RenderIcon: FC<RenderIconInterface> = ({
   icon,

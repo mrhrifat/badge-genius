@@ -13,7 +13,7 @@ import {
   ToggleKeyOptionsType,
 } from '@/types/componentsTypes'
 import { SelectChangeEvent } from '@mui/material'
-import { ChangeEvent, Dispatch, SetStateAction } from 'react'
+import { ChangeEvent, Dispatch, ReactNode, SetStateAction } from 'react'
 
 // ToggleKey - ToggleKeyInterface
 export interface ToggleKeyInterface {
@@ -59,4 +59,22 @@ export interface ShielListInterace {
 export interface UseCopyToClipboardInterface {
   isCopid: boolean
   setIsCopid: Dispatch<SetStateAction<boolean>>
+}
+
+// CustomButtonInterface - Custom Button
+export interface CustomButtonInterface {
+  title: string
+  disable: boolean
+  // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-explicit-any
+  handleClick?: (shieldContextValue: any) => void
+  handleFunc?: boolean
+  icon: ReactNode
+}
+
+// RenderIconInterface - Render Icon
+export interface RenderIconInterface {
+  icon: string
+  width: number
+  height: number
+  viewBox: string
 }
