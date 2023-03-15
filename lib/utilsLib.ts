@@ -35,9 +35,7 @@ export const handleWhiteSpace: HandleWhiteSpaceInterface = (
   return false
 }
 
-
 // https://img.shields.io/github/sponsors/mrhrifat?style=plastic
-
 // Generate Shield
 export const generateShield: GenerateShieldType = (
   value: OptionsType,
@@ -59,7 +57,7 @@ export const generateShield: GenerateShieldType = (
   return false
 }
 
-// Reset
+// Reset To Default
 export const resetDefault = (
   value: OptionsType,
   setShield: Dispatch<SetStateAction<string>>
@@ -135,6 +133,7 @@ export const generateSimpleIcon = (
   return icons[`${prefix}${event}`]
 }
 
+// Convert String Image Data to React Node
 export const svgStringToNode = (svgString: string): Node => {
   const parser = new DOMParser()
   const svg = parser.parseFromString(svgString, 'image/svg+xml').documentElement
@@ -182,6 +181,7 @@ export const svgToPngConverter = (svg: Node, title: string): Promise<void> => {
   })
 }
 
+// Sheild Type Option Convert To Real Value
 export const shieldTypeOptionToReal = (type: string) => {
   switch (type) {
     case 'Flat':
