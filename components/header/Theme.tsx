@@ -8,9 +8,9 @@
  *
  */
 
+import { ToggleKey } from '@/components/dynamic'
 import ShieldContext from '@/utils/ShieldContext'
 import { ChangeEvent, FC, useContext } from 'react'
-import ToggleKey from '../dynamic/ToggleKey'
 
 const Theme: FC = () => {
   const shieldContextValue = useContext(ShieldContext)
