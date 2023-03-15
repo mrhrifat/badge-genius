@@ -29,32 +29,32 @@ const ShieldSvg = () => {
     return false
   }
 
+  // Shield Properties List Item
+  const shieldLists = (
+    <List disablePadding>
+      <ListItem disablePadding>
+        <ListItemButton
+          sx={{
+            padding: '0 1rem',
+            cursor: 'pointer',
+            fill: (theme) => (theme.palette.mode === 'light' ? '#000' : '#fff'),
+          }}
+          onClick={handleClick}
+          disabled={shieldContextValue?.options.svg === ''}>
+          <RenderSVG
+            title={shieldContextValue?.options.title}
+            path={shieldContextValue?.options.path}
+            width={100}
+            height={100}
+          />
+        </ListItemButton>
+      </ListItem>
+    </List>
+  )
+
   return (
     <>
-      {shieldContextValue?.options.svg !== '' ? (
-        <List disablePadding>
-          <ListItem disablePadding>
-            <ListItemButton
-              sx={{
-                padding: '0 1rem',
-                cursor: 'pointer',
-                fill: (theme) =>
-                  theme.palette.mode === 'light' ? '#000' : '#fff',
-              }}
-              onClick={handleClick}
-              disabled={shieldContextValue?.options.svg === ''}>
-              <RenderSVG
-                title={shieldContextValue?.options.title}
-                path={shieldContextValue?.options.path}
-                width={100}
-                height={100}
-              />
-            </ListItemButton>
-          </ListItem>
-        </List>
-      ) : (
-        <></>
-      )}
+      {shieldContextValue?.options.svg !== '' ? shieldLists : <></>}
       <AlertMessage isCopied={isCopied} />
     </>
   )
