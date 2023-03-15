@@ -8,17 +8,9 @@
  *
  */
 
+import { CustomButtonInterface } from '@/interfaces/componentsInterfaces'
 import Button from '@mui/material/Button'
-import { FC, ReactNode } from 'react'
-
-export interface CustomButtonInterface {
-  title: string
-  disable: boolean
-  // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-explicit-any
-  handleClick?: (shieldContextValue: any) => void
-  handleFunc?: boolean
-  icon: ReactNode
-}
+import { FC } from 'react'
 
 const CustomButton: FC<CustomButtonInterface> = ({
   title,
