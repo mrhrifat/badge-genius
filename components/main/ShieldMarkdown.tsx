@@ -24,6 +24,7 @@ const ShieldMarkdown = () => {
   const shieldContextValue = useContext(ShieldContext)
   const [isCopied, handleCopy] = useCopyToClipboard()
   const markdown = `![](${shieldContextValue?.shield})`
+
   const handleClick = () => {
     const text = 'Not ready yet'
     handleCopy(
