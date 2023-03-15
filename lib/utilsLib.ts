@@ -103,7 +103,10 @@ export const updateLabelColor = (labelColors: string[], hex: string) => {
 }
 
 // Shield List value
-export const shieldListValue = (options: OptionsType, title: string) => {
+export const shieldListValue = (
+  options: OptionsType | undefined,
+  title: string
+) => {
   if (options && title) {
     if (title === 'Shield Label') return options?.title
     if (title === 'Shield Category') return options?.category
