@@ -49,23 +49,16 @@ const Download = () => {
         ]}
       />
 
-      {/* <ToggleButtonGroup
-                color="primary"
-                value={type}
-                exclusive
-                onChange={handleChange}
-                aria-label="Platform">
-                <ToggleButton value="svg" sx={{ padding: '5px 20px' }}>SVG</ToggleButton>
-                <ToggleButton value="png" sx={{ padding: '5px 20px' }}>PNG</ToggleButton>
-            </ToggleButtonGroup> */}
-
       {type === 'svg' ? (
         <>
           <DownloadLink
-            style={{ borderRadius: '0 0 14px 0', textDecoration: 'none' }}
+            style={{
+              borderRadius: '0 0 14px 0',
+              textDecoration: 'none',
+            }}
             label={
               <Button
-                disabled={shieldContextValue?.options.svg === null}
+                disabled={shieldContextValue?.options.svg === ''}
                 fullWidth
                 variant="contained"
                 endIcon={<DownloadIcon />}>
@@ -79,7 +72,7 @@ const Download = () => {
       ) : (
         <Button
           fullWidth
-          disabled={shieldContextValue?.options.svg === null}
+          disabled={shieldContextValue?.options.svg === ''}
           variant="contained"
           endIcon={<DownloadIcon />}
           onClick={() =>
