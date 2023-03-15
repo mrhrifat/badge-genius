@@ -1,5 +1,6 @@
 import AlertMessage from './AlertMessage'
 import ColorPalette from './ColorPalette'
+import CustomButton from './CustomButton'
 import HeaderIcons from './HeaderIcons'
 import OptionAndIcon from './OptionAndIcon'
 import RenderSVG from './RenderSVG'
@@ -18,4 +19,5 @@ export {
   ToggleKey,
   TotalItem,
   RenderSVG,
+  CustomButton,
 }
