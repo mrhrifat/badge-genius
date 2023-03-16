@@ -5,7 +5,7 @@ export const lightTheme = createTheme({
   palette: {
     mode: 'light',
     background: {
-      default: '#F8F9FA',
+      default: '#F6F7FA',
     },
     primary: {
       main: '#22A6B3',
@@ -33,7 +33,7 @@ export const darkTheme = createTheme({
 
 export const homeGridStyle = {
   border: '1px solid #EEE',
-  padding: 3,
-  borderRadius: 3,
+  padding: 1.5,
+  borderRadius: 2.5,
   boxShadow: '0 20px 27px 0 rgb(0 0 0 / 5%)',
 }
