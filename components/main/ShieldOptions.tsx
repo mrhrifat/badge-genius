@@ -22,18 +22,19 @@ import {
   resetDefault,
 } from '@/lib/utilsLib'
 import { ShieldContextValueType } from '@/types/utilsTypes'
-import { labelColors, shieldCategories, shieldTypeOptions } from '@/utils/data'
+import {
+  labelColors,
+  optionIcons,
+  shieldCategories,
+  shieldTypeOptions,
+} from '@/utils/data'
 import ShieldContext from '@/utils/ShieldContext'
-import AspectRatioIcon from '@mui/icons-material/AspectRatio'
-import CategoryIcon from '@mui/icons-material/Category'
 import ClearAllIcon from '@mui/icons-material/ClearAll'
-import FormatColorFillIcon from '@mui/icons-material/FormatColorFill'
-import FormatColorTextIcon from '@mui/icons-material/FormatColorText'
 import ShieldIcon from '@mui/icons-material/Shield'
-import StyleIcon from '@mui/icons-material/Style'
 import { SelectChangeEvent } from '@mui/material'
 import Stack from '@mui/material/Stack'
 import { ChangeEvent, useContext } from 'react'
+import RenderIcon from '../dynamic/RenderIcon'
 
 const ShieldOptions = () => {
   const shieldContextValue = useContext(ShieldContext)
@@ -60,6 +61,11 @@ const ShieldOptions = () => {
       shieldContextValue?.setOptions({
         ...shieldContextValue?.options,
         style: value as string,
+      })
+    } else if (name === 'Shield Color') {
+      shieldContextValue?.setOptions({
+        ...shieldContextValue?.options,
+        hex: value as string,
       })
     } else if (name === 'Label Color') {
       shieldContextValue?.setOptions({
@@ -105,7 +111,14 @@ const ShieldOptions = () => {
       firstItem={
         <TotalItem
           value={shieldCategories}
-          icon={<CategoryIcon color="action" />}
+          icon={
+            <RenderIcon
+              icon={optionIcons.shieldCategory}
+              width={25}
+              height={25}
+              viewBox="0 0 450 600"
+            />
+          }
         />
       }
       lastItem={
@@ -125,7 +138,14 @@ const ShieldOptions = () => {
       firstItem={
         <TotalItem
           value={shieldTypeOptions}
-          icon={<StyleIcon color="action" />}
+          icon={
+            <RenderIcon
+              icon={optionIcons.shieldStyle}
+              width={25}
+              height={25}
+              viewBox="0 0 450 600"
+            />
+          }
         />
       }
       lastItem={
@@ -139,13 +159,47 @@ const ShieldOptions = () => {
     />
   )
 
+  // Shield Color
+  const renderShieldColor = (
+    <OptionAndIcon
+      firstItem={
+        <TotalItem
+          value={labelColors}
+          icon={
+            <RenderIcon
+              icon={optionIcons.shieldColor}
+              width={25}
+              height={25}
+              viewBox="0 0 450 600"
+            />
+          }
+        />
+      }
+      lastItem={
+        <ShieldForm
+          title="Shield Color"
+          items={labelColors}
+          optionsState={shieldContextValue?.options.hex}
+          handleOptionsChange={handleOptionsChange}
+        />
+      }
+    />
+  )
+
   // Label Color
   const renderLabelColor = (
     <OptionAndIcon
       firstItem={
         <TotalItem
           value={labelColors}
-          icon={<FormatColorTextIcon color="action" />}
+          icon={
+            <RenderIcon
+              icon={optionIcons.labelColor}
+              width={25}
+              height={25}
+              viewBox="0 0 450 600"
+            />
+          }
         />
       }
       lastItem={
@@ -165,7 +219,14 @@ const ShieldOptions = () => {
       firstItem={
         <TotalItem
           value={labelColors}
-          icon={<FormatColorFillIcon color="action" />}
+          icon={
+            <RenderIcon
+              icon={optionIcons.logoColor}
+              width={25}
+              height={25}
+              viewBox="0 0 450 600"
+            />
+          }
         />
       }
       lastItem={
@@ -185,7 +246,14 @@ const ShieldOptions = () => {
       firstItem={
         <TotalItem
           value={generateOptionsLogoWidth()}
-          icon={<AspectRatioIcon color="action" />}
+          icon={
+            <RenderIcon
+              icon={optionIcons.logoWidth}
+              width={25}
+              height={25}
+              viewBox="0 0 450 600"
+            />
+          }
         />
       }
       lastItem={
@@ -204,6 +272,7 @@ const ShieldOptions = () => {
     <Stack direction="column" gap={2} mt={2}>
       {renderShieldCategory}
       {renderShieldStyle}
+      {renderShieldColor}
       {renderLabelColor}
       {renderLogoColor}
       {renderLogoWidth}
