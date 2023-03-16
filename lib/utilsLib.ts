@@ -114,7 +114,7 @@ export const shieldListValue = (
     if (title === 'Label Color') return ColorPalette(options?.labelColor)
     if (title === 'Logo Color') return ColorPalette(options?.logoColor)
     if (title === 'Shield Style') return options?.style
-    if (title === 'Shield Width') return options?.logoWidth
+    if (title === 'Logo Width') return options?.logoWidth
     if (title === 'Website') return renderWebsite(options?.source)
     if (title === 'License') return options?.license
     if (title === 'Guidelines') return options?.guidelines
