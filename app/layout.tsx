@@ -44,17 +44,18 @@ export const metadata: MetadataType = {
     'JavaScript',
   ],
   icons: {
-    icon: '/favicon.ico',
+    icon: 'img/logo.png',
+    shortcut: 'img/logo.jpg',
+    apple: 'img/logo.jpg',
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: 'img/logo.jpg',
+    },
   },
   generator: 'Next.js',
   applicationName: 'Shield Icons',
   referrer: 'origin-when-crossorigin',
   author: 'Mrh Rifat',
-  authors: [
-    { name: 'Mrh Rifat' },
-    { name: 'Rifat' },
-    { name: 'Rakibul Hassan Rifat' },
-  ],
   copyright: 'Copyright Mrh Rifat - Shield Icons',
   distribution: 'Global',
   coverage: 'Worldwide',
@@ -70,6 +71,9 @@ export const metadata: MetadataType = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={dosis.className}>
+      <head>
+        <link rel="manifest" href="manifest.webmanifest" />
+      </head>
       <body>{children}</body>
     </html>
   )
