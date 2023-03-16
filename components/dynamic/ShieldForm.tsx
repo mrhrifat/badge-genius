@@ -45,10 +45,8 @@ const ShieldForm: FC<ShieldFormInterface> = ({
   handleOptionsChange,
   menuProps,
 }) => {
-  
-
   return (
-    <FormControl fullWidth>
+    <FormControl fullWidth size="small">
       <InputLabel id={title}>{title}</InputLabel>
       <Select
         name={title}
