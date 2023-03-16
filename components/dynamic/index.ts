@@ -3,6 +3,7 @@ import ColorPalette from './ColorPalette'
 import CustomButton from './CustomButton'
 import HeaderIcons from './HeaderIcons'
 import OptionAndIcon from './OptionAndIcon'
+import RenderIcon from './RenderIcon'
 import RenderSVG from './RenderSVG'
 import ShieldForm from './ShieldForm'
 import ShieldList from './ShieldList'
@@ -20,4 +21,5 @@ export {
   TotalItem,
   RenderSVG,
   CustomButton,
+  RenderIcon,
 }
