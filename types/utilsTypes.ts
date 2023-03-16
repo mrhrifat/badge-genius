@@ -20,7 +20,6 @@ export type MetadataType = {
   generator: string
   applicationName: string
   referrer: string
-  authors: object[]
   themeColor: string
   colorScheme: string
   creator: string
