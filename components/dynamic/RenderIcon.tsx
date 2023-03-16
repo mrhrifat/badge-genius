@@ -12,7 +12,7 @@ const RenderIcon: FC<RenderIconInterface> = ({
     <Icon
       sx={{
         fill: (theme) =>
-          theme.palette.mode === 'light' ? '#38BDF8' : '#22A6B3',
+          theme.palette.mode === 'light' ? '#22A6B3' : '#38BDF8',
       }}>
       <svg width={width} height={height} viewBox={viewBox}>
         <path d={icon} />
