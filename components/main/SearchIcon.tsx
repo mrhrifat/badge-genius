@@ -10,7 +10,7 @@
 
 'use client'
 
-import { OptionAndIcon, TotalItem } from '@/components/dynamic'
+import { OptionAndIcon, RenderIcon, TotalItem } from '@/components/dynamic'
 import { ShiledListBox } from '@/components/utils'
 import {
   generateSimpleIcon,
@@ -18,9 +18,8 @@ import {
   updateLabelColor,
 } from '@/lib/utilsLib'
 import { HandleSelectIconHandlerType } from '@/types/componentsTypes'
-import { labelColors } from '@/utils/data'
+import { labelColors, optionIcons } from '@/utils/data'
 import ShieldContext from '@/utils/ShieldContext'
-import BadgeIcon from '@mui/icons-material/Badge'
 import Autocomplete from '@mui/material/Autocomplete'
 import TextField from '@mui/material/TextField'
 import { ChangeEvent, FC, ReactNode, useContext } from 'react'
@@ -58,7 +57,17 @@ const SearchIcon: FC = () => {
   return (
     <OptionAndIcon
       firstItem={
-        <TotalItem value={shieldContextValue?.icons} icon={<BadgeIcon />} />
+        <TotalItem
+          value={shieldContextValue?.icons}
+          icon={
+            <RenderIcon
+              icon={optionIcons.icons}
+              width={25}
+              height={25}
+              viewBox="0 0 450 600"
+            />
+          }
+        />
       }
       lastItem={
         <Autocomplete
