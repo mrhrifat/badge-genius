@@ -21,7 +21,8 @@ const renderColorMenuItem = (title: string, item: string | number) => {
     title !== 'Shield Category' &&
     title !== 'Shield Style' &&
     title !== 'Shield Width' &&
-    title !== 'Logo Width'
+    title !== 'Logo Width' &&
+    title !== 'Shield Sub Category'
   ) {
     return (
       <CircleIcon
