@@ -45,11 +45,11 @@ export const metadata: MetadataType = {
   ],
   icons: {
     icon: 'img/logo.png',
-    shortcut: 'img/logo.jpg',
-    apple: 'img/logo.jpg',
+    shortcut: 'img/logo.png',
+    apple: 'img/logo.png',
     other: {
       rel: 'apple-touch-icon-precomposed',
-      url: 'img/logo.jpg',
+      url: 'img/logo.png',
     },
   },
   generator: 'Next.js',
