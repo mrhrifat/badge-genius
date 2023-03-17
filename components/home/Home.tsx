@@ -21,16 +21,16 @@ import { FC } from 'react'
 const Home: FC = () => {
   return (
     <Grid container gap={1} justifyContent="space-between">
-      <Grid item md={3} sm={5} xs={12} sx={homeGridStyle}>
+      <Grid item md={4} sm={5} xs={12} sx={homeGridStyle}>
         <SearchIcon />
         <ShieldOptions />
       </Grid>
 
-      <Grid item md={5} sm={6} xs={12} sx={homeGridStyle}>
+      <Grid item md={3.5} sm={6} xs={12} sx={homeGridStyle}>
         <ShieldProperties />
       </Grid>
 
-      <Grid item md={3} sm={12} xs={12} sx={homeGridStyle}>
+      <Grid item md={3.5} sm={12} xs={12} sx={homeGridStyle}>
         <Operation />
       </Grid>
     </Grid>
