@@ -18,6 +18,7 @@ import {
 import { GenerateShieldType, OptionsType } from '@/types/utilsTypes'
 import {
   subCategoryBadge,
+  subCategoryBuild,
   subCategoryFunding,
   subCategorySocial,
 } from '@/utils/data'
@@ -227,6 +228,8 @@ export const shieldSubCategoryOptions = (category: string | undefined) => {
   switch (category) {
     case 'Badge':
       return subCategoryBadge
+    case 'Build':
+      return subCategoryBuild
     case 'Social':
       return subCategorySocial
     case 'Funding':
@@ -241,6 +244,8 @@ export const shieldSubCategoryState = (category: string | undefined) => {
   switch (category) {
     case 'Badge':
       return 'None'
+    case 'Build':
+      return 'AppVeyor'
     case 'Social':
       return 'GitHub Gist Stars'
     case 'Funding':
