@@ -16,6 +16,11 @@ import {
   SimpleIconsInterface,
 } from '@/interfaces/utilsInterfaces'
 import { GenerateShieldType, OptionsType } from '@/types/utilsTypes'
+import {
+  subCategoryBadge,
+  subCategoryFunding,
+  subCategorySocial,
+} from '@/utils/data'
 import { Dispatch, SetStateAction } from 'react'
 
 // OptionRender
@@ -210,5 +215,33 @@ export const shieldTypeOptionToReal = (type: string) => {
       return 'social'
     default:
       return 'for-the-badge'
+  }
+}
+
+// Shield Sub Category Options
+export const shieldSubCategoryOptions = (category: string | undefined) => {
+  switch (category) {
+    case 'Badge':
+      return subCategoryBadge
+    case 'Social':
+      return subCategorySocial
+    case 'Funding':
+      return subCategoryFunding
+    default:
+      return subCategoryBadge
+  }
+}
+
+// Shield Sub Category State
+export const shieldSubCategoryState = (category: string | undefined) => {
+  switch (category) {
+    case 'Badge':
+      return 'None'
+    case 'Social':
+      return 'GitHub Gist Stars'
+    case 'Funding':
+      return 'Bountysource'
+    default:
+      return 'None'
   }
 }
