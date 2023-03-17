@@ -115,6 +115,10 @@ export const shieldListValue = (
   if (options && title) {
     if (title === 'Shield Label') return options?.title
     if (title === 'Shield Category') return options?.category
+    if (title === 'Sub Category')
+      return options?.subCategory.length >= 25
+        ? options?.subCategory.substring(0, 25) + '...'
+        : options?.subCategory
     if (title === 'Shield Color') return ColorPalette(options.hex)
     if (title === 'Label Color') return ColorPalette(options?.labelColor)
     if (title === 'Logo Color') return ColorPalette(options?.logoColor)
