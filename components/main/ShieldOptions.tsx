@@ -13,6 +13,7 @@
 import {
   CustomButton,
   OptionAndIcon,
+  RenderIcon,
   ShieldForm,
   TotalItem,
 } from '@/components/dynamic'
@@ -20,6 +21,8 @@ import {
   generateOptionsLogoWidth,
   generateShield,
   resetDefault,
+  shieldSubCategoryOptions,
+  shieldSubCategoryState,
 } from '@/lib/utilsLib'
 import { ShieldContextValueType } from '@/types/utilsTypes'
 import {
@@ -34,7 +37,6 @@ import ShieldIcon from '@mui/icons-material/Shield'
 import { SelectChangeEvent } from '@mui/material'
 import Stack from '@mui/material/Stack'
 import { ChangeEvent, useContext } from 'react'
-import RenderIcon from '../dynamic/RenderIcon'
 
 const ShieldOptions = () => {
   const shieldContextValue = useContext(ShieldContext)
@@ -56,6 +58,12 @@ const ShieldOptions = () => {
       shieldContextValue?.setOptions({
         ...shieldContextValue?.options,
         category: value as string,
+        subCategory: shieldSubCategoryState(value as string),
+      })
+    } else if (name === 'Shield Sub Category') {
+      shieldContextValue?.setOptions({
+        ...shieldContextValue?.options,
+        subCategory: value as string,
       })
     } else if (name === 'Shield Style') {
       shieldContextValue?.setOptions({
@@ -127,6 +135,34 @@ const ShieldOptions = () => {
           items={shieldCategories}
           optionsState={shieldContextValue?.options.category}
           handleOptionsChange={handleOptionsChange}
+        />
+      }
+    />
+  )
+
+  // Shield Sub Category
+  const renderShieldSubCategory = (
+    <OptionAndIcon
+      firstItem={
+        <TotalItem
+          value={shieldSubCategoryOptions(shieldContextValue?.options.category)}
+          icon={
+            <RenderIcon
+              icon={optionIcons.shieldCategory}
+              width={25}
+              height={25}
+              viewBox="0 0 450 600"
+            />
+          }
+        />
+      }
+      lastItem={
+        <ShieldForm
+          title="Shield Sub Category"
+          items={shieldSubCategoryOptions(shieldContextValue?.options.category)}
+          optionsState={shieldContextValue?.options.subCategory}
+          handleOptionsChange={handleOptionsChange}
+          menuProps={{ PaperProps: { sx: { maxHeight: 300 } } }}
         />
       }
     />
@@ -271,6 +307,7 @@ const ShieldOptions = () => {
   return (
     <Stack direction="column" gap={2} mt={2}>
       {renderShieldCategory}
+      {renderShieldSubCategory}
       {renderShieldStyle}
       {renderShieldColor}
       {renderLabelColor}
