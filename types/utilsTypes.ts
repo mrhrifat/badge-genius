@@ -59,6 +59,7 @@ export type OptionsType = {
   logoWidth: number | string
   style: string
   category: string
+  subCategory: string
 }
 
 export type ShieldCategoriesType = string[]
@@ -79,3 +80,6 @@ export type GenerateShieldType = (
   // eslint-disable-next-line no-unused-vars
   setShield: Dispatch<SetStateAction<string>>
 ) => void
+
+// Social Sub Category
+export type SubCategorySocial = string[]
