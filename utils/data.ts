@@ -17,6 +17,7 @@ import {
   ShieldLabelColorsType,
   ShieldListsShieldPropsType,
   ShieldTypeOptionsType,
+  SubCategorySocial,
 } from '@/types/utilsTypes'
 
 // layout - Metadata Data
@@ -82,6 +83,7 @@ export const optionsdata: OptionsType = {
   logoWidth: 14,
   style: 'For The Badge',
   category: 'Badge',
+  subCategory: 'None',
 }
 
 // Footer - Footer Icons Data
@@ -145,7 +147,7 @@ export const shieldCategories: ShieldCategoriesType = [
   // 'Chat',
   // 'Dependencies',
   // 'Downloads',
-  // 'Funding',
+  'Funding',
   // 'Test Results',
   // 'Issue Tracking',
   // 'License',
@@ -230,9 +232,11 @@ export const shieldLists: ShieldListsShieldPropsType = [
   },
 ]
 
+// Button Icon
 export const generateBtnIcon =
   'M253.4 2.9C249.2 1 244.7 0 240 0s-9.2 1-13.4 2.9L38.3 82.8C16.3 92.1-.1 113.8 0 140c.5 99.2 41.3 280.7 213.6 363.2c16.7 8 36.1 8 52.8 0C438.7 420.7 479.5 239.2 480 140c.1-26.2-16.3-47.9-38.3-57.2L253.4 2.9zM128 221.3c0-33.8 27.4-61.3 61.3-61.3c16.2 0 31.8 6.5 43.3 17.9l7.4 7.4 7.4-7.4c11.5-11.5 27.1-17.9 43.3-17.9c33.8 0 61.3 27.4 61.3 61.3c0 16.2-6.5 31.8-17.9 43.3l-82.7 82.7c-6.2 6.2-16.4 6.2-22.6 0l-82.7-82.7c-11.5-11.5-17.9-27.1-17.9-43.3z'
 
+// Shield Options Icons
 export const optionIcons = {
   icons:
     'M500.3 7.3C507.7 13.3 512 22.4 512 32V176c0 26.5-28.7 48-64 48s-64-21.5-64-48s28.7-48 64-48V71L352 90.2V208c0 26.5-28.7 48-64 48s-64-21.5-64-48s28.7-48 64-48V64c0-15.3 10.8-28.4 25.7-31.4l160-32c9.4-1.9 19.1 .6 26.6 6.6zM74.7 304l11.8-17.8c5.9-8.9 15.9-14.2 26.6-14.2h61.7c10.7 0 20.7 5.3 26.6 14.2L213.3 304H240c26.5 0 48 21.5 48 48V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V352c0-26.5 21.5-48 48-48H74.7zM192 408a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM478.7 278.3L440.3 368H496c6.7 0 12.6 4.1 15 10.4s.6 13.3-4.4 17.7l-128 112c-5.6 4.9-13.9 5.3-19.9 .9s-8.2-12.4-5.3-19.2L391.7 400H336c-6.7 0-12.6-4.1-15-10.4s-.6-13.3 4.4-17.7l128-112c5.6-4.9 13.9-5.3 19.9-.9s8.2 12.4 5.3 19.2zm-339-59.2c-6.5 6.5-17 6.5-23 0L19.9 119.2c-28-29-26.5-76.9 5-103.9c27-23.5 68.4-19 93.4 6.5l10 10.5 9.5-10.5c25-25.5 65.9-30 93.9-6.5c31 27 32.5 74.9 4.5 103.9l-96.4 99.9z',
@@ -249,3 +253,50 @@ export const optionIcons = {
   logoWidth:
     'M32 64c17.7 0 32 14.3 32 32l0 320c0 17.7-14.3 32-32 32s-32-14.3-32-32V96C0 78.3 14.3 64 32 64zm214.6 73.4c12.5 12.5 12.5 32.8 0 45.3L205.3 224l229.5 0-41.4-41.4c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l96 96c12.5 12.5 12.5 32.8 0 45.3l-96 96c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L434.7 288l-229.5 0 41.4 41.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0l-96-96c-12.5-12.5-12.5-32.8 0-45.3l96-96c12.5-12.5 32.8-12.5 45.3 0zM640 96V416c0 17.7-14.3 32-32 32s-32-14.3-32-32V96c0-17.7 14.3-32 32-32s32 14.3 32 32z',
 }
+
+// Social Sub Category Parent
+export const subCategorySocial: SubCategorySocial = [
+  'GitHub Gist Stars',
+  'GitHub Followers',
+  'GitHub Forks',
+  'GitHub Repo Stars',
+  'GitHub User Stars',
+  "GitHub Org's Stars",
+  'GitHub Watchers',
+  'GitLab Forks',
+  'GitLab Stars',
+  'HackerNews User Karma',
+  'Keybase BTC',
+  'Keybase PGP',
+  'Keybase XLM',
+  'Keybase ZEC',
+  'Mastodon Follow',
+  'Modrinth Followers',
+  'Subreddit Subscribers',
+  'Reddit User Karma',
+  'Twitch Status',
+  'Twitter URL',
+  'Twitter Follow',
+  'YouTube Channel Views',
+  'YouTube Video Comments',
+  'YouTube Video Likes',
+  'YouTube Channel Subscribers',
+  'YouTube Video Views',
+]
+
+export const subCategoryFunding = [
+  'Bountysource',
+  'Chrome Web Store',
+  'GitHub Sponsors',
+  'Liberapay giving ',
+  'Liberapay goal progress',
+  'Liberapay patrons',
+  'Liberapay receiving',
+  'Open Collective backers and sponsors',
+  'Open Collective backers',
+  'Open Collective members by tier',
+  'Open Collective sponsors',
+]
+
+// Badge Sub Category
+export const subCategoryBadge = ['None']
