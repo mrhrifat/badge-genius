@@ -363,3 +363,27 @@ export const subCategoryBuild = [
   'Travis (.com) branch',
   'Visual Studio App Center Builds',
 ]
+
+// Code Coverage Sub Category
+export const codeCoverageSubCategory = [
+  'Azure DevOps coverage',
+  'Azure DevOps coverage (branch)',
+  'Codacy coverage',
+  'Codacy branch coverage',
+  'Code Climate coverage',
+  'Codecov',
+  'Codecov branch',
+  'Coveralls',
+  'Coveralls branch',
+  'Gitlab code coverage',
+  'Gitlab code coverage (specific job)',
+  'Gitlab code coverage (self-managed)',
+  'Gitlab code coverage (self-managed, specific job)',
+  'Jenkins Coverage',
+  'nycrc config on GitHub',
+  'Scrutinizer coverage (GitHub/BitBucket)',
+  'Scrutinizer coverage (GitLab)',
+  'Sonar Coverage',
+  'TeamCity Coverage',
+]
+
