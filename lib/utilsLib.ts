@@ -242,14 +242,44 @@ export const shieldSubCategoryOptions = (category: string | undefined) => {
 // Shield Sub Category State
 export const shieldSubCategoryState = (category: string | undefined) => {
   switch (category) {
+    case 'Activity':
+      return 'AUR last modified'
+    case 'Analysis':
+      return 'Ansible Quality Score'
     case 'Badge':
       return 'None'
     case 'Build':
       return 'AppVeyor'
-    case 'Social':
-      return 'GitHub Gist Stars'
+    case 'Code Coverage':
+      return 'Azure DevOps coverage'
+    case 'Chat':
+      return 'Discord'
+    case 'Dependencies':
+      return 'Depfu'
+    case 'Downloads':
+      return 'Mozilla Add-on'
     case 'Funding':
       return 'Bountysource'
+    case 'Test Results':
+      return 'AppVeyor tests'
+    case 'Issue Tracking':
+      return 'Bitbucket open issues'
+    case 'License':
+      return 'AUR license'
+    case 'Monitoring':
+      return 'Chromium HSTS preload'
+    case 'Others':
+      return 'Ansible Collection'
+    case 'Platform & Version Support':
+      return 'Cocoapods platforms'
+    case 'Rating':
+      return 'Mozilla Add-on'
+    case 'Size':
+      return 'npm bundle size'
+    case 'Social':
+      return 'GitHub Gist Stars'
+    case 'Version':
+      return 'Mozilla Add-on'
     default:
       return 'None'
   }
