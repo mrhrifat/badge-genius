@@ -477,3 +477,30 @@ export const dependenciesSubCategory = [
   'Libraries.io dependency status for GitHub repo',
 ]
 
+// Size Sub Category
+export const sizeSubCategory = [
+  'npm bundle size',
+  'npm bundle size (scoped)',
+  'npm bundle size (version)',
+  'npm bundle size (scoped version)',
+  'Docker Image Size (latest by date)',
+  'Docker Image Size (latest semver)',
+  'Docker Image Size with architecture (latest by date/latest semver)',
+  'Docker Image Size (tag)',
+  'GitHub code size in bytes',
+  'GitHub repo file count',
+  'GitHub repo file count (custom path)',
+  'GitHub repo directory count',
+  'GitHub repo directory count (custom path)',
+  'GitHub repo file count (file type)',
+  'GitHub repo file count (custom path & file type)',
+  'GitHub repo file count (file extension)',
+  'GitHub repo size',
+  'GitHub file size in bytes',
+  'GitHub file size in bytes on a specified ref (branch/commit/tag)',
+  'Spiget Download Size',
+  'Steam File Size',
+  'Lines of code',
+  'Visual Studio App Center Size',
+]
+
