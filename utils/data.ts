@@ -653,3 +653,31 @@ export const issueTrackingSubCategory = [
   'JIRA sprint completion',
 ]
 
+// License
+export const licenseSubCategory = [
+  'AUR license',
+  'Bower',
+  'Cocoapods',
+  'Conda - License',
+  'CPAN',
+  'CRAN/METACRAN',
+  'Crates.io',
+  'Crates.io',
+  'CTAN',
+  'DUB',
+  'Eclipse Marketplace',
+  'GitHub',
+  'GitLab',
+  'GitLab (self-managed)',
+  'Greasy Fork',
+  'Hex.pm',
+  'NPM',
+  'NPM',
+  'Ore License',
+  'Packagist License',
+  'Packagist License (custom server)',
+  'PyPI - License',
+  'REUSE Compliance',
+  'Weblate component license',
+]
+
