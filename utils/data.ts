@@ -448,3 +448,19 @@ export const analysisSubCategory = [
   'W3C Validation',
 ]
 
+// Chat Sub Category
+export const chatSubCategory = [
+  'Discord',
+  'Discourse topics',
+  'Discourse users',
+  'Discourse posts',
+  'Discourse likes',
+  'Discourse status',
+  'Gitter',
+  'Matrix',
+  'Matrix',
+  'Stack Exchange monthly questions',
+  'Stack Exchange reputation',
+  'Stack Exchange questions',
+]
+
