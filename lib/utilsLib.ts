@@ -17,10 +17,25 @@ import {
 } from '@/interfaces/utilsInterfaces'
 import { GenerateShieldType, OptionsType } from '@/types/utilsTypes'
 import {
+  activitySubCategory,
+  analysisSubCategory,
+  chatSubCategory,
+  codeCoverageSubCategory,
+  dependenciesSubCategory,
+  downloadSubCategory,
+  issueTrackingSubCategory,
+  licenseSubCategory,
+  monitoringSubCategory,
+  othersSubCategory,
+  platformVersionSupportSubCategory,
+  ratingSubCategory,
+  sizeSubCategory,
   subCategoryBadge,
   subCategoryBuild,
   subCategoryFunding,
   subCategorySocial,
+  testResultSubCategory,
+  versionSubCategory,
 } from '@/utils/data'
 import { Dispatch, SetStateAction } from 'react'
 
@@ -226,14 +241,44 @@ export const shieldTypeOptionToReal = (type: string) => {
 // Shield Sub Category Options
 export const shieldSubCategoryOptions = (category: string | undefined) => {
   switch (category) {
+    case 'Activity':
+      return activitySubCategory
+    case 'Analysis':
+      return analysisSubCategory
     case 'Badge':
       return subCategoryBadge
     case 'Build':
       return subCategoryBuild
-    case 'Social':
-      return subCategorySocial
+    case 'Code Coverage':
+      return codeCoverageSubCategory
+    case 'Chat':
+      return chatSubCategory
+    case 'Dependencies':
+      return dependenciesSubCategory
+    case 'Downloads':
+      return downloadSubCategory
     case 'Funding':
       return subCategoryFunding
+    case 'Test Results':
+      return testResultSubCategory
+    case 'Issue Tracking':
+      return issueTrackingSubCategory
+    case 'License':
+      return licenseSubCategory
+    case 'Monitoring':
+      return monitoringSubCategory
+    case 'Others':
+      return othersSubCategory
+    case 'Platform & Version Support':
+      return platformVersionSupportSubCategory
+    case 'Rating':
+      return ratingSubCategory
+    case 'Size':
+      return sizeSubCategory
+    case 'Social':
+      return subCategorySocial
+    case 'Version':
+      return versionSubCategory
     default:
       return subCategoryBadge
   }
