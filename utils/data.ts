@@ -387,3 +387,22 @@ export const codeCoverageSubCategory = [
   'TeamCity Coverage',
 ]
 
+// Test Result Sub Category
+export const testResultSubCategory = [
+  'AppVeyor tests',
+  'AppVeyor tests (branch)',
+  'AppVeyor tests (compact)',
+  'AppVeyor tests with custom labels',
+  'Azure DevOps tests',
+  'Azure DevOps tests (compact)',
+  'Azure DevOps tests with custom labels',
+  'Jenkins tests',
+  'Sonar Tests',
+  'Testspace tests',
+  'Testspace pass ratio',
+  'Testspace tests',
+  'Testspace tests (compact)',
+  'Testspace tests with custom labels',
+]
+
+
