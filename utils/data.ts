@@ -506,7 +506,7 @@ export const sizeSubCategory = [
 
 // Download Sub Category
 export const downloadSubCategory = [
-  'Mozilla Add-on:	Mozilla Add-on badge	/amo/dw/',
+  'Mozilla Add-on',
   'Mozilla Add-on',
   'Ansible Role',
   'Chocolatey',
