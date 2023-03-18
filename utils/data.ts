@@ -464,3 +464,16 @@ export const chatSubCategory = [
   'Stack Exchange questions',
 ]
 
+// Dependencies Sub Category
+export const dependenciesSubCategory = [
+  'Depfu',
+  'GitHub Pipenv locked dependency version',
+  'GitHub Pipenv locked dependency version (branch)',
+  'Hackage-Deps',
+  'Libraries.io dependency status for latest release',
+  'Libraries.io dependency status for specific release',
+  'Libraries.io dependency status for latest release, scoped npm package',
+  'Libraries.io dependency status for specific release, scoped npm package',
+  'Libraries.io dependency status for GitHub repo',
+]
+
