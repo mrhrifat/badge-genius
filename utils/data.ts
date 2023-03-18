@@ -903,3 +903,19 @@ export const platformVersionSupportSubCategory = [
   'WordPress Plugin: Tested WP Version',
 ]
 
+// Monitoring Sub Category
+export const monitoringSubCategory = [
+  'Chromium HSTS preload',
+  'Mozilla HTTP Observatory Grade',
+  'NodePing status',
+  'NodePing uptime',
+  'PingPong status',
+  'PingPong uptime (last 30 days)',
+  'Security Headers',
+  "Security Headers (Don't follow redirects)",
+  'Uptime Robot ratio (30 days)',
+  'Uptime Robot ratio (7 days)',
+  'Uptime Robot status',
+  'Website',
+]
+
