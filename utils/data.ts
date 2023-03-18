@@ -139,24 +139,24 @@ export const headerIcons: HeaderIconsType = [
 
 // ShieldOptions - ShieldCategories
 export const shieldCategories: ShieldCategoriesType = [
-  // 'Activity',
-  // 'Analysis',
+  'Activity',
+  'Analysis',
   'Badge',
   'Build',
-  // 'Code Coverage',
-  // 'Chat',
-  // 'Dependencies',
-  // 'Downloads',
+  'Code Coverage',
+  'Chat',
+  'Dependencies',
+  'Downloads',
   'Funding',
-  // 'Test Results',
-  // 'Issue Tracking',
-  // 'License',
-  // 'Monitoring',
-  // 'Platform & Version Support',
-  // 'Rating',
-  // 'Size',
+  'Test Results',
+  'Issue Tracking',
+  'License',
+  'Monitoring',
+  'Platform & Version Support',
+  'Rating',
+  'Size',
   'Social',
-  // 'Version',
+  'Version',
 ]
 
 // ShieldTypeOptions
