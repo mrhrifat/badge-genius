@@ -20,6 +20,8 @@ const CustomButton: FC<CustomButtonInterface> = ({
 }) => {
   return (
     <Button
+      aria-labelledby={title}
+      aria-label={title}
       fullWidth
       sx={{ justifyContent: 'space-around' }}
       disabled={disable}
