@@ -40,15 +40,18 @@ const Header: FC = () => {
         // direction={{ xs: 'column', sm: 'row' }}
         gap={1}
         justifyContent="space-between">
-        <Typography variant="body1">
-          Build & Download &nbsp;
-          <strong>{optionRender(shieldContextValue?.icons).length}</strong>
-          &nbsp;popular brands
-          <br />
-          Badge,&nbsp;&nbsp;
-          <abbr title="Scalable Vector Graphics">SVG,</abbr>
-          &nbsp; Hex & so on
-        </Typography>
+        <div>
+          <Typography variant="body1">
+            Build & Download &nbsp;
+            <strong>{optionRender(shieldContextValue?.icons).length}</strong>
+            &nbsp;popular brands
+          </Typography>
+          <Typography variant="body1">
+            Badge,&nbsp;&nbsp;
+            <abbr title="Scalable Vector Graphics">SVG,</abbr>
+            &nbsp; Hex & so on
+          </Typography>
+        </div>
         <Box alignSelf="center">
           <Theme />
         </Box>
