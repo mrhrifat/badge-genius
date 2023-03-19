@@ -8,8 +8,6 @@
  *
  */
 
-'use client'
-
 import { OptionAndIcon, RenderIcon, TotalItem } from '@/components/dynamic'
 import { ShiledListBox } from '@/components/utils'
 import {
@@ -77,7 +75,15 @@ const SearchIcon: FC = () => {
           ListboxComponent={ShiledListBox}
           onChange={(event, value) => handleSelectIcon(event, value)}
           renderInput={(params) => (
-            <TextField {...params} label="Search Icon" />
+            <TextField
+              {...params}
+              label="Search Icon"
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  padding: '5px',
+                },
+              }}
+            />
           )}
           renderOption={(props, option, state) =>
             [props, option, state.index] as ReactNode
