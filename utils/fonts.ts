@@ -8,16 +8,10 @@
  *
  */
 
-import { Dosis, Roboto } from '@next/font/google'
+import { Dosis } from '@next/font/google'
 
 // TODO: interface/type later
 export const dosis = Dosis({
   subsets: ['latin'],
   display: 'swap',
-})
-
-export const roboto = Roboto({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: ['300', '400', '700'],
 })
