@@ -7,7 +7,6 @@
  * Date: Feb 25, 2023
  *
  */
-'use client'
 
 import { CustomButton, ToggleKey } from '@/components/dynamic'
 import { imageProcessing } from '@/lib/utilsLib'
