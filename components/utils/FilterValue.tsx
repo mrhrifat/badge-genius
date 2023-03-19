@@ -1,21 +1,30 @@
+/**
+ * Title: FilterValue
+ * Description:
+ * Filename: FilterValue.tsx
+ * Path: /components/utils/FilterValue.tsx
+ * Author: Mrh Rifat (Programmer)
+ * Date: Mar 18, 2023
+ *
+ */
+
 import { shieldListValue } from '@/lib/utilsLib'
 import ShieldContext from '@/utils/ShieldContext'
 import Typography from '@mui/material/Typography'
+import Link from 'next/link'
 import React, { FC, useContext } from 'react'
 
 export interface FilterValueInterface {
   title: string
 }
 
-export const renderWebsite = (value: string) => (
-  <a
-    href={value}
-    target="_blank"
-    rel="noopener noreferrer"
-    style={{ color: '#22A6B3' }}>
-    Visit Now
-  </a>
-)
+export const renderWebsite = (value: string) => {
+  return (
+    <Link href={value} target="_blank" style={{ color: '#22A6B3' }}>
+      Visit Now
+    </Link>
+  )
+}
 
 const FilterValue: FC<FilterValueInterface> = ({ title }) => {
   const shieldContextValue = useContext(ShieldContext)
