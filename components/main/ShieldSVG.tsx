@@ -8,19 +8,18 @@
  *
  */
 
-'use client'
-
 import { AlertMessage, RenderSVG } from '@/components/dynamic'
 import ShieldContext from '@/utils/ShieldContext'
-import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
-import ListItemButton from '@mui/material/ListItemButton'
-import { useContext } from 'react'
+import ContentCopySharpIcon from '@mui/icons-material/ContentCopySharp'
+import Card from '@mui/material/Card'
+import IconButton from '@mui/material/IconButton'
+import { useContext, useState } from 'react'
 import useCopyToClipboard from '../hooks/useCopyToClipboard'
 
 const ShieldSvg = () => {
   const shieldContextValue = useContext(ShieldContext)
   const [isCopied, handleCopy] = useCopyToClipboard()
+  const [isHovered, setIsHovered] = useState(false)
 
   const handleClick = () => {
     if (shieldContextValue?.options.svg) {
@@ -29,27 +28,50 @@ const ShieldSvg = () => {
     return false
   }
 
+  const handleMouseOver = () => {
+    setIsHovered(true)
+  }
+
+  const handleMouseLeave = () => {
+    setIsHovered(false)
+  }
+
   // Shield Properties List Item
   const shieldLists = (
-    <List disablePadding>
-      <ListItem disablePadding>
-        <ListItemButton
+    <Card
+      onMouseOver={handleMouseOver}
+      onMouseLeave={handleMouseLeave}
+      sx={{
+        background: 'none',
+        boxShadow: 'none',
+        padding: '0 1rem',
+        cursor: 'pointer',
+        fill: (theme) => (theme.palette.mode === 'light' ? '#000' : '#fff'),
+        opacity: isCopied ? 0.5 : isHovered ? 0.7 : 1, // Update the opacity based on state
+        // Add position relative to position copy icon
+        position: 'relative',
+      }}
+      onClick={handleClick}>
+      <RenderSVG
+        title={shieldContextValue?.options.title}
+        path={shieldContextValue?.options.path}
+        width={100}
+        height={100}
+      />
+      {isHovered && !isCopied && (
+        // Render the copy icon when the card is hovered over
+        <IconButton
           sx={{
-            padding: '0 1rem',
-            cursor: 'pointer',
-            fill: (theme) => (theme.palette.mode === 'light' ? '#000' : '#fff'),
-          }}
-          onClick={handleClick}
-          disabled={shieldContextValue?.options.svg === ''}>
-          <RenderSVG
-            title={shieldContextValue?.options.title}
-            path={shieldContextValue?.options.path}
-            width={100}
-            height={100}
-          />
-        </ListItemButton>
-      </ListItem>
-    </List>
+            position: 'absolute',
+            top: '25%',
+            right: '30%',
+            color: (theme) =>
+              theme.palette.mode === 'light' ? '#000' : '#FFF',
+          }}>
+          <ContentCopySharpIcon />
+        </IconButton>
+      )}
+    </Card>
   )
 
   return (
