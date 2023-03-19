@@ -15,6 +15,11 @@ import {
   OptionRenderInterface,
   SimpleIconsInterface,
 } from '@/interfaces/utilsInterfaces'
+import flatImg from '@/public/img/styleFlat.svg'
+import flatSquareImg from '@/public/img/styleFlatSquare.svg'
+import forTheBadgeImg from '@/public/img/styleForTheBadge.svg'
+import plasticImg from '@/public/img/stylePlastic.svg'
+import socialImg from '@/public/img/styleSocial.svg'
 import { GenerateShieldType, OptionsType } from '@/types/utilsTypes'
 import {
   activitySubCategory,
@@ -140,16 +145,17 @@ export const shieldListValue = (
     if (title === 'Logo Color') return ColorPalette(options?.logoColor)
     if (title === 'Shield Style') return options?.style
     if (title === 'Logo Width') return options?.logoWidth
-    if (title === 'Website') return renderWebsite(options?.source)
+    if (title === 'Website')
+      return renderWebsite(
+        options?.source.length === 0
+          ? 'https://github.com/mrhrifat'
+          : options.source
+      )
     if (title === 'License') return options?.license
     if (title === 'Guidelines') return options?.guidelines
   }
   return false
 }
-
-// Regex of URL Check
-export const regex =
-  /(?:https?):\/\/(\w+:?\w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+=&%!\-/]))?/g
 
 // Generate Simple Icons
 export const generateSimpleIcon = (
@@ -327,5 +333,20 @@ export const shieldSubCategoryState = (category: string | undefined) => {
       return 'Mozilla Add-on'
     default:
       return 'None'
+  }
+}
+
+export const shieldTypeOptionsImg = (item: string | number) => {
+  switch (item) {
+    case 'Flat':
+      return flatImg
+    case 'Flat Square':
+      return flatSquareImg
+    case 'For The Badge':
+      return forTheBadgeImg
+    case 'Plastic':
+      return plasticImg
+    case 'Social':
+      return socialImg
   }
 }
