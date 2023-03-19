@@ -8,8 +8,6 @@
  *
  */
 
-'use client'
-
 import {
   CustomButton,
   OptionAndIcon,
@@ -32,8 +30,6 @@ import {
   shieldTypeOptions,
 } from '@/utils/data'
 import ShieldContext from '@/utils/ShieldContext'
-import ClearAllIcon from '@mui/icons-material/ClearAll'
-import ShieldIcon from '@mui/icons-material/Shield'
 import { SelectChangeEvent } from '@mui/material'
 import Stack from '@mui/material/Stack'
 import { ChangeEvent, useContext } from 'react'
@@ -135,6 +131,7 @@ const ShieldOptions = () => {
           items={shieldCategories}
           optionsState={shieldContextValue?.options.category}
           handleOptionsChange={handleOptionsChange}
+          menuProps={{ PaperProps: { sx: { maxHeight: 300 } } }}
         />
       }
     />
@@ -305,29 +302,33 @@ const ShieldOptions = () => {
   )
 
   return (
-    <Stack direction="column" gap={2} mt={2}>
-      {renderShieldCategory}
-      {renderShieldSubCategory}
-      {renderShieldStyle}
-      {renderShieldColor}
-      {renderLabelColor}
-      {renderLogoColor}
-      {renderLogoWidth}
+    <>
+      <Stack direction="column" gap={2} mt={2}>
+        {renderShieldCategory}
+        {renderShieldSubCategory}
+        {renderShieldStyle}
+        {renderShieldColor}
+        {renderLabelColor}
+        {renderLogoColor}
+        {renderLogoWidth}
+      </Stack>
 
-      <CustomButton
-        title={'Generate Shield'}
-        disable={shieldContextValue?.options.title === ''}
-        handleClick={() => handleGenerateShield(shieldContextValue)}
-        icon={<ShieldIcon />}
-      />
+      <Stack direction="column" gap={1} mt={1}>
+        <CustomButton
+          title={'Generate'}
+          disable={shieldContextValue?.options.title === ''}
+          handleClick={() => handleGenerateShield(shieldContextValue)}
+          // icon={<ShieldIcon />}
+        />
 
-      <CustomButton
-        title="Reset Default"
-        icon={<ClearAllIcon />}
-        disable={shieldContextValue?.options.title === ''}
-        handleClick={() => handleResetDefault(shieldContextValue)}
-      />
-    </Stack>
+        <CustomButton
+          title={'Reset'}
+          // icon={<ClearAllIcon />}
+          disable={shieldContextValue?.options.title === ''}
+          handleClick={() => handleResetDefault(shieldContextValue)}
+        />
+      </Stack>
+    </>
   )
 }
 
