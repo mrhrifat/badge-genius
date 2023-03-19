@@ -21,12 +21,8 @@ const Footer = () => {
       <Box>
         <Typography variant="subtitle1">
           An Open Source Project, build & maintained by Rifat.
-          <br />
-          Use GitHub for requests, corrections and contributions.
-          <br />
-          Kindly supported by your donations at BuyMeACoofee Become A Patreon
-          Kofi
         </Typography>
+        <Typography>Kindly support this projects by your donations</Typography>
       </Box>
       <Box>
         <Tooltip title="GitHub">
