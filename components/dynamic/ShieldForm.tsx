@@ -52,7 +52,7 @@ const ShieldForm: FC<ShieldFormInterface> = ({
       <Select
         name={title}
         labelId={title}
-        id={title}
+        id={title + 'Select'}
         sx={{
           '& .MuiOutlinedInput-input': {
             padding: '11px',
