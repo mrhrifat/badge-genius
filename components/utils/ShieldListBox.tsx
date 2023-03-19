@@ -8,8 +8,6 @@
  *
  */
 
-'use client'
-
 import ShieldContext from '@/utils/ShieldContext'
 import { useTheme } from '@mui/material/styles'
 import Typography from '@mui/material/Typography'
