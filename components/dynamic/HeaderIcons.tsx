@@ -17,6 +17,7 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Tooltip from '@mui/material/Tooltip'
+import Link from 'next/link'
 import React, { FC } from 'react'
 
 const HeaderIcons: FC = () => {
@@ -35,7 +36,7 @@ const HeaderIcons: FC = () => {
     <>
       {headerIcons.map((headerIcon: HeaderIconType) => (
         <Tooltip title={headerIcon.title} key={headerIcon.title}>
-          <a href={headerIcon.url} target="_blank" rel="noreferrer">
+          <Link href={headerIcon.url} target="_blank">
             <IconButton
               aria-label={headerIcon.title}
               color="primary"
@@ -51,7 +52,7 @@ const HeaderIcons: FC = () => {
                 <path d={headerIcon.icon} />
               </svg>
             </IconButton>
-          </a>
+          </Link>
         </Tooltip>
       ))}
 
