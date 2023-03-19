@@ -22,7 +22,9 @@ const Footer = () => {
         <Typography variant="subtitle1">
           An Open Source Project, build & maintained by Rifat.
         </Typography>
-        <Typography>Kindly support this projects by your donations</Typography>
+        <Typography variant="subtitle1">
+          Kindly support this projects by your donations
+        </Typography>
       </Box>
       <Box>
         <Tooltip title="GitHub">
