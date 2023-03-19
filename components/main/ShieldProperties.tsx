@@ -8,8 +8,6 @@
  *
  */
 
-'use client'
-
 import { ShieldList } from '@/components/dynamic'
 import List from '@mui/material/List'
 import Stack from '@mui/material/Stack'
