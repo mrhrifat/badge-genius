@@ -68,7 +68,7 @@ export interface CustomButtonInterface {
   // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-explicit-any
   handleClick?: (shieldContextValue: any) => void
   handleFunc?: boolean
-  icon: ReactNode
+  icon?: ReactNode
 }
 
 // RenderIconInterface - Render Icon
