@@ -1,3 +1,13 @@
+/**
+ * Title: RenderIcon
+ * Description:
+ * Filename: RenderIcon.tsx
+ * Path: /components/dynamic/RenderIcon.tsx
+ * Author: Mrh Rifat (Programmer)
+ * Date: Mar 19, 2023
+ *
+ */
+
 import { RenderIconInterface } from '@/interfaces/componentsInterfaces'
 import Icon from '@mui/material/Icon'
 import { FC } from 'react'
