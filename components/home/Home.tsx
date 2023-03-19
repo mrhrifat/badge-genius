@@ -26,7 +26,7 @@ const Home: FC = () => {
         <ShieldOptions />
       </Grid>
 
-      <Grid item md={3.5} sm={6} xs={12} sx={homeGridStyle}>
+      <Grid item md={4} sm={6} xs={12} sx={homeGridStyle}>
         <ShieldProperties />
       </Grid>
 
