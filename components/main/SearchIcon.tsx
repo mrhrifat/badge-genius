@@ -8,7 +8,7 @@
  *
  */
 
-import { OptionIconGrid, RenderIcon, TotalItem } from '@/components/dynamic'
+import { OptionAndIcon, RenderIcon, TotalItem } from '@/components/dynamic'
 import { ShiledListBox } from '@/components/utils'
 import {
   generateSimpleIcon,
@@ -53,7 +53,7 @@ const SearchIcon: FC = () => {
   }
 
   return (
-    <OptionIconGrid
+    <OptionAndIcon
       firstItem={
         <TotalItem
           value={shieldContextValue?.icons}
