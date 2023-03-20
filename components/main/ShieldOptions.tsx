@@ -9,20 +9,16 @@
  */
 
 import {
-  CustomButton,
-  OptionAndIcon,
+  OptionIconGrid,
   RenderIcon,
   ShieldForm,
   TotalItem,
 } from '@/components/dynamic'
 import {
   generateOptionsLogoWidth,
-  generateShield,
-  resetDefault,
   shieldSubCategoryOptions,
   shieldSubCategoryState,
 } from '@/lib/utilsLib'
-import { ShieldContextValueType } from '@/types/utilsTypes'
 import {
   labelColors,
   optionIcons,
@@ -89,29 +85,9 @@ const ShieldOptions = () => {
     }
   }
 
-  // Handle Reset Default
-  const handleResetDefault = (
-    shieldContextValue: ShieldContextValueType | null
-  ) => {
-    if (shieldContextValue?.options !== undefined) {
-      resetDefault(shieldContextValue?.options, shieldContextValue?.setShield)
-    }
-    return false
-  }
-
-  // Handle Generate Shield
-  const handleGenerateShield = (
-    shieldContextValue: ShieldContextValueType | null
-  ) => {
-    if (shieldContextValue?.options) {
-      generateShield(shieldContextValue?.options, shieldContextValue?.setShield)
-    }
-    return false
-  }
-
   // Shield Category
   const renderShieldCategory = (
-    <OptionAndIcon
+    <OptionIconGrid
       firstItem={
         <TotalItem
           value={shieldCategories}
@@ -125,7 +101,7 @@ const ShieldOptions = () => {
           }
         />
       }
-      lastItem={
+      secondItem={
         <ShieldForm
           title="Shield Category"
           items={shieldCategories}
@@ -139,7 +115,7 @@ const ShieldOptions = () => {
 
   // Shield Sub Category
   const renderShieldSubCategory = (
-    <OptionAndIcon
+    <OptionIconGrid
       firstItem={
         <TotalItem
           value={shieldSubCategoryOptions(shieldContextValue?.options.category)}
@@ -153,7 +129,7 @@ const ShieldOptions = () => {
           }
         />
       }
-      lastItem={
+      secondItem={
         <ShieldForm
           title="Shield Sub Category"
           items={shieldSubCategoryOptions(shieldContextValue?.options.category)}
@@ -167,7 +143,7 @@ const ShieldOptions = () => {
 
   // Shield Style
   const renderShieldStyle = (
-    <OptionAndIcon
+    <OptionIconGrid
       firstItem={
         <TotalItem
           value={shieldTypeOptions}
@@ -181,7 +157,7 @@ const ShieldOptions = () => {
           }
         />
       }
-      lastItem={
+      secondItem={
         <ShieldForm
           title="Shield Style"
           items={shieldTypeOptions}
@@ -194,7 +170,7 @@ const ShieldOptions = () => {
 
   // Shield Color
   const renderShieldColor = (
-    <OptionAndIcon
+    <OptionIconGrid
       firstItem={
         <TotalItem
           value={labelColors}
@@ -208,7 +184,7 @@ const ShieldOptions = () => {
           }
         />
       }
-      lastItem={
+      secondItem={
         <ShieldForm
           title="Shield Color"
           items={labelColors}
@@ -221,7 +197,7 @@ const ShieldOptions = () => {
 
   // Label Color
   const renderLabelColor = (
-    <OptionAndIcon
+    <OptionIconGrid
       firstItem={
         <TotalItem
           value={labelColors}
@@ -235,7 +211,7 @@ const ShieldOptions = () => {
           }
         />
       }
-      lastItem={
+      secondItem={
         <ShieldForm
           title="Label Color"
           items={labelColors}
@@ -248,7 +224,7 @@ const ShieldOptions = () => {
 
   // Logo Color
   const renderLogoColor = (
-    <OptionAndIcon
+    <OptionIconGrid
       firstItem={
         <TotalItem
           value={labelColors}
@@ -262,7 +238,7 @@ const ShieldOptions = () => {
           }
         />
       }
-      lastItem={
+      secondItem={
         <ShieldForm
           title="Logo Color"
           items={labelColors}
@@ -275,7 +251,7 @@ const ShieldOptions = () => {
 
   // Logo Width
   const renderLogoWidth = (
-    <OptionAndIcon
+    <OptionIconGrid
       firstItem={
         <TotalItem
           value={generateOptionsLogoWidth()}
@@ -289,7 +265,7 @@ const ShieldOptions = () => {
           }
         />
       }
-      lastItem={
+      secondItem={
         <ShieldForm
           title="Logo Width"
           items={generateOptionsLogoWidth()}
@@ -311,22 +287,6 @@ const ShieldOptions = () => {
         {renderLabelColor}
         {renderLogoColor}
         {renderLogoWidth}
-      </Stack>
-
-      <Stack direction="column" gap={1} mt={1}>
-        <CustomButton
-          title={'Generate'}
-          disable={shieldContextValue?.options.title === ''}
-          handleClick={() => handleGenerateShield(shieldContextValue)}
-          // icon={<ShieldIcon />}
-        />
-
-        <CustomButton
-          title={'Reset'}
-          // icon={<ClearAllIcon />}
-          disable={shieldContextValue?.options.title === ''}
-          handleClick={() => handleResetDefault(shieldContextValue)}
-        />
       </Stack>
     </>
   )
