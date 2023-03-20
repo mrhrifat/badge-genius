@@ -8,7 +8,7 @@
  *
  */
 
-import { OptionAndIcon, RenderIcon, TotalItem } from '@/components/dynamic'
+import { OptionIconGrid, RenderIcon, TotalItem } from '@/components/dynamic'
 import { ShiledListBox } from '@/components/utils'
 import {
   generateSimpleIcon,
@@ -53,7 +53,7 @@ const SearchIcon: FC = () => {
   }
 
   return (
-    <OptionAndIcon
+    <OptionIconGrid
       firstItem={
         <TotalItem
           value={shieldContextValue?.icons}
@@ -67,7 +67,7 @@ const SearchIcon: FC = () => {
           }
         />
       }
-      lastItem={
+      secondItem={
         <Autocomplete
           id="iconsList"
           options={optionRender(shieldContextValue?.icons)}
