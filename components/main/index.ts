@@ -9,6 +9,7 @@
  */
 
 import Download from './Download'
+import GenerateAndReset from './GenerateAndReset'
 import Operation from './Operation'
 import SearchIcon from './SearchIcon'
 import ShieldMarkdown from './ShieldMarkdown'
@@ -24,4 +25,5 @@ export {
   ShieldOptions,
   ShieldProperties,
   ShieldSvg,
+  GenerateAndReset,
 }
