@@ -21,7 +21,6 @@ const ToggleKey: FC<ToggleKeyInterface> = ({
 }: ToggleKeyInterface) => {
   return (
     <ToggleButtonGroup
-      fullWidth
       color="primary"
       value={value}
       exclusive
