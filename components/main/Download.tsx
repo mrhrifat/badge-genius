@@ -12,7 +12,6 @@ import { CustomButton, ToggleKey } from '@/components/dynamic'
 import { imageProcessing } from '@/lib/utilsLib'
 import ShieldContext from '@/utils/ShieldContext'
 import DownloadIcon from '@mui/icons-material/Download'
-import Stack from '@mui/material/Stack'
 import { ChangeEvent, useContext, useState } from 'react'
 import DownloadLink from 'react-download-link'
 
@@ -61,7 +60,7 @@ const Download = () => {
   )
 
   return (
-    <Stack direction="column" gap={2}>
+    <>
       <ToggleKey
         value={type}
         handleChange={handleChange}
@@ -72,7 +71,7 @@ const Download = () => {
       />
 
       {type === 'svg' ? renderSvgDownload : renderPngDownload}
-    </Stack>
+    </>
   )
 }
 
