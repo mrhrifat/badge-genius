@@ -22,7 +22,6 @@ const CustomButton: FC<CustomButtonInterface> = ({
     <Button
       aria-labelledby={title}
       aria-label={title}
-      fullWidth
       sx={{ justifyContent: 'space-around' }}
       disabled={disable}
       variant="contained"
