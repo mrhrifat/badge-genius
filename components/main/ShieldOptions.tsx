@@ -9,7 +9,7 @@
  */
 
 import {
-  OptionIconGrid,
+  OptionAndIcon,
   RenderIcon,
   ShieldForm,
   TotalItem,
@@ -28,10 +28,20 @@ import {
 import ShieldContext from '@/utils/ShieldContext'
 import { SelectChangeEvent } from '@mui/material'
 import Stack from '@mui/material/Stack'
-import { ChangeEvent, useContext } from 'react'
+import { ChangeEvent, useContext, useState } from 'react'
+import TextInputDialog from '../dynamic/TextInputDialog'
 
 const ShieldOptions = () => {
   const shieldContextValue = useContext(ShieldContext)
+  const [open, setOpen] = useState(false)
+
+  const handleClickOpen = () => {
+    setOpen(true)
+  }
+
+  const handleClose = () => {
+    setOpen(false)
+  }
 
   generateOptionsLogoWidth()
 
@@ -57,6 +67,7 @@ const ShieldOptions = () => {
         ...shieldContextValue?.options,
         subCategory: value as string,
       })
+      value !== 'Select One' && handleClickOpen()
     } else if (name === 'Shield Style') {
       shieldContextValue?.setOptions({
         ...shieldContextValue?.options,
@@ -87,7 +98,7 @@ const ShieldOptions = () => {
 
   // Shield Category
   const renderShieldCategory = (
-    <OptionIconGrid
+    <OptionAndIcon
       firstItem={
         <TotalItem
           value={shieldCategories}
@@ -115,7 +126,7 @@ const ShieldOptions = () => {
 
   // Shield Sub Category
   const renderShieldSubCategory = (
-    <OptionIconGrid
+    <OptionAndIcon
       firstItem={
         <TotalItem
           value={shieldSubCategoryOptions(shieldContextValue?.options.category)}
@@ -143,7 +154,7 @@ const ShieldOptions = () => {
 
   // Shield Style
   const renderShieldStyle = (
-    <OptionIconGrid
+    <OptionAndIcon
       firstItem={
         <TotalItem
           value={shieldTypeOptions}
@@ -170,7 +181,7 @@ const ShieldOptions = () => {
 
   // Shield Color
   const renderShieldColor = (
-    <OptionIconGrid
+    <OptionAndIcon
       firstItem={
         <TotalItem
           value={labelColors}
@@ -197,7 +208,7 @@ const ShieldOptions = () => {
 
   // Label Color
   const renderLabelColor = (
-    <OptionIconGrid
+    <OptionAndIcon
       firstItem={
         <TotalItem
           value={labelColors}
@@ -224,7 +235,7 @@ const ShieldOptions = () => {
 
   // Logo Color
   const renderLogoColor = (
-    <OptionIconGrid
+    <OptionAndIcon
       firstItem={
         <TotalItem
           value={labelColors}
@@ -251,7 +262,7 @@ const ShieldOptions = () => {
 
   // Logo Width
   const renderLogoWidth = (
-    <OptionIconGrid
+    <OptionAndIcon
       firstItem={
         <TotalItem
           value={generateOptionsLogoWidth()}
@@ -288,6 +299,11 @@ const ShieldOptions = () => {
         {renderLogoColor}
         {renderLogoWidth}
       </Stack>
+      <TextInputDialog
+        handleClose={handleClose}
+        open={open}
+        subCategoryValue={shieldContextValue?.options.subCategory}
+      />
     </>
   )
 }
