@@ -23,7 +23,6 @@ export type HeaderIconType = {
   title: string
   icon: string
   url: string
-  item?: ItemHeaderIconType[]
 }
 // HeaderIcons - HeaderIconsType
 export type HeaderIconsType = HeaderIconType[]
@@ -47,9 +46,9 @@ export type HandleSelectIconHandlerType = (
 ) => void
 
 // OptionAndIcon - OptionAndIconType
-export type OptionAndIconType = {
+export type OptionAndIconGridType = {
   firstItem: ReactNode
-  lastItem: ReactNode
+  secondItem: ReactNode
 }
 
 // TotalItem - TotalItemType
