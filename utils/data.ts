@@ -82,7 +82,7 @@ export const optionsdata: OptionsType = {
   logoWidth: 14,
   style: 'For The Badge',
   category: 'Badge',
-  subCategory: 'None',
+  subCategory: 'Select One',
 }
 
 // Footer - Footer Icons Data
@@ -244,6 +244,7 @@ export const optionIcons = {
 
 // Social Sub Category Parent
 export const subCategorySocial: SubCategorySocial = [
+  'Select One',
   'GitHub Gist Stars',
   'GitHub Followers',
   'GitHub Forks',
@@ -287,10 +288,11 @@ export const subCategoryFunding = [
 ]
 
 // Badge Sub Category
-export const subCategoryBadge = ['None']
+export const subCategoryBadge = ['Select One']
 
 // Build Sub Category
 export const subCategoryBuild = [
+  'Select One',
   'AppVeyor',
   'AppVeyor branch',
   'AppVeyor Job',
@@ -349,6 +351,7 @@ export const subCategoryBuild = [
 
 // Code Coverage Sub Category
 export const codeCoverageSubCategory = [
+  'Select One',
   'Azure DevOps coverage',
   'Azure DevOps coverage (branch)',
   'Codacy coverage',
@@ -372,6 +375,7 @@ export const codeCoverageSubCategory = [
 
 // Test Result Sub Category
 export const testResultSubCategory = [
+  'Select One',
   'AppVeyor tests',
   'AppVeyor tests (branch)',
   'AppVeyor tests (compact)',
@@ -390,6 +394,7 @@ export const testResultSubCategory = [
 
 // Analysis Sub Category
 export const analysisSubCategory = [
+  'Select One',
   'Ansible Quality Score',
   'CII Best Practices Level',
   'CII Best Practices Tiered Percentage',
@@ -433,6 +438,7 @@ export const analysisSubCategory = [
 
 // Chat Sub Category
 export const chatSubCategory = [
+  'Select One',
   'Discord',
   'Discourse topics',
   'Discourse users',
@@ -449,6 +455,7 @@ export const chatSubCategory = [
 
 // Dependencies Sub Category
 export const dependenciesSubCategory = [
+  'Select One',
   'Depfu',
   'GitHub Pipenv locked dependency version',
   'GitHub Pipenv locked dependency version (branch)',
@@ -462,6 +469,7 @@ export const dependenciesSubCategory = [
 
 // Size Sub Category
 export const sizeSubCategory = [
+  'Select One',
   'npm bundle size',
   'npm bundle size (scoped)',
   'npm bundle size (version)',
@@ -489,6 +497,7 @@ export const sizeSubCategory = [
 
 // Download Sub Category
 export const downloadSubCategory = [
+  'Select One',
   'Mozilla Add-on',
   'Mozilla Add-on',
   'Ansible Role',
@@ -573,6 +582,7 @@ export const downloadSubCategory = [
 // Issue Tracking Sub Category
 
 export const issueTrackingSubCategory = [
+  'Select One',
   'Bitbucket open issues',
   'Bitbucket open issues',
   'Bitbucket open pull requests',
@@ -638,6 +648,7 @@ export const issueTrackingSubCategory = [
 
 // License
 export const licenseSubCategory = [
+  'Select One',
   'AUR license',
   'Bower',
   'Cocoapods',
@@ -666,6 +677,7 @@ export const licenseSubCategory = [
 
 // Rating Sub Category
 export const ratingSubCategory = [
+  'Select One',
   'Mozilla Add-on',
   'Mozilla Add-on',
   'AUR votes',
@@ -708,6 +720,7 @@ export const ratingSubCategory = [
 
 // Version Sub Category
 export const versionSubCategory = [
+  'Select One',
   'Mozilla Add-on',
   'Arch Linux package',
   'AUR version',
@@ -840,6 +853,7 @@ export const versionSubCategory = [
 
 // Platform & Version Support
 export const platformVersionSupportSubCategory = [
+  'Select One',
   'Cocoapods platforms',
   'Factorio Mod Portal factorio versions',
   'GitHub package.json dependency version (prod)',
@@ -888,6 +902,7 @@ export const platformVersionSupportSubCategory = [
 
 // Monitoring Sub Category
 export const monitoringSubCategory = [
+  'Select One',
   'Chromium HSTS preload',
   'Mozilla HTTP Observatory Grade',
   'NodePing status',
@@ -904,6 +919,7 @@ export const monitoringSubCategory = [
 
 // Activity Sub Category
 export const activitySubCategory = [
+  'Select One',
   'AUR last modified',
   'Eclipse Marketplace',
   'Factorio Mod Portal mod',
@@ -945,6 +961,7 @@ export const activitySubCategory = [
 
 // Others Sub Category
 export const othersSubCategory = [
+  'Select One',
   'Ansible Collection',
   'Ansible Role',
   'AUR maintainer',
