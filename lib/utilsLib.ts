@@ -50,9 +50,7 @@ export const optionRender: OptionRenderInterface = (value: any) =>
   Object.keys(value).map((item) => item.slice(2))
 
 // Handle White Space
-export const handleWhiteSpace: HandleWhiteSpaceInterface = (
-  value: string | null
-) => {
+export const whiteSpace: HandleWhiteSpaceInterface = (value: string | null) => {
   if (value) {
     const title = new RegExp(/\s|-/g)
     const replaceTitle = value?.replace(title, '%20')
@@ -61,26 +59,178 @@ export const handleWhiteSpace: HandleWhiteSpaceInterface = (
   return false
 }
 
+// Generate Social Category Link
+export const genSocialCategory = (category: string) => {
+  switch (category) {
+    case 'GitHub Gist Stars':
+      return `/github/gist/stars/:gistId`
+    case 'GitHub Followers':
+      return `github/followers/mrhrifat?`
+    case 'GitHub Forks':
+      return `/github/forks/:user/:repo?label=Fork`
+    case 'GitHub Repo Stars':
+      return `/github/stars/:user/:repo?style=social`
+    case 'GitHub User Stars':
+      return `/github/stars/:user?affiliations=OWNER%2CCOLLABORATOR`
+    case "GitHub Org's Stars":
+      return `/github/stars/:org`
+    case 'GitHub Watchers':
+      return `/github/watchers/:user/:repo?label=Watch`
+    case 'GitLab Forks':
+      return `/gitlab/forks/:project+?gitlab_url=https%3A%2F%2Fgitlab.com`
+    case 'GitLab Stars':
+      return `/gitlab/stars/:project+?gitlab_url=https%3A%2F%2Fgitlab.com`
+    case 'HackerNews User Karma':
+      return `/hackernews/user-karma/:id`
+    case 'Keybase BTC':
+      return `/keybase/btc/:username`
+    case 'Keybase PGP':
+      return `/keybase/pgp/:username`
+    case 'Keybase XLM':
+      return `/keybase/xlm/:username`
+    case 'Keybase ZEC':
+      return `/keybase/zec/:username`
+    case 'Mastodon Follow':
+      return `/mastodon/follow/:id?domain=https%3A%2F%2Fmastodon.social`
+    case 'Modrinth Followers':
+      return `/modrinth/followers/:projectId`
+    case 'Subreddit Subscribers':
+      return `/reddit/subreddit-subscribers/:subreddit`
+    case 'Reddit User Karma':
+      return `/reddit/user-karma/:variant/:user`
+    case 'Twitch Status':
+      return `/twitch/status/:user?style=social`
+    case 'Twitter URL':
+      return `/twitter/url?url=https%3A%2F%2Fshields.io`
+    case 'Twitter Follow':
+      return `/twitter/follow/:user?label=Follow`
+    case 'YouTube Channel Views':
+      return `/youtube/channel/views/:channelId`
+    case 'YouTube Video Comments':
+      return `/youtube/comments/:videoId`
+    case 'YouTube Video Likes':
+      return `/youtube/likes/:videoId`
+    case 'YouTube Channel Subscribers':
+      return `/youtube/channel/subscribers/:channelId`
+    case 'YouTube Video Views':
+      return `/youtube/views/:videoId`
+  }
+}
+
 // https://img.shields.io/github/sponsors/mrhrifat?style=plastic
+
+// https://img.shields.io/github/followers/espadrine?logo=github&style=for-the-badge
+
+// https://img.shields.io/github/followers/mrhrifat?GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=FFFFFF&logoWidth=14
+
 // Generate Shield
 export const generateShield: GenerateShieldType = (
   value: OptionsType,
   setShield: Dispatch<SetStateAction<string>>
 ) => {
   if (value && setShield) {
-    const URL = `https://img.shields.io/${
-      value.category === 'Badge' ? 'badge' : 'github'
-    }/${handleWhiteSpace(value?.title)}-${
-      value.hex
-    }?style=${shieldTypeOptionToReal(value.style)}&logo=${handleWhiteSpace(
-      value.title
-    )}&logoColor=${value.logoColor}${
-      value.logoWidth !== 14 ? `&logoWidth=${value.logoWidth}` : ''
-    }${value.labelColor !== value.hex ? `&labelColor=${value.labelColor}` : ''}`
+    const baseUrl = `https://img.shields.io`
+    const logoTitle = whiteSpace(value.title)
+    const logoWidth = value.logoWidth !== 14 ? value.logoWidth : 14
+    const subCategory = genSocialCategory(value.subCategory)
+    const category = categoryConversion(value.category)
+    const style = shieldTypeOptionToReal(value.style)
+    const hex = value.hex
+    const labelColor =
+      value.labelColor !== value.hex ? value.labelColor : value.labelColor
+    console.log(category)
 
+    const URL = `${baseUrl}/${categoryPath(
+      category,
+      logoTitle,
+      hex,
+      subCategory
+    )}?style=${style}&logo=${logoTitle}&logoColor=${
+      value.logoColor
+    }&logoWidth=${logoWidth}&${labelColor}`
+
+    // return to sheild
     setShield(URL.replaceAll(' ', ''))
   }
   return false
+}
+
+export const categoryPath = (
+  category: string | undefined,
+  logoTitle: string | false,
+  hex: string,
+  subCategory: string | undefined
+) => {
+  if (category === 'badge') {
+    return `badge/${logoTitle}-${hex}`
+  } else if (category !== 'badge') {
+    return subCategory
+  } else {
+    return ''
+  }
+}
+
+// // Generate Shield
+// export const generateShield: GenerateShieldType = (
+//   value: OptionsType,
+//   setShield: Dispatch<SetStateAction<string>>
+// ) => {
+//   if (value && setShield) {
+//     const URL = `https://img.shields.io${genSocialCategory(
+//       value.subCategory
+//     )}/${whiteSpace(value?.title)}-${
+//       value.hex
+//     }?style=${shieldTypeOptionToReal(value.style)}&logo=${whiteSpace(
+//       value.title
+//     )}&logoColor=${value.logoColor}${
+//       value.logoWidth !== 14 ? `&logoWidth=${value.logoWidth}` : ''
+//     }${value.labelColor !== value.hex ? `&labelColor=${value.labelColor}` : ''}`
+
+//     setShield(URL.replaceAll(' ', ''))
+//   }
+//   return false
+// }
+
+// Category conversion
+export const categoryConversion = (value: string) => {
+  switch (value) {
+    case 'Activity':
+      return 'activity'
+    case 'Analysis':
+      return 'analysis'
+    case 'Badge':
+      return 'badge'
+    case 'Build':
+      return 'build'
+    case 'Code Coverage':
+      return 'codecoverage'
+    case 'Chat':
+      return 'Chat'
+    case 'Dependencies':
+      return 'dependencies'
+    case 'Downloads':
+      return 'downloads'
+    case 'Funding':
+      return 'funding'
+    case 'Test Results':
+      return 'test Results'
+    case 'Issue Tracking':
+      return 'issuetracking'
+    case 'License':
+      return 'license'
+    case 'Monitoring':
+      return 'monitoring'
+    case 'Platform & Version Support':
+      return 'platform&versionsupport'
+    case 'Rating':
+      return 'rating'
+    case 'Size':
+      return 'size'
+    case 'Social':
+      return 'social'
+    case 'Version':
+      return 'version'
+  }
 }
 
 // Reset To Default
@@ -294,45 +444,27 @@ export const shieldSubCategoryOptions = (category: string | undefined) => {
 export const shieldSubCategoryState = (category: string | undefined) => {
   switch (category) {
     case 'Activity':
-      return 'AUR last modified'
     case 'Analysis':
-      return 'Ansible Quality Score'
     case 'Badge':
-      return 'None'
     case 'Build':
-      return 'AppVeyor'
     case 'Code Coverage':
-      return 'Azure DevOps coverage'
     case 'Chat':
-      return 'Discord'
     case 'Dependencies':
-      return 'Depfu'
     case 'Downloads':
-      return 'Mozilla Add-on'
     case 'Funding':
-      return 'Bountysource'
     case 'Test Results':
-      return 'AppVeyor tests'
     case 'Issue Tracking':
-      return 'Bitbucket open issues'
     case 'License':
-      return 'AUR license'
     case 'Monitoring':
-      return 'Chromium HSTS preload'
     case 'Others':
-      return 'Ansible Collection'
     case 'Platform & Version Support':
-      return 'Cocoapods platforms'
     case 'Rating':
-      return 'Mozilla Add-on'
     case 'Size':
-      return 'npm bundle size'
     case 'Social':
-      return 'GitHub Gist Stars'
     case 'Version':
-      return 'Mozilla Add-on'
+      return 'Select One'
     default:
-      return 'None'
+      return 'Select One'
   }
 }
 
