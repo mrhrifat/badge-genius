@@ -17,21 +17,19 @@ import { FC } from 'react'
 
 const ShieldList: FC<ShielListInterace> = ({ icon, title }) => {
   return (
-    <>
-      <ListItem disablePadding id={title + 'ListItem'}>
-        <ListItemIcon
-          sx={{
-            fill: (theme) =>
-              theme.palette.mode === 'light' ? '#22A6B3' : '#38BDF8',
-          }}>
-          <svg width="21" height="21" viewBox="0 0 512 512">
-            <path d={icon} />
-          </svg>
-        </ListItemIcon>
-        <ListItemText primary={title} />
-        <FilterValue title={title} />
-      </ListItem>
-    </>
+    <ListItem disablePadding id={title + 'ListItem'}>
+      <ListItemIcon
+        sx={{
+          fill: (theme) =>
+            theme.palette.mode === 'light' ? '#22A6B3' : '#38BDF8',
+        }}>
+        <svg width="21" height="21" viewBox="0 0 512 512">
+          <path d={icon} />
+        </svg>
+      </ListItemIcon>
+      <ListItemText primary={title} />
+      <FilterValue title={title} />
+    </ListItem>
   )
 }
 
