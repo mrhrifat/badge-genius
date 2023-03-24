@@ -83,6 +83,14 @@ export const optionsdata: OptionsType = {
   style: 'For The Badge',
   category: 'Badge',
   subCategory: 'Select One',
+  subCategoryArgs: {
+    username: '',
+    gistId: '',
+    repo: '',
+    org: '',
+    project: '',
+    id: '',
+  },
 }
 
 // Footer - Footer Icons Data
@@ -122,24 +130,24 @@ export const headerIcons: HeaderIconsType = [
 
 // ShieldOptions - ShieldCategories
 export const shieldCategories: ShieldCategoriesType = [
-  'Activity',
-  'Analysis',
+  // 'Activity',
+  // 'Analysis',
   'Badge',
-  'Build',
-  'Code Coverage',
-  'Chat',
-  'Dependencies',
-  'Downloads',
-  'Funding',
-  'Test Results',
-  'Issue Tracking',
-  'License',
-  'Monitoring',
-  'Platform & Version Support',
-  'Rating',
-  'Size',
+  // 'Build',
+  // 'Code Coverage',
+  // 'Chat',
+  // 'Dependencies',
+  // 'Downloads',
+  // 'Funding',
+  // 'Test Results',
+  // 'Issue Tracking',
+  // 'License',
+  // 'Monitoring',
+  // 'Platform & Version Support',
+  // 'Rating',
+  // 'Size',
   'Social',
-  'Version',
+  // 'Version',
 ]
 
 // ShieldTypeOptions
