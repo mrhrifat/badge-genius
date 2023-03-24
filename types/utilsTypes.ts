@@ -60,6 +60,17 @@ export type OptionsType = {
   style: string
   category: string
   subCategory: string
+  subCategoryArgs: SubCategoryArgsType
+}
+
+// Sub Category Args
+export type SubCategoryArgsType = {
+  username?: string
+  repo?: string
+  org?: string
+  gistId?: string
+  project?: string
+  id?: string
 }
 
 export type ShieldCategoriesType = string[]
