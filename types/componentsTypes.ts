@@ -71,5 +71,24 @@ export type FooterIconType = { id: number; title: string; icon: string }
 // FooterIcons - FooterIconsType
 export type FooterIconsType = FooterIconType[]
 
-// Shield Form Items
+// ShieldFormItems - ShieldFormItemsTypes
 export type SheildFormItemsType = string[] | number[]
+
+// TextInputField - TextInputFieldType
+export type TextInputFieldType = {
+  value: string | undefined
+  id: string
+  label: string
+  ex: string
+  handleValueChange: (
+    // eslint-disable-next-line no-unused-vars
+    event: ChangeEvent<HTMLInputElement | { id: string; value: string }>
+  ) => void
+}
+
+// TextInputDialog - TextInputDialogType
+export type TextInputDialogType = {
+  handleClose: () => void
+  open: boolean
+  subCategoryValue: string | undefined
+}
