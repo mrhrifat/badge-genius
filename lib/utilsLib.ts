@@ -20,7 +20,11 @@ import flatSquareImg from '@/public/img/styleFlatSquare.svg'
 import forTheBadgeImg from '@/public/img/styleForTheBadge.svg'
 import plasticImg from '@/public/img/stylePlastic.svg'
 import socialImg from '@/public/img/styleSocial.svg'
-import { GenerateShieldType, OptionsType } from '@/types/utilsTypes'
+import {
+  GenerateShieldType,
+  OptionsType,
+  SubCategoryArgsType,
+} from '@/types/utilsTypes'
 import {
   activitySubCategory,
   analysisSubCategory,
@@ -60,60 +64,65 @@ export const whiteSpace: HandleWhiteSpaceInterface = (value: string | null) => {
 }
 
 // Generate Social Category Link
-export const genSocialCategory = (category: string) => {
-  switch (category) {
-    case 'GitHub Gist Stars':
-      return `/github/gist/stars/:gistId`
-    case 'GitHub Followers':
-      return `github/followers/mrhrifat?`
-    case 'GitHub Forks':
-      return `/github/forks/:user/:repo?label=Fork`
-    case 'GitHub Repo Stars':
-      return `/github/stars/:user/:repo?style=social`
-    case 'GitHub User Stars':
-      return `/github/stars/:user?affiliations=OWNER%2CCOLLABORATOR`
-    case "GitHub Org's Stars":
-      return `/github/stars/:org`
-    case 'GitHub Watchers':
-      return `/github/watchers/:user/:repo?label=Watch`
-    case 'GitLab Forks':
-      return `/gitlab/forks/:project+?gitlab_url=https%3A%2F%2Fgitlab.com`
-    case 'GitLab Stars':
-      return `/gitlab/stars/:project+?gitlab_url=https%3A%2F%2Fgitlab.com`
-    case 'HackerNews User Karma':
-      return `/hackernews/user-karma/:id`
-    case 'Keybase BTC':
-      return `/keybase/btc/:username`
-    case 'Keybase PGP':
-      return `/keybase/pgp/:username`
-    case 'Keybase XLM':
-      return `/keybase/xlm/:username`
-    case 'Keybase ZEC':
-      return `/keybase/zec/:username`
-    case 'Mastodon Follow':
-      return `/mastodon/follow/:id?domain=https%3A%2F%2Fmastodon.social`
-    case 'Modrinth Followers':
-      return `/modrinth/followers/:projectId`
-    case 'Subreddit Subscribers':
-      return `/reddit/subreddit-subscribers/:subreddit`
-    case 'Reddit User Karma':
-      return `/reddit/user-karma/:variant/:user`
-    case 'Twitch Status':
-      return `/twitch/status/:user?style=social`
-    case 'Twitter URL':
-      return `/twitter/url?url=https%3A%2F%2Fshields.io`
-    case 'Twitter Follow':
-      return `/twitter/follow/:user?label=Follow`
-    case 'YouTube Channel Views':
-      return `/youtube/channel/views/:channelId`
-    case 'YouTube Video Comments':
-      return `/youtube/comments/:videoId`
-    case 'YouTube Video Likes':
-      return `/youtube/likes/:videoId`
-    case 'YouTube Channel Subscribers':
-      return `/youtube/channel/subscribers/:channelId`
-    case 'YouTube Video Views':
-      return `/youtube/views/:videoId`
+export const genSocialCategory = (
+  category: string | undefined,
+  subCategoryArgs: SubCategoryArgsType | undefined
+) => {
+  if (category && subCategoryArgs) {
+    switch (category) {
+      case 'GitHub Gist Stars':
+        return `github/gist/stars/${subCategoryArgs.gistId}`
+      case 'GitHub Followers':
+        return `github/followers/${subCategoryArgs.username}`
+      case 'GitHub Forks':
+        return `github/forks/${subCategoryArgs.username}/${subCategoryArgs.repo}`
+      case 'GitHub Repo Stars':
+        return `github/stars/${subCategoryArgs.username}/${subCategoryArgs.repo}`
+      case 'GitHub User Stars':
+        return `github/stars/${subCategoryArgs.username}`
+      case "GitHub Org's Stars":
+        return `github/stars/${subCategoryArgs.org}`
+      case 'GitHub Watchers':
+        return `github/watchers/${subCategoryArgs.username}/${subCategoryArgs.repo}`
+      case 'GitLab Forks':
+        return `gitlab/forks/${subCategoryArgs.project}+?gitlab_url=https%3A%2F%2Fgitlab.com`
+      case 'GitLab Stars':
+        return `gitlab/stars/${subCategoryArgs.project}+?gitlab_url=https%3A%2F%2Fgitlab.com`
+      case 'HackerNews User Karma':
+        return `hackernews/user-karma/${subCategoryArgs.id}`
+      case 'Keybase BTC':
+        return `keybase/btc/${subCategoryArgs.id}`
+      case 'Keybase PGP':
+        return `keybase/pgp/${subCategoryArgs.id}`
+      case 'Keybase XLM':
+        return `keybase/xlm/${subCategoryArgs.id}`
+      case 'Keybase ZEC':
+        return `keybase/zec/${subCategoryArgs.id}`
+      case 'Mastodon Follow':
+        return `mastodon/follow/${subCategoryArgs.id}?domain=https%3A%2F%2Fmastodon.social`
+      case 'Modrinth Followers':
+        return `modrinth/followers/:projectId`
+      case 'Subreddit Subscribers':
+        return `reddit/subreddit-subscribers/:subreddit`
+      case 'Reddit User Karma':
+        return `reddit/user-karma/:variant/:user`
+      case 'Twitch Status':
+        return `twitch/status/:user?style=social`
+      case 'Twitter URL':
+        return `twitter/url?url=https%3A%2F%2Fshields.io`
+      case 'Twitter Follow':
+        return `twitter/follow/${subCategoryArgs.username}?label=Follow`
+      case 'YouTube Channel Views':
+        return `youtube/channel/views/:channelId`
+      case 'YouTube Video Comments':
+        return `youtube/comments/:videoId`
+      case 'YouTube Video Likes':
+        return `youtube/likes/:videoId`
+      case 'YouTube Channel Subscribers':
+        return `youtube/channel/subscribers/:channelId`
+      case 'YouTube Video Views':
+        return `youtube/views/:videoId`
+    }
   }
 }
 
@@ -123,6 +132,7 @@ export const genSocialCategory = (category: string) => {
 
 // https://img.shields.io/github/followers/mrhrifat?GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=FFFFFF&logoWidth=14
 
+// https://img.shields.io/badge/Coinbase-0052FF?style=for-the-badge&logo=Coinbase&logoColor=white?labelColor=abcdef
 // Generate Shield
 export const generateShield: GenerateShieldType = (
   value: OptionsType,
@@ -132,13 +142,13 @@ export const generateShield: GenerateShieldType = (
     const baseUrl = `https://img.shields.io`
     const logoTitle = whiteSpace(value.title)
     const logoWidth = value.logoWidth !== 14 ? value.logoWidth : 14
-    const subCategory = genSocialCategory(value.subCategory)
+    const subCategory = genSocialCategory(
+      value.subCategory,
+      value.subCategoryArgs
+    )
     const category = categoryConversion(value.category)
     const style = shieldTypeOptionToReal(value.style)
     const hex = value.hex
-    const labelColor =
-      value.labelColor !== value.hex ? value.labelColor : value.labelColor
-    console.log(category)
 
     const URL = `${baseUrl}/${categoryPath(
       category,
@@ -147,7 +157,9 @@ export const generateShield: GenerateShieldType = (
       subCategory
     )}?style=${style}&logo=${logoTitle}&logoColor=${
       value.logoColor
-    }&logoWidth=${logoWidth}&${labelColor}`
+    }&logoWidth=${logoWidth}${
+      value.labelColor !== value.hex ? `&labelColor=${value.labelColor}` : ''
+    }`
 
     // return to sheild
     setShield(URL.replaceAll(' ', ''))
