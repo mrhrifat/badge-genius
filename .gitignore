@@ -37,3 +37,6 @@ next-env.d.ts
 
 # Custom
 utils/simpleicons.json
+public
+.gitignore
+note.md
