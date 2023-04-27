@@ -23,7 +23,11 @@ const Header: FC = () => {
   return (
     <Box my={5}>
       <Stack direction="row" gap={1} justifyContent="space-between">
-        <Typography variant="h5" fontWeight={700} sx={{ letterSpacing: 1 }}>
+        <Typography
+          variant="h5"
+          fontWeight={700}
+          sx={{ letterSpacing: 1 }}
+          data-testid="appName">
           Badge Genius
         </Typography>
         <Box alignSelf="center">
@@ -33,12 +37,15 @@ const Header: FC = () => {
 
       <Stack direction="row" gap={1} justifyContent="space-between">
         <div>
-          <Typography variant="body1">
-            Build & Download &nbsp;
-            <strong>{optionRender(shieldContextValue?.icons).length}</strong>
+          <Typography variant="body1" data-testid="tagLine1">
+            Build & Download&nbsp;
+            <strong data-testid="simpleIconsNo">
+              {shieldContextValue?.icons &&
+                optionRender(shieldContextValue?.icons).length}
+            </strong>
             &nbsp;popular brands
           </Typography>
-          <Typography variant="body1">
+          <Typography variant="body1" data-testid="tagLine2">
             Badge,&nbsp;&nbsp;
             <abbr title="Scalable Vector Graphics">SVG,</abbr>
             &nbsp; HEX & so on
