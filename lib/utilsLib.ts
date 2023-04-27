@@ -15,11 +15,6 @@ import {
   OptionRenderInterface,
   SimpleIconsInterface,
 } from '@/interfaces/utilsInterfaces'
-import flatImg from '@/public/img/styleFlat.svg'
-import flatSquareImg from '@/public/img/styleFlatSquare.svg'
-import forTheBadgeImg from '@/public/img/styleForTheBadge.svg'
-import plasticImg from '@/public/img/stylePlastic.svg'
-import socialImg from '@/public/img/styleSocial.svg'
 import {
   GenerateShieldType,
   OptionsType,
@@ -133,6 +128,7 @@ export const genSocialCategory = (
 // https://img.shields.io/github/followers/mrhrifat?GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=FFFFFF&logoWidth=14
 
 // https://img.shields.io/badge/Coinbase-0052FF?style=for-the-badge&logo=Coinbase&logoColor=white?labelColor=abcdef
+
 // Generate Shield
 export const generateShield: GenerateShieldType = (
   value: OptionsType,
@@ -388,6 +384,7 @@ export const imageProcessing = (
   }
   return false
 }
+
 // Sheild Type Option Convert To Real Value
 export const shieldTypeOptionToReal = (type: string) => {
   switch (type) {
@@ -477,20 +474,5 @@ export const shieldSubCategoryState = (category: string | undefined) => {
       return 'Select One'
     default:
       return 'Select One'
-  }
-}
-
-export const shieldTypeOptionsImg = (item: string | number) => {
-  switch (item) {
-    case 'Flat':
-      return flatImg
-    case 'Flat Square':
-      return flatSquareImg
-    case 'For The Badge':
-      return forTheBadgeImg
-    case 'Plastic':
-      return plasticImg
-    case 'Social':
-      return socialImg
   }
 }
