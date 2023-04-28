@@ -7,10 +7,12 @@
  * Date: Feb 25, 2023
  *
  */
-
+/* eslint-disable react/no-children-prop */
+import { markdown } from '@/utils/data'
 import Box from '@mui/material/Box'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
+import ReactMarkdown from 'react-markdown'
 
 const Footer = () => {
   return (
@@ -23,6 +25,7 @@ const Footer = () => {
           Kindly support this projects by your donations
         </Typography>
       </Box>
+      <ReactMarkdown linkTarget="_blank">{markdown}</ReactMarkdown>
     </Stack>
   )
 }
