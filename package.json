@@ -1,11 +1,11 @@
 {
-  "name": "shield-icons",
+  "name": "badge-genius",
   "version": "2.0.0",
   "private": true,
   "author": "Mrh Rifat",
   "description": "",
   "license": "GPL 3.0",
-  "homepage": "https://github.com/mrhrifat/sheild-icons",
+  "homepage": "https://github.com/mrhrifat/badge-genius",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
