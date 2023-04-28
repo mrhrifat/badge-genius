@@ -15,9 +15,9 @@ import { ReactNode } from 'react'
 
 // Metadata Data
 export const metadata: MetadataType = {
-  title: 'Shield Icons',
+  title: 'Badge Genius',
   description:
-    'Build & Download 2401 popular brands Badge, SVG, Hex Code & so on Shield Icons to use in GitHub Markdown or Any Web Pages',
+    'Build & Download 2441 popular brands Badge, SVG, Hex Code & so on Badge Genius to use in GitHub Markdown or Any Web Pages',
   keywords: [
     'Shield Icons',
     'Simple Icons',
@@ -42,6 +42,9 @@ export const metadata: MetadataType = {
     'Next.js',
     'React',
     'JavaScript',
+    'Badge Genius',
+    'Badge',
+    'Genius',
   ],
   icons: {
     icon: 'img/logo.png',
@@ -53,10 +56,10 @@ export const metadata: MetadataType = {
     },
   },
   generator: 'Next.js',
-  applicationName: 'Shield Icons',
+  applicationName: 'Badge Genius',
   referrer: 'origin-when-crossorigin',
   author: 'Mrh Rifat',
-  copyright: 'Copyright Mrh Rifat - Shield Icons',
+  copyright: 'Copyright Mrh Rifat - Badge Genius',
   distribution: 'Global',
   coverage: 'Worldwide',
   rating: 'General',
