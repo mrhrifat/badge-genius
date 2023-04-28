@@ -16,7 +16,11 @@ import ReactMarkdown from 'react-markdown'
 
 const Footer = () => {
   return (
-    <Stack direction="row" justifyContent="space-between" my={2}>
+    <Stack
+      direction={{ sm: 'column', md: 'row' }}
+      justifyContent="space-between"
+      alignItems={{ sm: 'center' }}
+      my={2}>
       <Box>
         <Typography variant="subtitle1">
           An Open Source Project, build & maintained by Rifat.
