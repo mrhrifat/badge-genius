@@ -12,7 +12,7 @@ import { Dosis } from '@next/font/google'
 
 // TODO: interface/type later
 export const dosis = Dosis({
-  weight: '400',
+  weight: ['400', '700'],
   subsets: ['latin'],
   display: 'swap',
 })
