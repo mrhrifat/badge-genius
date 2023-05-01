@@ -23,6 +23,7 @@ This app is aimed to simplify your GitHub Profile Badge or Shield Badge creation
 - [x] Download Brand SVG & PNG Logo
 - [x] Copy Badge Code, Title, SVG & Hex Code
 - [x] Light/Dark Theme
+- [x] PWA
 - [x] User Friendly
 - [ ] Sub Category
 
