@@ -16,6 +16,12 @@
 
 This app is aimed to simplify your GitHub Profile Badge or Shield Badge creation fast, reliable with amazing dynamic process. Beside you can also download Brand Logo in SVG & PNG format. Moreover it will provide Hex code of Brand Logo & so on.
 
+## Lighthouse Report
+|Extension Lighthouse Report|Developer Lighthouse Report|
+|---|---|
+|<details><summary>Click to expand</summary><img src="https://user-images.githubusercontent.com/45077312/235615088-f899b07d-a07f-490c-8ca7-687c840fed5c.png" alt="Badge Genius" border="0" height='400'></details>|<details><summary>Click to expand</summary><img src="https://user-images.githubusercontent.com/45077312/235615550-a5ee074e-45aa-4867-8223-6041aa677180.png" alt="Badge Genius" height='400' border="0"></details>| 
+
+
 ## Features
 
 - [x] Badge Creation
