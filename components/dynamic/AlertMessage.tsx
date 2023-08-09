@@ -18,6 +18,7 @@ const AlertMessage: FC<AlertMessageInterface> = ({ isCopied }) => {
     <Snackbar
       open={isCopied}
       autoHideDuration={2000}
+      data-testid="snackbar"
       anchorOrigin={{ vertical: 'top', horizontal: 'center' }}>
       <Alert severity="success" sx={{ width: '100%' }}>
         Successfully Copied!

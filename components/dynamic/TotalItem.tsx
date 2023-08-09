@@ -18,6 +18,7 @@ const TotalItem = ({ value, icon }: TotalItemType) => {
       badgeContent={optionRender(value).length}
       showZero
       color="primary"
+      data-testid="badge-total-item"
       max={3000}>
       {icon}
     </Badge>
