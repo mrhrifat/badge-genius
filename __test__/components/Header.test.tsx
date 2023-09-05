@@ -1,28 +1,31 @@
 /* eslint-disable no-undef */
-import Header from '@/components/header/Header'
+import { Header } from '@/components/header'
 import { optionRender } from '@/lib/utilsLib'
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
-import { siSimpleicons } from 'simple-icons'
+import { si1001tracklists, siSimpleicons } from 'simple-icons'
 
-describe('Home', () => {
-  it('render Badge Genius', () => {
+describe('Home Component', () => {
+  it('render badge genius text', () => {
+    render(<Header />)
+    const appName = screen.getByTestId('appName')
+    expect(appName).toHaveTextContent('Badge Genius')
+  })
+
+  it('count total icons number', () => {
     render(<Header />)
 
-    const appName = screen.getByTestId('appName')
     const simpleIconsNo = screen.getByTestId('simpleIconsNo')
+    const items1 = optionRender({ siSimpleicons })
+    const items2 = optionRender({ siSimpleicons, si1001tracklists })
 
-    expect(appName).toHaveTextContent('Badge Genius')
     expect(simpleIconsNo).toBeInTheDocument()
     expect(simpleIconsNo).toBeValid()
+    expect(items1.length).toEqual(1)
+    expect(items2.length).toEqual(2)
   })
 
-  test('Count Icons Item', () => {
-    const items = optionRender({ siSimpleicons })
-    expect(items.length).toEqual(1)
-  })
-
-  test('Tagline', () => {
+  it('render tagline', () => {
     render(<Header />)
     const tagLine1 = screen.getByTestId('tagLine1')
     const tagLine2 = screen.getByTestId('tagLine2')
