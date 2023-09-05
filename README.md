@@ -1,7 +1,7 @@
 <div align="center"> 
   <img src="https://user-images.githubusercontent.com/45077312/235338350-6397aee9-b577-47ac-8402-774b921fae35.png" alt="WebBadge" border="0" height='90'>
     <h2 align="center"><a href="https://badgegenius.vercel.app">Badge Genius</a></h2>
-    Build & Download <b>2440+</b> popular brands <br> Badge, SVG, Hex & so on to use in <br>GitHub Markdown or Any Web Pages<br><br>
+    Build & Download <b>2680+</b> popular brands <br> Badge, SVG, Hex & so on to use in <br>GitHub Markdown or Any Web Pages<br><br>
   
   <img src="https://img.shields.io/github/forks/mrhrifat/badge-genius?style=for-the-badge">
 
@@ -28,8 +28,6 @@ This app is aimed to simplify your GitHub Profile Badge or Shield Badge creation
   <summary>Click to expand</summary>
   <img src="https://user-images.githubusercontent.com/45077312/235615088-f899b07d-a07f-490c-8ca7-687c840fed5c.png" alt="Badge Genius" border="0" height='400'>
   </details>
-
-
 
 ## Features
 
@@ -73,11 +71,11 @@ yarn dev
 </div>
 ⭐️ Starring & Sharing the project is also appreciated. Thanks! ❤️
 
-[![GitHub Repo stars](https://img.shields.io/badge/share%20on-reddit-red?logo=reddit)](https://reddit.com/submit?url=https://badgegenius.vercel.app&title=Build%20&%20Download%202440+%20popular%20brands%20Badge,%20SVG,%20HEX%20&%20so%20on%20to%20use%20in%20GitHub%20Markdown%20or%20Any%20Web%20Pages)
+[![GitHub Repo stars](https://img.shields.io/badge/share%20on-reddit-red?logo=reddit)](https://reddit.com/submit?url=https://badgegenius.vercel.app&title=Build%20&%20Download%2022680+%20popular%20brands%20Badge,%20SVG,%20HEX%20&%20so%20on%20to%20use%20in%20GitHub%20Markdown%20or%20Any%20Web%20Pages)
 [![GitHub Repo stars](https://img.shields.io/badge/share%20on-hacker%20news-orange?logo=ycombinator)](https://news.ycombinator.com/submitlink?u=https://badgegenius.vercel.app)
-[![GitHub Repo stars](https://img.shields.io/badge/share%20on-twitter-03A9F4?logo=twitter)](https://twitter.com/share?url=https://badgegenius.vercel.app&text=Build%20&%20Download%202440+%20popular%20brands%20Badge,%20SVG,%20HEX%20&%20so%20on%20to%20use%20in%20GitHub%20Markdown%20or%20Any%20Web%20Pages)
+[![GitHub Repo stars](https://img.shields.io/badge/share%20on-twitter-03A9F4?logo=twitter)](https://twitter.com/share?url=https://badgegenius.vercel.app&text=Build%20&%20Download%202680+%20popular%20brands%20Badge,%20SVG,%20HEX%20&%20so%20on%20to%20use%20in%20GitHub%20Markdown%20or%20Any%20Web%20Pages)
 [![GitHub Repo stars](https://img.shields.io/badge/share%20on-facebook-1976D2?logo=facebook)](https://www.facebook.com/sharer/sharer.php?u=https://badgegenius.vercel.app)
-[![GitHub Repo stars](https://img.shields.io/badge/share%20on-linkedin-3949AB?logo=linkedin)](https://www.linkedin.com/shareArticle?url=https://badgegenius.vercel.app&title=Build%20&%20Download%202440+%20popular%20brands%20Badge,%20SVG,%20HEX%20&%20so%20on%20to%20use%20in%20GitHub%20Markdown%20or%20Any%20Web%20Pages)
+[![GitHub Repo stars](https://img.shields.io/badge/share%20on-linkedin-3949AB?logo=linkedin)](https://www.linkedin.com/shareArticle?url=https://badgegenius.vercel.app&title=Build%20&%20Download%202680+%20popular%20brands%20Badge,%20SVG,%20HEX%20&%20so%20on%20to%20use%20in%20GitHub%20Markdown%20or%20Any%20Web%20Pages)
 
 ## Contribution
 
