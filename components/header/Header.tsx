@@ -35,7 +35,11 @@ const Header: FC = () => {
         </Box>
       </Stack>
 
-      <Stack direction="row" gap={1} justifyContent="space-between">
+      <Stack
+        direction={{ xs: 'column', sm: 'row' }}
+        gap={1}
+        alignItems="center"
+        justifyContent="space-between">
         <div>
           <Typography variant="body1" data-testid="tagLine1">
             Build & Download&nbsp;
@@ -48,7 +52,10 @@ const Header: FC = () => {
           <Typography variant="body1" data-testid="tagLine2">
             Badge,&nbsp;&nbsp;
             <abbr title="Scalable Vector Graphics">SVG,</abbr>
-            &nbsp; HEX & so on
+            &nbsp; HEX & so on to use in
+          </Typography>
+          <Typography variant="body1">
+            GitHub Markdown or Any Web Pages
           </Typography>
         </div>
         <Box alignSelf="center">
