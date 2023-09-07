@@ -13,7 +13,7 @@ import Grid from '@mui/material/Grid'
 
 const OptionAndIcon = ({ firstItem, secondItem }: OptionAndIconGridType) => {
   return (
-    <Grid container gap={2}>
+    <Grid container gap={2} data-testid="option-icon-grid">
       <Grid item xs={2} alignSelf="center" textAlign="center">
         {firstItem}
       </Grid>
