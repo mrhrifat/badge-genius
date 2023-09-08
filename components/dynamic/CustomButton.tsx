@@ -31,5 +31,4 @@ const CustomButton: FC<CustomButtonInterface> = ({
     </Button>
   )
 }
-
 export default CustomButton
