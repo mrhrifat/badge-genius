@@ -1,7 +1,7 @@
 <div align="center"> 
   <img src="https://user-images.githubusercontent.com/45077312/235338350-6397aee9-b577-47ac-8402-774b921fae35.png" alt="WebBadge" border="0" height='90'>
     <h2 align="center"><a href="https://badgegenius.vercel.app">Badge Genius</a></h2>
-    Build & Download <b>2680+</b> popular brands <br> Badge, SVG, Hex & so on to use in <br>GitHub Markdown or Any Web Pages<br><br>
+    Build & Download <b>2700+</b> popular brands <br> Badge, SVG, Hex & so on to use in <br>GitHub Markdown or Any Web Pages<br><br>
   
   <img src="https://img.shields.io/github/forks/mrhrifat/badge-genius?style=for-the-badge">
 
@@ -18,22 +18,16 @@ This app is aimed to simplify your GitHub Profile Badge or Shield Badge creation
 
 ## Lighthouse Report
 
-- Extension
-  <details>
-  <summary>Click to expand</summary>
-  <img src="https://user-images.githubusercontent.com/45077312/235615550-a5ee074e-45aa-4867-8223-6041aa677180.png" alt="Badge Genius" height='400' border="0">
-  </details>
-- Developer Tools
-  <details>
-  <summary>Click to expand</summary>
-  <img src="https://user-images.githubusercontent.com/45077312/235615088-f899b07d-a07f-490c-8ca7-687c840fed5c.png" alt="Badge Genius" border="0" height='400'>
-  </details>
+<div align='center'>
+  <img src='https://github.com/mrhrifat/badge-genius/assets/45077312/78c55a0b-1813-4240-bef0-af124401361a'/>
+</div>
 
 ## Features
 
 - [x] Badge Creation
 - [x] Brand & Shield Details
 - [x] Download Brand SVG & PNG Logo
+- [x] Download different size of Logo/Image
 - [x] Copy Badge Code, Title, SVG & Hex Code
 - [x] Light/Dark Theme
 - [x] PWA
