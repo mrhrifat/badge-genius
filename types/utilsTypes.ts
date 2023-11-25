@@ -32,14 +32,14 @@ export type MetadataType = {
   coverage: string
 }
 
-// page - Shild Context Value Type
-export type ShieldContextValueType = {
+// page - Badge Context Type
+export type BadgeContextType = {
   theme: string
   setTheme: Dispatch<SetStateAction<string>>
   options: OptionsType
   setOptions: Dispatch<SetStateAction<OptionsType>>
-  shield: string
-  setShield: Dispatch<SetStateAction<string>>
+  badge: string
+  setBadge: Dispatch<SetStateAction<string>>
   icons: object
 }
 
@@ -59,6 +59,11 @@ export type OptionsType = {
   logoWidth: number | string
   style: string
   category: string
+  imageSizeType: string
+  imageSize: {
+    width: number
+    height: number
+  }
   subCategory: string
   subCategoryArgs: SubCategoryArgsType
 }

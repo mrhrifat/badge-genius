@@ -8,8 +8,14 @@
  *
  */
 
-import { SvgIconProps } from '@mui/material'
-import { ChangeEvent, ReactElement, ReactNode } from 'react'
+import { SelectChangeEvent, SvgIconProps } from '@mui/material'
+import {
+  ChangeEvent,
+  Dispatch,
+  ReactElement,
+  ReactNode,
+  SetStateAction
+} from 'react'
 
 // HeaderIcons - ItemHeaderIconType
 export type ItemHeaderIconType = {
@@ -46,23 +52,28 @@ export type HandleSelectIconHandlerType = (
 ) => void
 
 // OptionAndIcon - OptionAndIconType
-export type OptionAndIconGridType = {
-  firstItem: ReactNode
-  secondItem: ReactNode
+export type IconAndOptionType = {
+  leftItem: ReactNode
+  rightItem: ReactNode
+}
+
+// AlertMessage - AlertMessageType
+export type AlertMessageType = {
+  isCopied: boolean
 }
 
 // TotalItem - TotalItemType
-export type TotalItemType = {
-  value: object | undefined
+export type CustomBadgeType = {
+  value: object
   icon: ReactElement<SvgIconProps>
 }
 
 // RenderSVG - RenderSVGType
-export type RenderSVGType = {
+export type BuildSVGLogoType = {
   width: number
   height: number
-  title: string | null | undefined
-  path: string | null | undefined
+  title: string
+  path: string
 }
 
 // FooterIcon - FooterIconType
@@ -75,7 +86,7 @@ export type FooterIconsType = FooterIconType[]
 export type SheildFormItemsType = string[] | number[]
 
 // TextInputField - TextInputFieldType
-export type TextInputFieldType = {
+export type CustomTextFieldType = {
   value: string | undefined
   id: string
   label: string
@@ -87,8 +98,65 @@ export type TextInputFieldType = {
 }
 
 // TextInputDialog - TextInputDialogType
-export type TextInputDialogType = {
+export type CustomDialogType = {
   handleClose: () => void
   open: boolean
-  subCategoryValue: string | undefined
+  subCategoryValue: string
+}
+
+export type ListValueType = {
+  title: string
+}
+
+// ShieldListType - ShieldListType
+export type InfoListItemType = {
+  icon: string
+  title: string
+}
+
+// CustomButtonInterface - Custom Button
+export type CustomButtonType = {
+  title: string
+  disable: boolean
+  // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-explicit-any
+  handleClick?: (shieldContextValue: any) => void
+  handleFunc?: boolean
+  icon?: ReactNode
+}
+
+// ShieldForm - ShieldFormInterface
+export type CustomFormType = {
+  title: string
+  items: SheildFormItemsType
+  optionsState: string | number
+  handleOptionsChange: (
+    // eslint-disable-next-line no-unused-vars
+    event:
+      | ChangeEvent<HTMLInputElement | { name?: string; value: unknown }>
+      | SelectChangeEvent<string | number>
+  ) => void
+  menuProps?: object
+  fullWidth?: boolean
+}
+
+// RenderIconInterface - Render Icon
+export type CustomIconType = {
+  icon: string
+  width: number
+  height: number
+  viewBox: string
+}
+
+// ToggleKey - ToggleKeyInterface
+export type ToggleKey = {
+  value: string
+  // eslint-disable-next-line no-unused-vars
+  handleChange: (event: ChangeEvent<unknown>, value: string) => void
+  options: ToggleKeyOptionsType
+}
+
+// useCopyToClipboard - UseCopyToClipboardInterface
+export type UseCopyToClipboardType = {
+  isCopid: boolean
+  setIsCopid: Dispatch<SetStateAction<boolean>>
 }
