@@ -8,7 +8,7 @@
  *
  */
 
-import { Dosis } from '@next/font/google'
+import { Dosis } from 'next/font/google'
 
 // TODO: interface/type later
 export const dosis = Dosis({
