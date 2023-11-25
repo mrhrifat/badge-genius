@@ -43,5 +43,5 @@ export interface OptionRenderInterface {
 // HandleWhiteSpace - HandleWhiteSpaceInterface
 export interface HandleWhiteSpaceInterface {
   // eslint-disable-next-line no-unused-vars
-  (value: string | null): string | false
+  (value: string): string
 }
